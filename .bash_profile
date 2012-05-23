@@ -1,4 +1,5 @@
 source ~/.bashrc
+source ~/dotfiles/.private_bash_profile
 
 source /usr/local/Cellar/git/1.7.10/etc/bash_completion.d/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
@@ -48,8 +49,3 @@ eval "$(rbenv init -)"
 
 #KeyRemap4MacBook
 alias keyconfig="subl /Users/babakazuki/Library/Application\ Support/KeyRemap4MacBook/private.xml -nw"
-
-
-#speed cd
-alias specia="cd /Users/babakazuki/project/specia-web"
-alias asagao="cd /Users/babakazuki/rails_projects/asaao"
