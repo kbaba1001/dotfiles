@@ -1,1 +1,165 @@
-/Users/babakazuki/Library/Application Support/KeyRemap4MacBook/private.xml
+<?xml version="1.0"?>
+<root>
+ 	<item>
+    <name>Space to Fn</name>
+    <identifier>private.space_to_fn</identifier>
+    <autogen>--KeyToKey-- KeyCode::SPACE,  KeyCode::FN</autogen>
+	</item>
+
+ 	<item>
+    <name>LOCK Shift_L or Fn by Shift_R</name>
+    <identifier>private.lock_shift_l_or_fn</identifier>
+    <autogen>--KeyToKey-- KeyCode::SHIFT_R, ModifierFlag::SHIFT_L, KeyCode::VK_LOCK_SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::SHIFT_L, ModifierFlag::SHIFT_R, KeyCode::VK_LOCK_SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::SHIFT_R, ModifierFlag::FN, KeyCode::VK_LOCK_FN</autogen>
+    <autogen>--KeyToKey-- KeyCode::FN, ModifierFlag::SHIFT_R, KeyCode::VK_LOCK_FN</autogen>
+  </item>
+
+ 	<item>
+    <name>HENTAN cursor moving</name>
+    <identifier>private.hentai_cursor_moving</identifier>
+    <autogen>--KeyToKey-- KeyCode::A, ModifierFlag::FN, KeyCode::CURSOR_LEFT</autogen>
+    <autogen>--KeyToKey-- KeyCode::S, ModifierFlag::FN, KeyCode::CURSOR_UP</autogen>
+    <autogen>--KeyToKey-- KeyCode::D, ModifierFlag::FN, KeyCode::CURSOR_DOWN</autogen>
+    <autogen>--KeyToKey-- KeyCode::F, ModifierFlag::FN, KeyCode::CURSOR_RIGHT</autogen>
+    <autogen>--KeyToKey-- KeyCode::Z, ModifierFlag::FN, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::X, ModifierFlag::FN, KeyCode::PAGEUP</autogen>
+    <autogen>--KeyToKey-- KeyCode::C, ModifierFlag::FN, KeyCode::PAGEDOWN</autogen>
+    <autogen>--KeyToKey-- KeyCode::V, ModifierFlag::FN, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::W, ModifierFlag::FN, KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::E, ModifierFlag::FN, KeyCode::TAB, ModifierFlag::COMMAND_L</autogen>
+  </item>
+
+<!--  	<item>
+    <name>HENTAI q</name>
+    <identifier>private.hentai_q</identifier>
+    <autogen>--KeyToKey-- KeyCode::Q, ModifierFlag::FN, KeyCode::SPACE, ModifierFlag::COMMAND_L</autogen>
+  </item>
+ -->
+	<item>
+    <name>HENTAI comma</name>
+    <identifier>private.hentai_comma</identifier>
+    <autogen>--KeyToKey-- KeyCode::COMMA, ModifierFlag::SHIFT_L | ModifierFlag::NONE, KeyCode::BACKQUOTE, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::COMMA, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::DELETE</autogen>
+    <autogen>--KeyToKey-- KeyCode::COMMA, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::FORWARD_DELETE</autogen>
+  </item>
+
+ 	<item>
+    <name>HENTAN dot</name>
+    <identifier>private.hentai_dot</identifier>
+    <autogen>--KeyToKey-- KeyCode::DOT, ModifierFlag::SHIFT_L | ModifierFlag::NONE, KeyCode::SLASH</autogen>
+    <autogen>--KeyToKey-- KeyCode::DOT, ModifierFlag::FN, KeyCode::RETURN</autogen>
+  </item>
+
+ 	<item>
+    <name>HENTAI Slash</name>
+    <identifier>private.hentai_slash</identifier>
+    <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::NONE, KeyCode::SPACE</autogen>
+    <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::SHIFT_L, KeyCode::SPACE</autogen>
+    <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::SHIFT_R, KeyCode::SPACE</autogen>
+    <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::COMMAND_L, KeyCode::SPACE</autogen>
+    <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::COMMAND_R, KeyCode::SPACE</autogen>
+    <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::FN, KeyCode::SPACE, ModifierFlag::COMMAND_L | ModifierFlag::NONE</autogen>
+  </item>
+
+ 	<item>
+    <name>HENTAI n</name>
+    <identifier>private.hentai_n</identifier>
+    <autogen>--KeyToKey-- KeyCode::N, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::COMMA, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::N, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::KEY_6, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
+ 	<item>
+    <name>HENTAI m</name>
+    <identifier>private.hentai_m</identifier>
+    <autogen>--KeyToKey-- KeyCode::M, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::DOT, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::M, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::KEY_3, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
+ 	<item>
+    <name>HENTAI h</name>
+    <identifier>private.hentai_h</identifier>
+    <autogen>--KeyToKey-- KeyCode::H, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::KEY_5, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::H, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::KEY_4, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
+ 	<item>
+    <name>HENTAI j</name>
+    <identifier>private.hentai_j</identifier>
+    <autogen>--KeyToKey-- KeyCode::J, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::J, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::BRACKET_LEFT, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
+ 	<item>
+    <name>HENTAI k</name>
+    <identifier>private.hentai_k</identifier>
+    <autogen>--KeyToKey-- KeyCode::K, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::K, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
+ 	<item>
+    <name>HENTAI l</name>
+    <identifier>private.hentai_l</identifier>
+    <autogen>--KeyToKey-- KeyCode::L, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::MINUS</autogen>
+    <autogen>--KeyToKey-- KeyCode::L, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::EQUAL, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
+ 	<item>
+    <name>HENTAI Semi Colon</name>
+    <identifier>private.hentai_semicolon</identifier>
+    <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::NONE, KeyCode::SEMICOLON, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::SHIFT_L | ModifierFlag::NONE, KeyCode::SEMICOLON</autogen>
+    <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::SLASH, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::KEY_1, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
+ 	<item>
+    <name>HENTAI QUOTE</name>
+    <identifier>private.hentai_quote</identifier>
+    <autogen>--KeyToKey-- KeyCode::QUOTE, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::BACKSLASH, ModifierFlag::SHIFT_L</autogen>
+		<autogen>--KeyToKey-- KeyCode::QUOTE, ModifierFlag::SHIFT_L | ModifierFlag::FN, KeyCode::BACKSLASH, ModifierFlag::NONE</autogen>
+  </item>
+
+ 	<item>
+    <name>HENTAI u</name>
+    <identifier>private.hentai_u</identifier>
+    <autogen>--KeyToKey-- KeyCode::U, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::KEY_8, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::U, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::KEY_7, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
+ 	<item>
+    <name>HENTAI i</name>
+    <identifier>private.hentai_i</identifier>
+    <autogen>--KeyToKey-- KeyCode::I, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::MINUS, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::I, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::KEY_2, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
+ 	<item>
+    <name>HENTAI o</name>
+    <identifier>private.hentai_o</identifier>
+    <autogen>--KeyToKey-- KeyCode::O, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::EQUAL</autogen>
+    <autogen>--KeyToKey-- KeyCode::O, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::EQUAL, KeyCode::DOT, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
+ 	<item>
+    <name>HENTAI p</name>
+    <identifier>private.hentai_p</identifier>
+    <autogen>--KeyToKey-- KeyCode::P, ModifierFlag::FN, KeyCode::ESCAPE</autogen>
+  </item>
+
+  <item>
+    <name>HENTAI bracket left</name>
+    <identifier>private.hentai_bracket_left</identifier>
+    <autogen>--KeyToKey-- KeyCode::BRACKET_LEFT, ModifierFlag::FN, KeyCode::BACKQUOTE</autogen>
+  </item>
+
+  <item>
+    <name>Mouse side button browser back</name>
+    <identifier>private.mouse_side_buttom_browser_back</identifier>
+    <autogen>--KeyToKey-- KeyCode::VK_MOUSEKEY_BUTTON_BUTTON4, KeyCode::DELETE</autogen>
+    <autogen>--KeyToKey-- KeyCode::VK_MOUSEKEY_BUTTON_BUTTON5, KeyCode::DELETE, ModifierFlag::SHIFT_R</autogen>
+  </item>
+
+
+
+</root>
