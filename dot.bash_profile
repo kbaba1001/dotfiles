@@ -1,0 +1,1 @@
+/Users/babakazuki/.bash_profile
