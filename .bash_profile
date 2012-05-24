@@ -6,6 +6,7 @@ export PATH="$HOME/.rbenv/*/*/bin:$PATH"
 eval "$(rbenv init -)"
 
 ### prompt's setting ##################
+# https://gist.github.com/1668822
 # prompt with ruby version
 __rbenv_ps1 ()
 {
