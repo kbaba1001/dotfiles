@@ -1,10 +1,31 @@
 source ~/dotfiles/.private_bash_profile
 
-# プロンプトでカレントディレクトリのベース名と、gitブランチ名を表示する。
+#rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/*/*/bin:$PATH"
+eval "$(rbenv init -)"
+
+### prompt's setting ##################
+# prompt with ruby version
+__rbenv_ps1 ()
+{
+  rbenv_ruby_version=`rbenv version`
+  short_version=${rbenv_ruby_version#1.}
+  short_short_version=${short_version%-*}
+  printf $short_short_version
+}
+
+# prompt with git branch name
 source /usr/local/Cellar/git/1.7.10/etc/bash_completion.d/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
-dir_name='\[\033[32m\]$(__git_ps1)\[\033[33m\]\W\[\033[00m\]\$ '
-export PS1="$dir_name"
+
+# prompt
+if [ `which rbenv` ]; then
+  export PS1='\[\033[31m\]$(__rbenv_ps1)\[\033[32m\]$(__git_ps1)\[\033[33m\]\W\[\033[00m\]\$ '
+else
+  export PS1='\[\033[32m\]$(__git_ps1)\[\033[33m\]\W\[\033[00m\]\$ '
+fi
+### end prompt's setting ##################
 
 # ls
 # http://d.hatena.ne.jp/yamazaru_rengou/20090119/1232373540
@@ -25,12 +46,16 @@ alias less="/usr/share/vim/vim73/macros/less.sh"
 #gui application
 alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 
+#KeyRemap4MacBook
+alias keyconfig="subl /Users/babakazuki/Library/Application\ Support/KeyRemap4MacBook/private.xml -n"
+
 #locate
 alias updatedb="/usr/libexec/locate.updatedb"
 
 #git short
 alias g="git"
-alias gc="git commit"
+alias gc="git add -A . ; git commit"
+alias gcm="git add -A . ; git commit -m"
 
 #ruby, rails short
 alias ru='ruby'
@@ -45,11 +70,3 @@ alias chhash="perl -pi -e 's/([^\w^:]):([\w\d_]+)\s*=>/\1\2:/g'"
 
 #postgreSQL's PATH
 export PATH=/usr/local/bin:$PATH
-
-#rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.rbenv/*/*/bin:$PATH"
-eval "$(rbenv init -)"
-
-#KeyRemap4MacBook
-alias keyconfig="subl /Users/babakazuki/Library/Application\ Support/KeyRemap4MacBook/private.xml -n"
