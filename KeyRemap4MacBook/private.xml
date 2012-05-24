@@ -30,14 +30,8 @@
     <autogen>--KeyToKey-- KeyCode::E, ModifierFlag::FN, KeyCode::TAB, ModifierFlag::COMMAND_L</autogen>
   </item>
 
-<!--  	<item>
-    <name>HENTAI q</name>
-    <identifier>private.hentai_q</identifier>
-    <autogen>--KeyToKey-- KeyCode::Q, ModifierFlag::FN, KeyCode::SPACE, ModifierFlag::COMMAND_L</autogen>
-  </item>
- -->
 	<item>
-    <name>HENTAI comma</name>
+    <name>PIANIST comma</name>
     <identifier>private.hentai_comma</identifier>
     <autogen>--KeyToKey-- KeyCode::COMMA, ModifierFlag::SHIFT_L | ModifierFlag::NONE, KeyCode::BACKQUOTE, ModifierFlag::SHIFT_L</autogen>
     <autogen>--KeyToKey-- KeyCode::COMMA, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::DELETE</autogen>
@@ -52,7 +46,7 @@
   </item>
 
  	<item>
-    <name>HENTAI Slash</name>
+    <name>PIANIST Slash</name>
     <identifier>private.hentai_slash</identifier>
     <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::NONE, KeyCode::SPACE</autogen>
     <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::SHIFT_L, KeyCode::SPACE</autogen>
@@ -63,49 +57,49 @@
   </item>
 
  	<item>
-    <name>HENTAI n</name>
+    <name>PIANIST n</name>
     <identifier>private.hentai_n</identifier>
     <autogen>--KeyToKey-- KeyCode::N, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::COMMA, ModifierFlag::SHIFT_L</autogen>
     <autogen>--KeyToKey-- KeyCode::N, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::KEY_6, ModifierFlag::SHIFT_L</autogen>
   </item>
 
  	<item>
-    <name>HENTAI m</name>
+    <name>PIANIST m</name>
     <identifier>private.hentai_m</identifier>
     <autogen>--KeyToKey-- KeyCode::M, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::DOT, ModifierFlag::SHIFT_L</autogen>
     <autogen>--KeyToKey-- KeyCode::M, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::KEY_3, ModifierFlag::SHIFT_L</autogen>
   </item>
 
  	<item>
-    <name>HENTAI h</name>
+    <name>PIANIST h</name>
     <identifier>private.hentai_h</identifier>
     <autogen>--KeyToKey-- KeyCode::H, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::KEY_5, ModifierFlag::SHIFT_L</autogen>
     <autogen>--KeyToKey-- KeyCode::H, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::KEY_4, ModifierFlag::SHIFT_L</autogen>
   </item>
 
  	<item>
-    <name>HENTAI j</name>
+    <name>PIANIST j</name>
     <identifier>private.hentai_j</identifier>
     <autogen>--KeyToKey-- KeyCode::J, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
     <autogen>--KeyToKey-- KeyCode::J, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::BRACKET_LEFT, ModifierFlag::SHIFT_L</autogen>
   </item>
 
  	<item>
-    <name>HENTAI k</name>
+    <name>PIANIST k</name>
     <identifier>private.hentai_k</identifier>
     <autogen>--KeyToKey-- KeyCode::K, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
     <autogen>--KeyToKey-- KeyCode::K, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_L</autogen>
   </item>
 
  	<item>
-    <name>HENTAI l</name>
+    <name>PIANIST l</name>
     <identifier>private.hentai_l</identifier>
     <autogen>--KeyToKey-- KeyCode::L, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::MINUS</autogen>
     <autogen>--KeyToKey-- KeyCode::L, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::EQUAL, ModifierFlag::SHIFT_L</autogen>
   </item>
 
  	<item>
-    <name>HENTAI Semi Colon</name>
+    <name>PIANIST Semi Colon</name>
     <identifier>private.hentai_semicolon</identifier>
     <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::NONE, KeyCode::SEMICOLON, ModifierFlag::SHIFT_L</autogen>
     <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::SHIFT_L | ModifierFlag::NONE, KeyCode::SEMICOLON</autogen>
@@ -114,41 +108,41 @@
   </item>
 
  	<item>
-    <name>HENTAI QUOTE</name>
+    <name>PIANIST QUOTE</name>
     <identifier>private.hentai_quote</identifier>
     <autogen>--KeyToKey-- KeyCode::QUOTE, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::BACKSLASH, ModifierFlag::SHIFT_L</autogen>
 		<autogen>--KeyToKey-- KeyCode::QUOTE, ModifierFlag::SHIFT_L | ModifierFlag::FN, KeyCode::BACKSLASH, ModifierFlag::NONE</autogen>
   </item>
 
  	<item>
-    <name>HENTAI u</name>
+    <name>PIANIST u</name>
     <identifier>private.hentai_u</identifier>
     <autogen>--KeyToKey-- KeyCode::U, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::KEY_8, ModifierFlag::SHIFT_L</autogen>
     <autogen>--KeyToKey-- KeyCode::U, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::KEY_7, ModifierFlag::SHIFT_L</autogen>
   </item>
 
  	<item>
-    <name>HENTAI i</name>
+    <name>PIANIST i</name>
     <identifier>private.hentai_i</identifier>
     <autogen>--KeyToKey-- KeyCode::I, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::MINUS, ModifierFlag::SHIFT_L</autogen>
     <autogen>--KeyToKey-- KeyCode::I, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::KEY_2, ModifierFlag::SHIFT_L</autogen>
   </item>
 
  	<item>
-    <name>HENTAI o</name>
+    <name>PIANIST o</name>
     <identifier>private.hentai_o</identifier>
     <autogen>--KeyToKey-- KeyCode::O, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::EQUAL</autogen>
     <autogen>--KeyToKey-- KeyCode::O, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::EQUAL, KeyCode::DOT, ModifierFlag::SHIFT_L</autogen>
   </item>
 
  	<item>
-    <name>HENTAI p</name>
+    <name>PIANIST p</name>
     <identifier>private.hentai_p</identifier>
     <autogen>--KeyToKey-- KeyCode::P, ModifierFlag::FN, KeyCode::ESCAPE</autogen>
   </item>
 
   <item>
-    <name>HENTAI bracket left</name>
+    <name>PIANIST bracket left</name>
     <identifier>private.hentai_bracket_left</identifier>
     <autogen>--KeyToKey-- KeyCode::BRACKET_LEFT, ModifierFlag::FN, KeyCode::BACKQUOTE</autogen>
   </item>

@@ -41,7 +41,7 @@ alias ll='ls -l'
 
 #syntax for less
 #@see http://c-brains.jp/blog/wsg/07/12/07-033558.php
-alias pless="less"
+alias pless="/usr/bin/less"
 alias less="/usr/share/vim/vim73/macros/less.sh"
 
 #gui application
@@ -63,6 +63,7 @@ alias ru='ruby'
 alias r='rails'
 alias be='bundle exec'
 alias ber='bundle exec rspec'
+
 
 # Ruby 1.8記法のHashをRuby 1.9記法に変換する正規表現。
 # 同名のファイルに上書き保存される。
