@@ -16,7 +16,7 @@
   </item>
 
  	<item>
-    <name>HENTAN cursor moving</name>
+    <name>PIANIST cursor moving</name>
     <identifier>private.hentai_cursor_moving</identifier>
     <autogen>--KeyToKey-- KeyCode::A, ModifierFlag::FN, KeyCode::CURSOR_LEFT</autogen>
     <autogen>--KeyToKey-- KeyCode::S, ModifierFlag::FN, KeyCode::CURSOR_UP</autogen>
@@ -39,7 +39,7 @@
   </item>
 
  	<item>
-    <name>HENTAN dot</name>
+    <name>PIANIST dot</name>
     <identifier>private.hentai_dot</identifier>
     <autogen>--KeyToKey-- KeyCode::DOT, ModifierFlag::SHIFT_L | ModifierFlag::NONE, KeyCode::SLASH</autogen>
     <autogen>--KeyToKey-- KeyCode::DOT, ModifierFlag::FN, KeyCode::RETURN</autogen>
