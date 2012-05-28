@@ -11,7 +11,7 @@ eval "$(rbenv init -)"
 __rbenv_ps1 ()
 {
   rbenv_ruby_version=`rbenv version`
-  short_version=${rbenv_ruby_version#1.}
+  short_version=${rbenv_ruby_version#?.}
   short_short_version=${short_version%-*}
   printf $short_short_version
 }
@@ -64,6 +64,8 @@ alias r='rails'
 alias be='bundle exec'
 alias ber='bundle exec rspec'
 
+#RSpec
+alias rspec="rspec -c"
 
 # Ruby 1.8記法のHashをRuby 1.9記法に変換する正規表現。
 # 同名のファイルに上書き保存される。
