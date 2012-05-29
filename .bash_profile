@@ -64,9 +64,6 @@ alias r='rails'
 alias be='bundle exec'
 alias ber='bundle exec rspec'
 
-#RSpec
-alias rspec="rspec -c"
-
 # Ruby 1.8記法のHashをRuby 1.9記法に変換する正規表現。
 # 同名のファイルに上書き保存される。
 # http://robots.thoughtbot.com/post/17450269990/convert-ruby-1-8-to-1-9-hash-syntax
