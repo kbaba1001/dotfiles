@@ -2,6 +2,7 @@ source ~/dotfiles/.private_bash_profile
 
 #rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
 export PATH="$HOME/.rbenv/*/*/bin:$PATH"
 eval "$(rbenv init -)"
 
@@ -32,20 +33,23 @@ fi
 # http://d.hatena.ne.jp/yamazaru_rengou/20090119/1232373540
 # export LSCOLORS=exfxcxdxbxegedabagacad
 export LSCOLORS=gxfxcxdxbxegedabagacad
-alias ls="ls -GF"
+alias ls="ls -FG"
+alias l="ls"
+alias ll='l -l'
 
 #bash short
 alias t='touch'
 alias m='mkdir'
-alias ll='ls -l'
+alias mp='mkdir -p'  #サブディレクトリを一気に作成する
 
 #syntax for less
 #@see http://c-brains.jp/blog/wsg/07/12/07-033558.php
-alias pless="/usr/bin/less"
 alias less="/usr/share/vim/vim73/macros/less.sh"
+alias le="/usr/share/vim/vim73/macros/less.sh"
 
 #gui application
 alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
 #KeyRemap4MacBook
 alias keyconfig="subl /Users/babakazuki/Library/Application\ Support/KeyRemap4MacBook/private.xml -n"
@@ -54,9 +58,10 @@ alias keyconfig="subl /Users/babakazuki/Library/Application\ Support/KeyRemap4Ma
 alias updatedb="/usr/libexec/locate.updatedb"
 
 #git short
+alias git="hub"  # https://github.com/defunkt/hub
 alias g="git"
-alias gc="git add -A . ; git commit"
-alias gcm="git add -A . ; git commit -m"
+alias gc="git add . ; git commit"
+alias gcm="git add . ; git commit -m"
 
 #ruby, rails short
 alias ru='ruby'
@@ -71,3 +76,6 @@ alias chhash="perl -pi -e 's/([^\w^:]):([\w\d_]+)\s*=>/\1\2:/g'"
 
 #postgreSQL's PATH
 export PATH=/usr/local/bin:$PATH
+
+# perl
+export PATH=$HOME/.cpanm/work/*/:$PATH
