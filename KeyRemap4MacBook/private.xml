@@ -15,9 +15,21 @@
     <autogen>--KeyToKey-- KeyCode::FN, ModifierFlag::SHIFT_R, KeyCode::VK_LOCK_FN</autogen>
   </item>
 
+    <item>
+    <name>PIANIST g</name>
+    <identifier>private.pianist_g</identifier>
+    <autogen>--KeyToKey-- KeyCode::G, ModifierFlag::FN, KeyCode::F1</autogen>
+  </item>
+
+    <item>
+    <name>PIANIST q</name>
+    <identifier>private.pianist_q</identifier>
+    <autogen>--KeyToKey-- KeyCode::Q, ModifierFlag::FN, KeyCode::ESCAPE</autogen>
+  </item>
+
  	<item>
     <name>PIANIST cursor moving</name>
-    <identifier>private.hentai_cursor_moving</identifier>
+    <identifier>private.pianist_cursor_moving</identifier>
     <autogen>--KeyToKey-- KeyCode::A, ModifierFlag::FN, KeyCode::CURSOR_LEFT</autogen>
     <autogen>--KeyToKey-- KeyCode::S, ModifierFlag::FN, KeyCode::CURSOR_UP</autogen>
     <autogen>--KeyToKey-- KeyCode::D, ModifierFlag::FN, KeyCode::CURSOR_DOWN</autogen>
@@ -30,121 +42,127 @@
     <autogen>--KeyToKey-- KeyCode::E, ModifierFlag::FN, KeyCode::TAB, ModifierFlag::COMMAND_L</autogen>
   </item>
 
+    <item>
+        <name>1 ~ 0,-,= + Fn to F1 ~ F12</name>
+        <identifier>private.number_and_fn_to_functionkey</identifier>
+        <autogen>--KeyToKey-- KeyCode::KEY_1, ModifierFlag::FN, KeyCode::F1</autogen>
+        <autogen>--KeyToKey-- KeyCode::KEY_2, ModifierFlag::FN, KeyCode::F2</autogen>
+        <autogen>--KeyToKey-- KeyCode::KEY_3, ModifierFlag::FN, KeyCode::F3</autogen>
+        <autogen>--KeyToKey-- KeyCode::KEY_4, ModifierFlag::FN, KeyCode::F4</autogen>
+        <autogen>--KeyToKey-- KeyCode::KEY_5, ModifierFlag::FN, KeyCode::F5</autogen>
+        <autogen>--KeyToKey-- KeyCode::KEY_6, ModifierFlag::FN, KeyCode::F6</autogen>
+        <autogen>--KeyToKey-- KeyCode::KEY_7, ModifierFlag::FN, KeyCode::F7</autogen>
+        <autogen>--KeyToKey-- KeyCode::KEY_8, ModifierFlag::FN, KeyCode::F8</autogen>
+        <autogen>--KeyToKey-- KeyCode::KEY_9, ModifierFlag::FN, KeyCode::F9</autogen>
+        <autogen>--KeyToKey-- KeyCode::KEY_0, ModifierFlag::FN, KeyCode::F10</autogen>
+        <autogen>--KeyToKey-- KeyCode::MINUS, ModifierFlag::FN, KeyCode::F11</autogen>
+        <autogen>--KeyToKey-- KeyCode::EQUAL, ModifierFlag::FN, KeyCode::F12</autogen>
+    </item>
+
+    <item>
+    <name>PIANIST n</name>
+    <identifier>private.pianist_n</identifier>
+    <autogen>--KeyToKey-- KeyCode::N, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::N, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::BRACKET_LEFT, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
+    <item>
+    <name>PIANIST m</name>
+    <identifier>private.pianist_m</identifier>
+    <autogen>--KeyToKey-- KeyCode::M, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::M, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
 	<item>
     <name>PIANIST comma</name>
-    <identifier>private.hentai_comma</identifier>
-    <autogen>--KeyToKey-- KeyCode::COMMA, ModifierFlag::SHIFT_L | ModifierFlag::NONE, KeyCode::BACKQUOTE, ModifierFlag::SHIFT_L</autogen>
-    <autogen>--KeyToKey-- KeyCode::COMMA, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::DELETE</autogen>
-    <autogen>--KeyToKey-- KeyCode::COMMA, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::FORWARD_DELETE</autogen>
+    <identifier>private.pianist_comma</identifier>
+    <autogen>--KeyToKey-- KeyCode::COMMA, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::BRACKET_LEFT</autogen>
+    <autogen>--KeyToKey-- KeyCode::COMMA, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::KEY_1, ModifierFlag::SHIFT_L</autogen>
   </item>
 
  	<item>
     <name>PIANIST dot</name>
-    <identifier>private.hentai_dot</identifier>
-    <autogen>--KeyToKey-- KeyCode::DOT, ModifierFlag::SHIFT_L | ModifierFlag::NONE, KeyCode::SLASH</autogen>
-    <autogen>--KeyToKey-- KeyCode::DOT, ModifierFlag::FN, KeyCode::RETURN</autogen>
+    <identifier>private.pianist_dot</identifier>
+    <autogen>--KeyToKey-- KeyCode::DOT, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::BRACKET_RIGHT</autogen>
+    <autogen>--KeyToKey-- KeyCode::DOT, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::SLASH, ModifierFlag::SHIFT_L</autogen>
   </item>
 
  	<item>
     <name>PIANIST Slash</name>
-    <identifier>private.hentai_slash</identifier>
-    <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::NONE, KeyCode::SPACE</autogen>
-    <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::SHIFT_L, KeyCode::SPACE</autogen>
-    <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::SHIFT_R, KeyCode::SPACE</autogen>
-    <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::COMMAND_L, KeyCode::SPACE</autogen>
-    <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::COMMAND_R, KeyCode::SPACE</autogen>
-    <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::FN, KeyCode::SPACE, ModifierFlag::COMMAND_L | ModifierFlag::NONE</autogen>
-  </item>
-
- 	<item>
-    <name>PIANIST n</name>
-    <identifier>private.hentai_n</identifier>
-    <autogen>--KeyToKey-- KeyCode::N, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::COMMA, ModifierFlag::SHIFT_L</autogen>
-    <autogen>--KeyToKey-- KeyCode::N, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::KEY_6, ModifierFlag::SHIFT_L</autogen>
-  </item>
-
- 	<item>
-    <name>PIANIST m</name>
-    <identifier>private.hentai_m</identifier>
-    <autogen>--KeyToKey-- KeyCode::M, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::DOT, ModifierFlag::SHIFT_L</autogen>
-    <autogen>--KeyToKey-- KeyCode::M, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::KEY_3, ModifierFlag::SHIFT_L</autogen>
+    <identifier>private.pianist_slash</identifier>
+    <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::SHIFT_L | ModifierFlag::NONE, KeyCode::BACKQUOTE, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::BACKSLASH, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::BACKSLASH</autogen>
   </item>
 
  	<item>
     <name>PIANIST h</name>
-    <identifier>private.hentai_h</identifier>
-    <autogen>--KeyToKey-- KeyCode::H, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::KEY_5, ModifierFlag::SHIFT_L</autogen>
-    <autogen>--KeyToKey-- KeyCode::H, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::KEY_4, ModifierFlag::SHIFT_L</autogen>
+    <identifier>private.pianist_h</identifier>
+    <autogen>--KeyToKey-- KeyCode::H, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::MINUS</autogen>
+    <autogen>--KeyToKey-- KeyCode::H, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::EQUAL, ModifierFlag::SHIFT_L</autogen>
   </item>
 
  	<item>
     <name>PIANIST j</name>
-    <identifier>private.hentai_j</identifier>
-    <autogen>--KeyToKey-- KeyCode::J, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
-    <autogen>--KeyToKey-- KeyCode::J, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::BRACKET_LEFT, ModifierFlag::SHIFT_L</autogen>
+    <identifier>private.pianist_j</identifier>
+    <autogen>--KeyToKey-- KeyCode::J, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::DELETE</autogen>
+    <autogen>--KeyToKey-- KeyCode::J, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::FORWARD_DELETE</autogen>
+
   </item>
 
  	<item>
     <name>PIANIST k</name>
-    <identifier>private.hentai_k</identifier>
-    <autogen>--KeyToKey-- KeyCode::K, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
-    <autogen>--KeyToKey-- KeyCode::K, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_L</autogen>
+    <identifier>private.pianist_k</identifier>
+    <autogen>--KeyToKey-- KeyCode::K, ModifierFlag::FN, KeyCode::SPACE</autogen>
   </item>
 
  	<item>
     <name>PIANIST l</name>
-    <identifier>private.hentai_l</identifier>
-    <autogen>--KeyToKey-- KeyCode::L, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::MINUS</autogen>
-    <autogen>--KeyToKey-- KeyCode::L, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::EQUAL, ModifierFlag::SHIFT_L</autogen>
+    <identifier>private.pianist_l</identifier>
+    <autogen>--KeyToKey-- KeyCode::L, ModifierFlag::FN, KeyCode::RETURN</autogen>
   </item>
 
  	<item>
     <name>PIANIST Semi Colon</name>
-    <identifier>private.hentai_semicolon</identifier>
+    <identifier>private.pianist_semicolon</identifier>
     <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::NONE, KeyCode::SEMICOLON, ModifierFlag::SHIFT_L</autogen>
     <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::SHIFT_L | ModifierFlag::NONE, KeyCode::SEMICOLON</autogen>
-    <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::SLASH, ModifierFlag::SHIFT_L</autogen>
-    <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::KEY_1, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::KEY_5, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::KEY_7, ModifierFlag::SHIFT_L</autogen>
   </item>
 
  	<item>
     <name>PIANIST QUOTE</name>
-    <identifier>private.hentai_quote</identifier>
-    <autogen>--KeyToKey-- KeyCode::QUOTE, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::BACKSLASH, ModifierFlag::SHIFT_L</autogen>
-		<autogen>--KeyToKey-- KeyCode::QUOTE, ModifierFlag::SHIFT_L | ModifierFlag::FN, KeyCode::BACKSLASH, ModifierFlag::NONE</autogen>
+    <identifier>private.pianist_quote</identifier>
+    <autogen>--KeyToKey-- KeyCode::QUOTE, ModifierFlag::FN, KeyCode::BACKQUOTE</autogen>
   </item>
 
  	<item>
     <name>PIANIST u</name>
-    <identifier>private.hentai_u</identifier>
+    <identifier>private.pianist_u</identifier>
     <autogen>--KeyToKey-- KeyCode::U, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::KEY_8, ModifierFlag::SHIFT_L</autogen>
-    <autogen>--KeyToKey-- KeyCode::U, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::KEY_7, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::U, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::KEY_4, ModifierFlag::SHIFT_L</autogen>
   </item>
 
  	<item>
     <name>PIANIST i</name>
-    <identifier>private.hentai_i</identifier>
+    <identifier>private.pianist_i</identifier>
     <autogen>--KeyToKey-- KeyCode::I, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::MINUS, ModifierFlag::SHIFT_L</autogen>
     <autogen>--KeyToKey-- KeyCode::I, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::KEY_2, ModifierFlag::SHIFT_L</autogen>
   </item>
 
  	<item>
     <name>PIANIST o</name>
-    <identifier>private.hentai_o</identifier>
+    <identifier>private.pianist_o</identifier>
     <autogen>--KeyToKey-- KeyCode::O, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::EQUAL</autogen>
     <autogen>--KeyToKey-- KeyCode::O, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::EQUAL, KeyCode::DOT, ModifierFlag::SHIFT_L</autogen>
   </item>
 
  	<item>
     <name>PIANIST p</name>
-    <identifier>private.hentai_p</identifier>
-    <autogen>--KeyToKey-- KeyCode::P, ModifierFlag::FN, KeyCode::ESCAPE</autogen>
-  </item>
-
-  <item>
-    <name>PIANIST bracket left</name>
-    <identifier>private.hentai_bracket_left</identifier>
-    <autogen>--KeyToKey-- KeyCode::BRACKET_LEFT, ModifierFlag::FN, KeyCode::BACKQUOTE</autogen>
+    <identifier>private.pianist_p</identifier>
+    <autogen>--KeyToKey-- KeyCode::P, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::KEY_3, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::P, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::KEY_6, ModifierFlag::SHIFT_L</autogen>
   </item>
 
   <item>

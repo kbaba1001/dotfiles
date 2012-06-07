@@ -23,7 +23,7 @@ GIT_PS1_SHOWDIRTYSTATE=true
 
 # prompt
 if [ `which rbenv` ]; then
-  export PS1='\[\033[31m\]$(__rbenv_ps1)\[\033[32m\]$(__git_ps1)\[\033[33m\]\W\[\033[00m\]\$ '
+  export PS1='\[\033[1;31m\]$(__rbenv_ps1)\[\033[32m\]$(__git_ps1)\[\033[33m\]\W\[\033[0;00m\]\$ '
 else
   export PS1='\[\033[32m\]$(__git_ps1)\[\033[33m\]\W\[\033[00m\]\$ '
 fi
@@ -34,18 +34,19 @@ fi
 # export LSCOLORS=exfxcxdxbxegedabagacad
 export LSCOLORS=gxfxcxdxbxegedabagacad
 alias ls="ls -FG"
-alias l="ls"
-alias ll='l -l'
+alias s="ls"
+alias sl='s -l'
 
 #bash short
 alias t='touch'
 alias m='mkdir'
 alias mp='mkdir -p'  #サブディレクトリを一気に作成する
+alias rf='rm -fr'
 
 #syntax for less
 #@see http://c-brains.jp/blog/wsg/07/12/07-033558.php
 alias less="/usr/share/vim/vim73/macros/less.sh"
-alias le="/usr/share/vim/vim73/macros/less.sh"
+alias e="/usr/share/vim/vim73/macros/less.sh"
 
 #gui application
 alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
