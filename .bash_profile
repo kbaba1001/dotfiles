@@ -23,7 +23,7 @@ GIT_PS1_SHOWDIRTYSTATE=true
 
 # prompt
 if [ `which rbenv` ]; then
-  export PS1='\[\033[1;31m\]$(__rbenv_ps1)\[\033[32m\]$(__git_ps1)\[\033[33m\]\W\[\033[0;00m\]\$ '
+  export PS1='\[\033[1;31m\]$(__rbenv_ps1)\[\033[0;32m\]$(__git_ps1)\[\033[33m\]\W\[\033[00m\]\$ '
 else
   export PS1='\[\033[32m\]$(__git_ps1)\[\033[33m\]\W\[\033[00m\]\$ '
 fi
@@ -33,7 +33,7 @@ fi
 # http://d.hatena.ne.jp/yamazaru_rengou/20090119/1232373540
 # export LSCOLORS=exfxcxdxbxegedabagacad
 export LSCOLORS=gxfxcxdxbxegedabagacad
-alias ls="ls -FG"
+alias ls='ls -FG'
 alias s="ls"
 alias sl='s -l'
 
@@ -42,11 +42,12 @@ alias t='touch'
 alias m='mkdir'
 alias mp='mkdir -p'  #サブディレクトリを一気に作成する
 alias rf='rm -fr'
+alias d='cd'
 
 #syntax for less
 #@see http://c-brains.jp/blog/wsg/07/12/07-033558.php
 alias less="/usr/share/vim/vim73/macros/less.sh"
-alias e="/usr/share/vim/vim73/macros/less.sh"
+alias e='less'
 
 #gui application
 alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
@@ -61,8 +62,8 @@ alias updatedb="/usr/libexec/locate.updatedb"
 #git short
 alias git="hub"  # https://github.com/defunkt/hub
 alias g="git"
-alias gc="git add . ; git commit"
-alias gcm="git add . ; git commit -m"
+alias gc="git add . -A ; git commit"
+alias gcm="git add . -A ; git commit -m"
 
 #ruby, rails short
 alias ru='ruby'
