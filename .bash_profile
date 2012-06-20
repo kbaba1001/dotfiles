@@ -41,8 +41,12 @@ alias sl='s -l'
 alias t='touch'
 alias m='mkdir'
 alias mp='mkdir -p'  #サブディレクトリを一気に作成する
+alias rr='rm -r'
 alias rf='rm -fr'
 alias d='cd'
+alias grep='grep -n'
+alias bp='nano ~/.bash_profile ; source ~/.bash_profile'
+alias tr='tree | less'
 
 #syntax for less
 #@see http://c-brains.jp/blog/wsg/07/12/07-033558.php
@@ -50,7 +54,7 @@ alias less="/usr/share/vim/vim73/macros/less.sh"
 alias e='less'
 
 #gui application
-alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
+alias st="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
 #KeyRemap4MacBook
@@ -64,12 +68,14 @@ alias git="hub"  # https://github.com/defunkt/hub
 alias g="git"
 alias gc="git add . -A ; git commit"
 alias gcm="git add . -A ; git commit -m"
+alias ga="git commit --amend"
 
 #ruby, rails short
 alias ru='ruby'
 alias r='rails'
 alias be='bundle exec'
 alias ber='bundle exec rspec'
+alias irb='pry'
 
 # Ruby 1.8記法のHashをRuby 1.9記法に変換する正規表現。
 # 同名のファイルに上書き保存される。
