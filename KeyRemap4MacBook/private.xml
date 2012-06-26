@@ -168,7 +168,7 @@
   <item>
     <name>Mouse side button browser back</name>
     <identifier>private.mouse_side_buttom_browser_back</identifier>
-    <autogen>--PointingButtonToKey-- PointingButton::BUTTON4, KeyCode::DELETE, ModifierFlag::SHIFT_R</autogen>
-    <autogen>--PointingButtonToKey-- PointingButton::BUTTON5, KeyCode::DELETE</autogen>
+    <autogen>--PointingButtonToKey-- PointingButton::BUTTON5, KeyCode::DELETE, ModifierFlag::SHIFT_R</autogen>
+    <autogen>--PointingButtonToKey-- PointingButton::BUTTON4, KeyCode::DELETE</autogen>
   </item>
 </root>

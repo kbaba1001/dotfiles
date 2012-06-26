@@ -11,23 +11,28 @@ eval "$(rbenv init -)"
 # prompt with ruby version
 __rbenv_ps1 ()
 {
-  rbenv_ruby_version=`rbenv version`
-  short_version=${rbenv_ruby_version#?.}
-  short_short_version=${short_version%-*}
-  printf $short_short_version
+  version_string=$(rbenv version | cut -c 1-5)
+  case $version_string in
+    1.9.3) version_string="(v*╹◡╹)v" ;;
+    1.9.2) version_string="(´_ゝ\`)" ;;
+    *)     version_string=${version_string#?.} ;;
+  esac
+  printf $version_string
 }
+
 
 # prompt with git branch name
 source /usr/local/Cellar/git/1.7.10/etc/bash_completion.d/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
 
 # prompt
-if [ `which rbenv` ]; then
-  export PS1='\[\033[1;31m\]$(__rbenv_ps1)\[\033[0;32m\]$(__git_ps1)\[\033[33m\]\W\[\033[00m\]\$ '
-else
-  export PS1='\[\033[32m\]$(__git_ps1)\[\033[33m\]\W\[\033[00m\]\$ '
-fi
+export PS1='\[\033[1;31m\]$(__rbenv_ps1)\[\033[0;32m\]$(__git_ps1)\[\033[33m\]\W\[\033[00m\]\$ '
 ### end prompt's setting ##################
+
+# Ellie
+alias hi='echo "(v*╹◡╹)v < hi, わたしエリー。happy ?"'
+alias happy='echo "(v*╹◡╹)v < ウフフ ダブルピース!!!"'
+alias hello='echo "(v*╹◡╹)v < hello. コーヒーでも飲んでリラックスしたら？"'
 
 # ls
 # http://d.hatena.ne.jp/yamazaru_rengou/20090119/1232373540
@@ -37,12 +42,16 @@ alias ls='ls -FG'
 alias s="ls"
 alias sl='s -l'
 
+# rm
+# rmする代わりに.Trash(ゴミ箱)にファイルを移動する
+alias rm='/usr/local/bin/alterm'
+# alias rr='rm -r'
+# alias rf='rm -fr'
+
 #bash short
 alias t='touch'
 alias m='mkdir'
 alias mp='mkdir -p'  #サブディレクトリを一気に作成する
-alias rr='rm -r'
-alias rf='rm -fr'
 alias d='cd'
 alias grep='grep -n'
 alias bp='nano ~/.bash_profile ; source ~/.bash_profile'
@@ -58,10 +67,10 @@ alias st="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
 #KeyRemap4MacBook
-alias keyconfig="subl /Users/babakazuki/Library/Application\ Support/KeyRemap4MacBook/private.xml -n"
+alias keyconfig="st /Users/babakazuki/Library/Application\ Support/KeyRemap4MacBook/private.xml -n"
 
 #locate
-alias updatedb="/usr/libexec/locate.updatedb"
+alias updatedb="sudo /usr/libexec/locate.updatedb"
 
 #git short
 alias git="hub"  # https://github.com/defunkt/hub
@@ -75,6 +84,7 @@ alias ru='ruby'
 alias r='rails'
 alias be='bundle exec'
 alias ber='bundle exec rspec'
+alias bec='bundle exec cucumber'
 alias irb='pry'
 
 # Ruby 1.8記法のHashをRuby 1.9記法に変換する正規表現。
