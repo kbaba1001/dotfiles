@@ -33,34 +33,42 @@ export PS1='\[\033[1;31m\]$(__rbenv_ps1)\[\033[0;32m\]$(__git_ps1)\[\033[33m\]\W
 alias hi='echo "(v*╹◡╹)v < hi, わたしエリー。happy ?"'
 alias happy='echo "(v*╹◡╹)v < ウフフ ダブルピース!!!"'
 alias hello='echo "(v*╹◡╹)v < hello. コーヒーでも飲んでリラックスしたら？"'
+alias にゃんにゃん='echo "(v*╹◡╹)v < 酔いを覚ましてください"'
+alias ほむほむ='echo "(v*╹◡╹)v < ほむほむ"'
+
 
 # ls
 # http://d.hatena.ne.jp/yamazaru_rengou/20090119/1232373540
 # export LSCOLORS=exfxcxdxbxegedabagacad
 export LSCOLORS=gxfxcxdxbxegedabagacad
 alias ls='ls -FG'
-alias s="ls"
-alias sl='s -l'
+alias l='ls -lh'
+
+# syntax for less
+# @see http://c-brains.jp/blog/wsg/07/12/07-033558.php
+alias pless='/usr/bin/less'
+alias less="/usr/share/vim/vim73/macros/less.sh"
+
+# show
+# showは引数がディレクトリならls, ファイルならlessするスクリプト
+alias s='/usr/local/bin/show'
 
 # rm
-# rmする代わりに.Trash(ゴミ箱)にファイルを移動する
-alias rm='/usr/local/bin/alterm'
-# alias rr='rm -r'
-# alias rf='rm -fr'
+# trashは削除する代わりに.Trash(ゴミ箱)にファイルを移動する。実態は単なるmv
+alias rm='/usr/local/bin/trash'
+alias prm='/bin/rm'
+alias rr='rm -r'
+alias rf='rm -fr'
 
 #bash short
 alias t='touch'
 alias m='mkdir'
 alias mp='mkdir -p'  #サブディレクトリを一気に作成する
 alias d='cd'
-alias grep='grep -n'
+alias grep='grep -n -r'
 alias bp='nano ~/.bash_profile ; source ~/.bash_profile'
 alias tr='tree | less'
 
-#syntax for less
-#@see http://c-brains.jp/blog/wsg/07/12/07-033558.php
-alias less="/usr/share/vim/vim73/macros/less.sh"
-alias e='less'
 
 #gui application
 alias st="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
@@ -78,6 +86,7 @@ alias g="git"
 alias gc="git add . -A ; git commit"
 alias gcm="git add . -A ; git commit -m"
 alias ga="git commit --amend"
+alias gaa="git add . -A ; git commit --amend"
 
 #ruby, rails short
 alias ru='ruby'
@@ -97,3 +106,7 @@ export PATH=/usr/local/bin:$PATH
 
 # perl
 export PATH=$HOME/.cpanm/work/*/:$PATH
+
+# JsTestDriver
+# JavaScriptのテストフレームワーク
+export JSTESTDRIVER_HOME=~/bin
