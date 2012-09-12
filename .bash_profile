@@ -83,10 +83,11 @@ alias updatedb="sudo /usr/libexec/locate.updatedb"
 #git short
 alias git="hub"  # https://github.com/defunkt/hub
 alias g="git"
-alias gc="git add . -A ; git commit"
-alias gcm="git add . -A ; git commit -m"
-alias ga="git commit --amend"
-alias gaa="git add . -A ; git commit --amend"
+# alias gc="git add . -A ; git commit"
+# alias gcm="git add . -A ; git commit -m"
+# alias ga="git commit --amend"
+# alias gaa="git add . -A ; git commit --amend"
+alias bi="bundle install"
 
 #ruby, rails short
 alias ru='ruby'

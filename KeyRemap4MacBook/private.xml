@@ -13,19 +13,19 @@
     <autogen>--KeyToKey-- KeyCode::SHIFT_L, ModifierFlag::SHIFT_R, KeyCode::VK_LOCK_SHIFT_L</autogen>
     <autogen>--KeyToKey-- KeyCode::SHIFT_R, ModifierFlag::FN, KeyCode::VK_LOCK_FN</autogen>
     <autogen>--KeyToKey-- KeyCode::FN, ModifierFlag::SHIFT_R, KeyCode::VK_LOCK_FN</autogen>
-  </item>
+    </item>
 
     <item>
     <name>PIANIST g</name>
     <identifier>private.pianist_g</identifier>
     <autogen>--KeyToKey-- KeyCode::G, ModifierFlag::FN, KeyCode::F1</autogen>
-  </item>
+    </item>
 
     <item>
     <name>PIANIST q</name>
     <identifier>private.pianist_q</identifier>
     <autogen>--KeyToKey-- KeyCode::Q, ModifierFlag::FN, KeyCode::ESCAPE</autogen>
-  </item>
+    </item>
 
  	<item>
     <name>PIANIST cursor moving</name>
@@ -40,7 +40,13 @@
     <autogen>--KeyToKey-- KeyCode::V, ModifierFlag::FN, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L</autogen>
     <autogen>--KeyToKey-- KeyCode::W, ModifierFlag::FN, KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L</autogen>
     <autogen>--KeyToKey-- KeyCode::E, ModifierFlag::FN, KeyCode::TAB, ModifierFlag::COMMAND_L</autogen>
-  </item>
+    </item>
+
+    <item>
+    <name>PIANIST b</name>
+    <identifier>private.pianist_b</identifier>
+    <autogen>--KeyToKey-- KeyCode::B, ModifierFlag::FN, KeyCode::TAB</autogen>
+    </item>
 
     <item>
         <name>1 ~ 0,-,= + Fn to F1 ~ F12</name>
