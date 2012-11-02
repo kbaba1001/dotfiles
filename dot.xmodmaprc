@@ -1,0 +1,68 @@
+! http://www.in-ulm.de/~mascheck/X11/xmodmap.html
+! CapsLock => Mod4, Mod4 => Ctrl, Ctrl => CapsLock
+remove Lock = Caps_Lock
+remove Control = Control_L
+clear mod4
+ 
+keysym Control_L = Super_L
+keysym Caps_Lock = Control_L
+keysym Super_L = Caps_Lock
+  
+add Lock = Caps_Lock
+add Control = Control_L
+add mod4 = Super_L
+
+! SpaceKey => Mode_switch(Fn)
+clear mod5
+keycode 65 = Mode_switch
+add mod5 = Mode_switch
+
+keycode 102 = Return NoSymbol Return NoSymbol
+keycode 100 = space NoSymbol space NoSymbol
+
+! move cursole
+keycode 43 = h H Left
+keycode 44 = j J Down
+keycode 45 = k K Up
+keycode 46 = l L Right
+keycode 30 = u U Home
+keycode 57 = n N End
+keycode 31 = i I Prior
+keycode 58 = m M Next
+
+! left hand
+keycode  24 = q Q Escape Escape
+keycode  25 = w W w W
+keycode  26 = e E e E
+keycode  27 = r R r R
+keycode  28 = t T t T
+
+keycode  38 = a A Left Left
+keycode  39 = s S Up Up
+keycode  40 = d D Down Down
+keycode  41 = f F Right Right
+keycode  42 = g G Zenkaku_Hankaku Zenkaku_Hankaku
+
+keycode  52 = z Z Home Home
+keycode  53 = x X Prior Prior
+keycode  54 = c C Next Next
+keycode  55 = v V End End
+
+! right hand
+keycode  30 = u U asterisk dollar
+keycode  31 = i I underscore at
+keycode  32 = o O equal equal
+keycode  33 = p P numbersign asciicircum
+
+keycode  43 = h H minus plus
+keycode  44 = j J BackSpace Delete
+keycode  45 = k K space space
+keycode  46 = l L Return Return
+keycode  47 = colon semicolon percent ampersand
+keycode  48 = apostrophe quotedbl grave grave
+
+keycode  57 = n N parenleft braceleft
+keycode  58 = m M parenright braceright
+keycode  59 = comma less bracketleft exclam
+keycode  60 = period greater bracketright question
+keycode  61 = slash asciitilde bar backslash
