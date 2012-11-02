@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+# rmの代わりに使う。いわゆるゴミ箱。
+#
+# trash [ file...]
+
+TRASH_DIR="$HOME/.Trash"
+
+while getopts "cs" opts
+do
+  case $opts in
+    c)
+      rm -rf $TRASH_DIR/*
+      echo "clear ${TRASH_DIR}"
+      exit 0
+      ;;
+    s)
+      ls $TRASH_DIR
+      exit 0
+      ;;
+  esac
+done
+
+mv "$@" "$TRASH_DIR"

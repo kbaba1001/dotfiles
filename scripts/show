@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# ファイルかディレクトリかを気にせずに表示できる
+#
+# show [ FILE | DIR ] 
+
+for input in "$@"
+do
+  if [ -d "$input" ]; then
+    ls "$input"
+  elif [ -f "$input" ]; then
+    less "$input"
+  else
+    echo "Sorry, i dont no ..."
+  fi
+done
