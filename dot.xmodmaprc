@@ -17,18 +17,16 @@ clear mod5
 keycode 65 = Mode_switch
 add mod5 = Mode_switch
 
-keycode 102 = Return NoSymbol Return NoSymbol
+! thumb key
 keycode 100 = space NoSymbol space NoSymbol
+keycode 101 = BackSpace NoSymbol Delete
+keycode 102 = Return NoSymbol Return NoSymbol
 
-! move cursole
-keycode 43 = h H Left
-keycode 44 = j J Down
-keycode 45 = k K Up
-keycode 46 = l L Right
-keycode 30 = u U Home
-keycode 57 = n N End
-keycode 31 = i I Prior
-keycode 58 = m M Next
+! shift lock
+clear lock
+remove Shift = Shift_R
+keysym Shift_R = Shift_Lock
+add lock = Shift_Lock
 
 ! left hand
 keycode  24 = q Q Escape Escape
