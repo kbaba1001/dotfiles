@@ -2,14 +2,18 @@
 #
 # ファイルかディレクトリかを気にせずに表示できる
 #
-# show [ FILE | DIR ] 
+# show [ FILE | DIR ]
+
+if [ "$#" = 0 ]; then
+  ls -F --color
+fi
 
 for input in "$@"
 do
   if [ -d "$input" ]; then
-    ls "$input"
+    ls -F --color "$input"
   elif [ -f "$input" ]; then
-    less "$input"
+    /usr/share/vim/vim73/macros/less.sh "$input"
   else
     echo "Sorry, i dont no ..."
   fi

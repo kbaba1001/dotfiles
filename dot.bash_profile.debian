@@ -3,7 +3,7 @@ export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/*/bin:$PATH"
 eval "$(rbenv init -)"
 
 # https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
-source /usr/local/git/contrib/completion/git-completion.bash 
+source /usr/local/git/contrib/completion/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
 
 # (ruby version)(branch name)(dir name)$
@@ -24,11 +24,10 @@ alias prm="/bin/rm"
 
 # show (ls & less)
 alias s="/usr/local/bin/show"
+alias ls="ls -F --color"
 alias ll="ls -l"
 alias la="ls -a"
 alias lla="ls -la"
-alias less="/usr/share/vim/vim73/macros/less.sh"
-alias pless="/usr/bin/less"
 
 # update .bash_prifile
 alias bp="nano $HOME/.bash_profile ; source $HOME/.bash_profile"

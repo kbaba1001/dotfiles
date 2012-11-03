@@ -14,7 +14,7 @@ xbacklight -set 25
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
-/usr/bin/ibus-daemon --xim -d &
+/usr/bin/ibus-daemon --xim -d
 
 # ターミナルの起動
 mlterm &
