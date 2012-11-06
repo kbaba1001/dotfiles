@@ -5,13 +5,13 @@
 # show [ FILE | DIR ]
 
 if [ "$#" = 0 ]; then
-  ls -F --color
+  ls -FG
 fi
 
 for input in "$@"
 do
   if [ -d "$input" ]; then
-    ls -F --color "$input"
+    ls -FG "$input"
   elif [ -f "$input" ]; then
     /usr/share/vim/vim73/macros/less.sh "$input"
   else
