@@ -12,6 +12,10 @@ export PS1='\[\033[1;31m\]$(rbenv version | cut -c 1-5)\[\033[1;32m\]$(__git_ps1
 # gem open & bundle open
 export BUNDLER_EDITOR="/usr/local/bin/subl"
 export GEM_EDITOR="/usr/local/bin/subl"
+alias bi="bundle install --path vendor/bundle/"
+alias bu="bundle update"
+alias be="bundle exec"
+alias ber="bundle exec rspec"
 
 # short command
 alias t="touch"
