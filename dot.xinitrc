@@ -16,15 +16,15 @@ export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 /usr/bin/ibus-daemon --xim -d
 
+# キーボード設定
+xset r rate 150 80
+xmodmap ~/.xmodmaprc
+
 # ターミナルの起動
 mlterm &
 
 # 透明化の設定
 xcompmgr &
-
-# キーボード設定
-xset r rate 150 100
-xmodmap ~/.xmodmaprc
 
 # Dropbox起動
 dropbox start -i &

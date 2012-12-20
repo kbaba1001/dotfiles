@@ -1,5 +1,10 @@
+# private bash_profile
+if [ -e $HOME/.bash_profile.private ]; then
+  source $HOME/.bash_profile.private
+fi
+
 # rbenv
-export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/*/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$PATH"
 eval "$(rbenv init -)"
 
 # https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
@@ -28,10 +33,15 @@ alias prm="/bin/rm"
 
 # show (ls & less)
 alias s="/usr/local/bin/show"
+
+# ls
 alias ls="ls -F --color"
-alias ll="ls -l"
+alias l="ls -l"
 alias la="ls -a"
 alias lla="ls -la"
+
+# less
+alias less="less -X"
 
 # update .bash_prifile
 alias bp="nano $HOME/.bash_profile ; source $HOME/.bash_profile"
@@ -41,3 +51,13 @@ alias st="/usr/local/bin/subl"
 
 # git
 alias g="git"
+
+# sbin
+export PATH="/sbin:$PATH"
+
+# search ESSID
+alias essid="iwlist wlan0 scan | grep ESSID"
+
+# irb to pry
+alias irb='pry'
+

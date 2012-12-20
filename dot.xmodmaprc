@@ -18,9 +18,9 @@ keycode 65 = Mode_switch
 add mod5 = Mode_switch
 
 ! thumb key
-keycode 100 = space NoSymbol space NoSymbol
+keycode 100 = Return NoSymbol Return NoSymbol
 keycode 101 = BackSpace NoSymbol Delete
-keycode 102 = Return NoSymbol Return NoSymbol
+keycode 102 = space NoSymbol space NoSymbol
 
 ! shift lock
 clear lock
@@ -64,3 +64,15 @@ keycode  58 = m M parenright braceright
 keycode  59 = comma less bracketleft exclam
 keycode  60 = period greater bracketright question
 keycode  61 = slash asciitilde bar backslash
+
+! number + Mode_switch(Fn) = Function
+keycode  10 = 1 exclam F1 F1
+keycode  11 = 2 at F2 F2
+keycode  12 = 3 numbersign F3 F3
+keycode  13 = 4 dollar F4 F4
+keycode  14 = 5 percent F5 F5
+keycode  15 = 6 asciicircum F6 F6
+keycode  16 = 7 ampersand F7 F7
+keycode  17 = 8 asterisk F8 F8
+keycode  18 = 9 parenleft F9 F9
+keycode  19 = 0 parenright F10 F10
