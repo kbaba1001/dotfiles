@@ -1,0 +1,100 @@
+! http://www.in-ulm.de/~mascheck/X11/xmodmap.html
+! Tab => Ctrl_L, CapsLock => Shuft_L, Shuft_L => Mod
+
+remove Lock = Caps_Lock
+remove Shift = Shift_L
+keysym Caps_Lock = Shift_L
+keysym Shift_L = Super_L
+
+add Shift = Shift_L
+
+
+
+remove Lock = Caps_Lock
+remove Control = Control_L
+
+keysym Control_L = Caps_Lock
+keysym Caps_Lock = Control_L
+
+add Lock = Caps_Lock
+add Control = Control_L
+
+! CapsLock => Mod4, Mod4 => Ctrl, Ctrl => CapsLock
+! remove Lock = Caps_Lock
+! remove Control = Control_L
+! clear mod4
+
+! keysym Control_L = Super_L
+! keysym Caps_Lock = Control_L
+! keysym Super_L = Caps_Lock
+
+! add Lock = Caps_Lock
+! add Control = Control_L
+! add mod4 = Super_L
+
+! SpaceKey => Mode_switch(Fn)
+clear mod5
+keycode 65 = Mode_switch
+add mod5 = Mode_switch
+
+! shift lock
+! clear lock
+! remove Shift = Shift_R
+! keysym Shift_R = Shift_Lock
+! add lock = Shift_Lock
+
+! first
+keycode  49 = Tab ISO_Left_Tab Tab ISO_Left_Tab
+keycode  10 = q Q Escape Escape
+keycode  11 = w W w W
+keycode  12 = e E e E
+keycode  13 = r R r R
+keycode  14 = t T t T
+keycode  15 = y Y y Y
+keycode  16 = u U asterisk dollar
+keycode  17 = i I underscore at
+keycode  18 = o O equal equal
+keycode  19 = p P numbersign asciicircum
+
+! second
+keycode  23 = Control_L NoSymbol Control_L
+keycode  24 = a A Left Left
+keycode  25 = s S Up Up
+keycode  26 = d D Down Down
+keycode  27 = f F Right Right
+keycode  28 = g G Zenkaku_Hankaku Zenkaku_Hankaku
+keycode  29 = h H minus plus
+keycode  30 = j J BackSpace Delete
+keycode  31 = k K space space
+keycode  32 = l L Return Return
+keycode  33 = colon semicolon percent ampersand
+keycode  34 = apostrophe quotedbl grave grave
+
+! therd
+keycode  66 = Shift_L NoSymbol Shift_L
+keycode  38 = z Z Home Home
+keycode  39 = x X Prior Prior
+keycode  40 = c C Next Next
+keycode  41 = v V End End
+keycode  42 = b B b B
+keycode  43 = n N parenleft braceleft
+keycode  44 = m M parenright braceright
+keycode  45 = comma less bracketleft exclam
+keycode  46 = period greater bracketright question
+keycode  47 = slash asciitilde bar backslash
+keycode  48 = Shift_Lock NoSymbol Shift_Lock
+
+! 4th
+keycode  50 = Super_L NoSymbol Super_L
+keycode  51 = backslash bar backslash bar
+keycode  52 = Alt_L Meta_L Alt_L Meta_L
+keycode  53 =
+keycode  54 = Num_Lock NoSymbol Num_Lock
+keycode  55 = Return NoSymbol Return NoSymbol
+keycode  56 = Zenkaku_Hankaku NoSymbol Zenkaku_Hankaku NoSymbol
+keycode  57 = space NoSymbol space NoSymbol
+keycode  58 = BackSpace NoSymbol Delete
+keycode  59 =
+keycode  60 =
+keycode  61 =
+keycode  62 = Shift_Lock NoSymbol Shift_Lock

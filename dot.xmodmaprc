@@ -1,14 +1,11 @@
 ! http://www.in-ulm.de/~mascheck/X11/xmodmap.html
-! CapsLock => Mod4, Mod4 => Ctrl, Ctrl => CapsLock
-remove Lock = Caps_Lock
+! CapsLock Key => Ctrl, Ctrl key => Mod4
 remove Control = Control_L
 clear mod4
 
 keysym Control_L = Super_L
 keysym Caps_Lock = Control_L
-keysym Super_L = Caps_Lock
 
-add Lock = Caps_Lock
 add Control = Control_L
 add mod4 = Super_L
 
@@ -21,6 +18,9 @@ add mod5 = Mode_switch
 keycode 100 = Return NoSymbol Return NoSymbol
 keycode 101 = BackSpace NoSymbol Delete
 keycode 102 = space NoSymbol space NoSymbol
+
+! command left => space
+keycode 133 = space NoSymbol space NoSymbol
 
 ! shift lock
 clear lock

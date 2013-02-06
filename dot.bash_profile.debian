@@ -20,7 +20,8 @@ export GEM_EDITOR="/usr/local/bin/subl"
 alias bi="bundle install --path vendor/bundle/"
 alias bu="bundle update"
 alias be="bundle exec"
-alias ber="bundle exec rspec"
+alias ber="bundle exec rake"
+alias brs="bundle exec rspec"
 
 # short command
 alias t="touch"
@@ -61,3 +62,8 @@ alias essid="iwlist wlan0 scan | grep ESSID"
 # irb to pry
 alias irb='pry'
 
+# show remaining battery
+alias battery='acpi'
+
+# xscreensaver
+alias ss='xscreensaver-command -lock'
