@@ -7,12 +7,9 @@
 	</item>
 
  	<item>
-    <name>LOCK Shift_L or Fn by Shift_R</name>
-    <identifier>private.lock_shift_l_or_fn</identifier>
-    <autogen>--KeyToKey-- KeyCode::SHIFT_R, ModifierFlag::SHIFT_L, KeyCode::VK_LOCK_SHIFT_L</autogen>
-    <autogen>--KeyToKey-- KeyCode::SHIFT_L, ModifierFlag::SHIFT_R, KeyCode::VK_LOCK_SHIFT_L</autogen>
-    <autogen>--KeyToKey-- KeyCode::SHIFT_R, ModifierFlag::FN, KeyCode::VK_LOCK_FN</autogen>
-    <autogen>--KeyToKey-- KeyCode::FN, ModifierFlag::SHIFT_R, KeyCode::VK_LOCK_FN</autogen>
+    <name>LOCK Shift_L by Shift_R</name>
+    <identifier>private.lock_shift_l</identifier>
+    <autogen>--KeyToKey-- KeyCode::SHIFT_R, KeyCode::VK_LOCK_SHIFT_L</autogen>
     </item>
 
     <item>

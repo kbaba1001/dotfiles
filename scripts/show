@@ -5,7 +5,7 @@
 # show [ FILE | DIR ]
 
 if [ "$#" = 0 ]; then
-  ls -FG
+  ls -FG .
 fi
 
 for input in "$@"
