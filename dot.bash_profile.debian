@@ -52,6 +52,7 @@ alias st="/usr/local/bin/subl"
 
 # git
 alias g="git"
+alias gup="git pull --rebase ; git remote update --prune ; git branch --merged | grep -v '*' | xargs -I % git branch -d %"
 
 # sbin
 export PATH="/sbin:$PATH"
@@ -67,3 +68,4 @@ alias battery='acpi'
 
 # xscreensaver
 alias ss='xscreensaver-command -lock'
+

@@ -23,6 +23,10 @@ xmodmap ~/.xmodmaprc
 # ターミナルの起動
 mlterm &
 
+# ssh-agent
+eval `ssh-agent`
+ssh-add
+
 # 透明化の設定
 xcompmgr &
 
