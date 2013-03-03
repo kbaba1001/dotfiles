@@ -23,10 +23,6 @@ xmodmap ~/.xmodmaprc
 # ターミナルの起動
 mlterm &
 
-# ssh-agent
-eval `ssh-agent`
-ssh-add
-
 # 透明化の設定
 xcompmgr &
 
@@ -35,4 +31,3 @@ dropbox start -i &
 
 # invoke global X session script
 . /etc/X11/Xsession
-

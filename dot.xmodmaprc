@@ -19,8 +19,13 @@ keycode 100 = Return NoSymbol Return NoSymbol
 keycode 101 = BackSpace NoSymbol Delete
 keycode 102 = space NoSymbol space NoSymbol
 
+! create delete key
+keycode 51 = Delete NoSymbol Delete
+
 ! command left => space
 keycode 133 = space NoSymbol space NoSymbol
+
+! create 
 
 ! shift lock
 clear lock

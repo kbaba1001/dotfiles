@@ -20,8 +20,10 @@ export GEM_EDITOR="/usr/local/bin/subl"
 alias bi="bundle install --path vendor/bundle/"
 alias bu="bundle update"
 alias be="bundle exec"
+alias bo="bundle open"
 alias ber="bundle exec rake"
 alias brs="bundle exec rspec"
+alias bra="bundle exec rails"
 
 # short command
 alias t="touch"
@@ -51,6 +53,7 @@ alias bp="nano $HOME/.bash_profile ; source $HOME/.bash_profile"
 alias st="/usr/local/bin/subl"
 
 # git
+alias git="hub"
 alias g="git"
 alias gup="git pull --rebase ; git remote update --prune ; git branch --merged | grep -v '*' | xargs -I % git branch -d %"
 
