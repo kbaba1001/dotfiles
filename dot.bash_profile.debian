@@ -31,11 +31,11 @@ alias m="mkdir"
 alias d="cd"
 
 # rm command to trash
-alias rm="/usr/local/bin/trash"
+alias rm="trash"
 alias prm="/bin/rm"
 
 # show (ls & less)
-alias s="/usr/local/bin/show"
+alias s="show"
 
 # ls
 alias ls="ls -F --color"
@@ -60,6 +60,9 @@ alias gup="git pull --rebase ; git remote update --prune ; git branch --merged |
 # sbin
 export PATH="/sbin:$PATH"
 
+# myscripts
+export PATH="$HOME/dotfiles/scripts:$PATH"
+
 # search ESSID
 alias essid="iwlist wlan0 scan | grep ESSID"
 
@@ -71,4 +74,3 @@ alias battery='acpi'
 
 # xscreensaver
 alias ss='xscreensaver-command -lock'
-
