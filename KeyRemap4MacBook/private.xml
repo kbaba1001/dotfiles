@@ -35,8 +35,10 @@
     <autogen>--KeyToKey-- KeyCode::X, ModifierFlag::FN, KeyCode::PAGEUP</autogen>
     <autogen>--KeyToKey-- KeyCode::C, ModifierFlag::FN, KeyCode::PAGEDOWN</autogen>
     <autogen>--KeyToKey-- KeyCode::V, ModifierFlag::FN, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L</autogen>
-    <autogen>--KeyToKey-- KeyCode::W, ModifierFlag::FN, KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L</autogen>
-    <autogen>--KeyToKey-- KeyCode::E, ModifierFlag::FN, KeyCode::TAB, ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::W, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::W, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::BACKQUOTE, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::E, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::TAB, ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::E, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::BACKQUOTE, ModifierFlag::COMMAND_L</autogen>
     </item>
 
     <item>
