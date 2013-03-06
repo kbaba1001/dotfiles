@@ -7,6 +7,7 @@
       ,{ "key": "setting.tab_completion", "operator": "equal", "operand": true }
     ]
   }
+  ,{ "keys": ["super+shift+d"], "command": "find_all_under" }
   ,{ "keys": ["super+e"], "command": "toggle_comment", "args": { "block": false } }
   ,{ "keys": ["super+alt+e"], "command": "toggle_comment", "args": { "block": true } }
   ,{ "keys": ["super+i"], "command": "unindent" }
@@ -28,17 +29,27 @@
   ,{ "keys": ["super+ctrl+alt+v"], "command": "clipboard_paste_previous" }
   ,{ "keys": ["super+shift+alt+v"], "command": "clipboard_paste_next" }
   ,{ "keys": ["ctrl+f"],
-      "command": "run_multiple_commands",
-      "args": {
-          "commands": [
-              {"command": "find_under_expand", "context": "window"},
-              {"command": "slurp_find_string", "context": "window"},
-              {"command": "show_panel", "args": {"panel": "find"}, "context": "window"}
-          ]
-      }
+    "command": "run_multiple_commands",
+    "args": {
+      "commands": [
+          {"command": "find_under_expand", "context": "window"},
+          {"command": "slurp_find_string", "context": "window"},
+          {"command": "show_panel", "args": {"panel": "find"}, "context": "window"}
+      ]
+    }
+  }
+  ,{ "keys": ["ctrl+shift+f"],
+    "command": "run_multiple_commands",
+    "args": {
+      "commands": [
+          {"command": "find_under_expand", "context": "window"},
+          {"command": "slurp_find_string", "context": "window"},
+          {"command": "show_panel", "args": {"panel": "find_in_files"}, "context": "window"}
+      ]
+    }
   }
 
-  // Window split
+  // *** Window split ***
   ,{
     "keys": ["super+1"]
     ,"command": "set_layout"
@@ -47,85 +58,6 @@
       "cols": [0.0, 1.0],
       "rows": [0.0, 1.0],
       "cells": [[0, 0, 1, 1]]
-    }
-  }
-  ,{
-    "keys": ["ctrl+1"]
-    ,"command": "set_layout"
-    ,"args":
-    {
-      "cols": [0.0, 1.0],
-      "rows": [0.0, 1.0],
-      "cells": [[0, 0, 1, 1]]
-    }
-  }
-  ,{
-    "keys": ["ctrl+2"],
-    "command": "run_multiple_commands",
-    "args": {
-      "commands": [
-        {
-          "command": "set_layout"
-          ,"args":
-            {
-              "cols": [0.0, 0.5, 1.0],
-              "rows": [0.0, 1.0],
-              "cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
-            }
-          ,"context": "window"
-        }
-        ,{
-          "command": "focus_group"
-          ,"args": { "group": 1 }
-          ,"context": "window"
-        }
-      ]
-    }
-  }
-  ,{
-    "keys": ["ctrl+3"],
-    "command": "run_multiple_commands",
-    "args": {
-      "commands": [
-        {
-          "command": "set_layout"
-          ,"args":
-            {
-              "cols": [0.0, 0.33, 0.66, 1.0],
-              "rows": [0.0, 1.0],
-              "cells": [[0, 0, 1, 1], [1, 0, 2, 1], [2, 0, 3, 1]]
-            }
-          ,"context": "window"
-        }
-        ,{
-          "command": "focus_group"
-          ,"args": { "group": 1 }
-          ,"context": "window"
-        }
-      ]
-    }
-  }
-  ,{
-    "keys": ["ctrl+4"],
-    "command": "run_multiple_commands",
-    "args": {
-      "commands": [
-        {
-          "command": "set_layout"
-          ,"args":
-            {
-              "cols": [0.0, 0.25, 0.5, 0.75, 1.0],
-              "rows": [0.0, 1.0],
-              "cells": [[0, 0, 1, 1], [1, 0, 2, 1], [2, 0, 3, 1], [3, 0, 4, 1]]
-            }
-          ,"context": "window"
-        }
-        ,{
-          "command": "focus_group"
-          ,"args": { "group": 1 }
-          ,"context": "window"
-        }
-      ]
     }
   }
   ,{
@@ -148,6 +80,11 @@
           ,"args": { "group": 1 }
           ,"context": "window"
         }
+        ,{
+          "command": "show_overlay"
+          ,"args": {"overlay": "goto" ,"show_files": true}
+          ,"context": "window"
+        }
       ]
     }
   }
@@ -168,7 +105,12 @@
         }
         ,{
           "command": "focus_group"
-          ,"args": { "group": 1 }
+          ,"args": { "group": 2 }
+          ,"context": "window"
+        }
+        ,{
+          "command": "show_overlay"
+          ,"args": {"overlay": "goto" ,"show_files": true}
           ,"context": "window"
         }
       ]
@@ -191,7 +133,12 @@
         }
         ,{
           "command": "focus_group"
-          ,"args": { "group": 1 }
+          ,"args": { "group": 3 }
+          ,"context": "window"
+        }
+        ,{
+          "command": "show_overlay"
+          ,"args": {"overlay": "goto" ,"show_files": true}
           ,"context": "window"
         }
       ]
@@ -221,18 +168,107 @@
           ,"args": { "group": 1 }
           ,"context": "window"
         }
+        ,{
+          "command": "show_overlay"
+          ,"args": {"overlay": "goto" ,"show_files": true}
+          ,"context": "window"
+        }
       ]
     }
   }
-  ,{ "keys": ["super+j", "1"], "command": "focus_group", "args": { "group": 0 } }
-  ,{ "keys": ["super+j", "2"], "command": "focus_group", "args": { "group": 1 } }
-  ,{ "keys": ["super+j", "3"], "command": "focus_group", "args": { "group": 2 } }
-  ,{ "keys": ["super+j", "4"], "command": "focus_group", "args": { "group": 3 } }
-  ,{ "keys": ["super+shift+j", "1"], "command": "move_to_group", "args": { "group": 0 } }
-  ,{ "keys": ["super+shift+j", "2"], "command": "move_to_group", "args": { "group": 1 } }
-  ,{ "keys": ["super+shift+j", "3"], "command": "move_to_group", "args": { "group": 2 } }
-  ,{ "keys": ["super+shift+j", "4"], "command": "move_to_group", "args": { "group": 3 } }
-  ,{ "keys": ["super+j", "0"], "command": "focus_side_bar" }
+  ,{
+    "keys": ["super+7"],
+    "command": "run_multiple_commands",
+    "args": {
+      "commands": [
+        {
+          "command": "set_layout"
+          ,"args":
+            {
+              "cols": [0.0, 0.5, 1.0],
+              "rows": [0.0, 1.0],
+              "cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
+            }
+          ,"context": "window"
+        }
+        ,{
+          "command": "focus_group"
+          ,"args": { "group": 2 }
+          ,"context": "window"
+        }
+        ,{
+          "command": "show_overlay"
+          ,"args": {"overlay": "goto" ,"show_files": true}
+          ,"context": "window"
+        }
+      ]
+    }
+  }
+  ,{
+    "keys": ["super+8"],
+    "command": "run_multiple_commands",
+    "args": {
+      "commands": [
+        {
+          "command": "set_layout"
+          ,"args":
+            {
+              "cols": [0.0, 0.33, 0.66, 1.0],
+              "rows": [0.0, 1.0],
+              "cells": [[0, 0, 1, 1], [1, 0, 2, 1], [2, 0, 3, 1]]
+            }
+          ,"context": "window"
+        }
+        ,{
+          "command": "focus_group"
+          ,"args": { "group": 3 }
+          ,"context": "window"
+        }
+        ,{
+          "command": "show_overlay"
+          ,"args": {"overlay": "goto" ,"show_files": true}
+          ,"context": "window"
+        }
+      ]
+    }
+  }
+  ,{
+    "keys": ["super+9"],
+    "command": "run_multiple_commands",
+    "args": {
+      "commands": [
+        {
+          "command": "set_layout"
+          ,"args":
+            {
+              "cols": [0.0, 0.25, 0.5, 0.75, 1.0],
+              "rows": [0.0, 1.0],
+              "cells": [[0, 0, 1, 1], [1, 0, 2, 1], [2, 0, 3, 1], [3, 0, 4, 1]]
+            }
+          ,"context": "window"
+        }
+        ,{
+          "command": "focus_group"
+          ,"args": { "group": 4 }
+          ,"context": "window"
+        }
+        ,{
+          "command": "show_overlay"
+          ,"args": {"overlay": "goto" ,"show_files": true}
+          ,"context": "window"
+        }
+      ]
+    }
+  }
+  ,{ "keys": ["ctrl+1"], "command": "focus_group", "args": { "group": 0 } }
+  ,{ "keys": ["ctrl+2"], "command": "focus_group", "args": { "group": 1 } }
+  ,{ "keys": ["ctrl+3"], "command": "focus_group", "args": { "group": 2 } }
+  ,{ "keys": ["ctrl+4"], "command": "focus_group", "args": { "group": 3 } }
+  ,{ "keys": ["ctrl+shift+1"], "command": "move_to_group", "args": { "group": 0 } }
+  ,{ "keys": ["ctrl+shift+2"], "command": "move_to_group", "args": { "group": 1 } }
+  ,{ "keys": ["ctrl+shift+3"], "command": "move_to_group", "args": { "group": 2 } }
+  ,{ "keys": ["ctrl+shift+4"], "command": "move_to_group", "args": { "group": 3 } }
+  ,{ "keys": ["ctrl+0"], "command": "focus_side_bar" }
 
   // CTags
   ,{

@@ -42,6 +42,9 @@ alias la='ls -a'
 alias pless='/usr/bin/less'
 alias less="/usr/share/vim/vim73/macros/less.sh"
 
+# grep
+alias grep='grep --color=auto -n'
+
 # show
 # showは引数がディレクトリならls, ファイルならlessするスクリプト
 alias s='show'
@@ -63,8 +66,8 @@ alias tr='tree | less'
 
 #gui application
 alias st="/usr/local/bin/subl"
-# alias st="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+alias gimp='/Applications/GIMP.app/Contents/MacOS/GIMP'
 
 #KeyRemap4MacBook
 alias keyconfig="st /Users/babakazuki/Library/Application\ Support/KeyRemap4MacBook/private.xml -n"
@@ -75,7 +78,7 @@ alias updatedb="sudo /usr/libexec/locate.updatedb"
 #git short
 alias git="hub"  # https://github.com/defunkt/hub
 alias g="git"
-alias gg='git grep'
+alias gg='git grep -n'
 alias gbc="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
 alias gup="git pull --rebase ; git remote update --prune ; git branch --merged | grep -v '*' | xargs -I % git branch -d %"
 
@@ -86,6 +89,7 @@ alias bi='bundle install'
 alias bu='bundle update'
 alias be='bundle exec'
 alias ber='bundle exec rake'
+alias bra='bundle exec rails'
 alias brs='bundle exec rspec'
 alias bec='bundle exec cucumber'
 alias irb='pry'
@@ -114,3 +118,6 @@ alias nano="/usr/local/bin/nano"
 
 # my scripts's PATH
 export PATH=$HOME/dotfiles/scripts/:$PATH
+
+# z (https://github.com/rupa/z)
+. `brew --prefix`/etc/profile.d/z.sh
