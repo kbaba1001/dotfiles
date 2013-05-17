@@ -6,7 +6,7 @@
 
 TRASH_DIR="$HOME/.Trash"
 
-while getopts "cs" opts
+while getopts "csh" opts
 do
   case $opts in
     c)
@@ -16,6 +16,12 @@ do
       ;;
     s)
       ls $TRASH_DIR
+      exit 0
+      ;;
+    h)
+      echo "trash help"
+      echo "-c : clear files in TRASH_DIR"
+      echo "-s : show files in TRASH_DIR"
       exit 0
       ;;
   esac

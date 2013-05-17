@@ -13,6 +13,7 @@ __rbenv_ps1 ()
 {
   version_string=$(rbenv version | cut -c 1-5)
   case $version_string in
+    2.0.0) version_string="2.0" ;;
     1.9.3) version_string="9.3" ;;
     1.9.2) version_string="9.2" ;;
     *)     version_string=${version_string#?.} ;;
@@ -20,9 +21,10 @@ __rbenv_ps1 ()
   printf $version_string
 }
 
-
 # prompt with git branch name
 source /usr/local/Cellar/git/1.7.10/etc/bash_completion.d/git-completion.bash
+source /usr/local/etc/bash_completion.d/git-flow-completion.bash
+source /usr/local/etc/bash_completion.d/hub.bash_completion.sh
 GIT_PS1_SHOWDIRTYSTATE=true
 
 # prompt
@@ -39,7 +41,6 @@ alias la='ls -a'
 
 # syntax for less
 # @see http://c-brains.jp/blog/wsg/07/12/07-033558.php
-alias pless='/usr/bin/less'
 alias less="/usr/share/vim/vim73/macros/less.sh"
 
 # grep
@@ -52,7 +53,6 @@ alias s='show'
 # rm
 # trashは削除する代わりに.Trash(ゴミ箱)にファイルを移動する。実態は単なるmv
 alias rm='trash'
-alias prm='/bin/rm'
 alias rr='rm -r'
 alias rf='rm -fr'
 
@@ -62,7 +62,8 @@ alias m='mkdir'
 alias mp='mkdir -p'
 alias d='cd'
 alias bp='nano ~/.bash_profile ; source ~/.bash_profile'
-alias tr='tree | less'
+alias tree='tree -C'
+alias ct='ctags -R -f .tags'
 
 #gui application
 alias st="/usr/local/bin/subl"
@@ -80,7 +81,7 @@ alias git="hub"  # https://github.com/defunkt/hub
 alias g="git"
 alias gg='git grep -n'
 alias gbc="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
-alias gup="git pull --rebase ; git remote update --prune ; git branch --merged | grep -v '*' | xargs -I % git branch -d %"
+alias gup="git pull --rebase ; git remote update --prune ; gbc ; git fetch --tags ; ctags -R -f .tags"
 
 #ruby, rails short
 alias ru='ruby'
@@ -93,6 +94,9 @@ alias bra='bundle exec rails'
 alias brs='bundle exec rspec'
 alias bec='bundle exec cucumber'
 alias irb='pry'
+alias spr='spring rake'
+alias sps='spring rspec'
+alias spc='spring cucumber -c'
 
 # Ruby 1.8記法のHashをRuby 1.9記法に変換する正規表現。
 # 同名のファイルに上書き保存される。

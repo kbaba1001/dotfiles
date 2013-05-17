@@ -1,7 +1,8 @@
 {
 	"color_scheme": "Packages/Color Scheme - Default/Monokai Bright.tmTheme",
 	"disable_formatted_linebreak": true,
-	"font_face": "Source Code Pro",
+	"ensure_newline_at_eof_on_save": true,
+	"font_face": "VL Gothic",
 	"font_size": 20.0,
 	"highlight_line": true,
 	"ignored_packages":
@@ -16,7 +17,7 @@
 	"save_on_focus_lost": true,
 	"scroll_past_end": true,
 	"tab_size": 2,
-	"theme": "Soda Dark.sublime-theme",
+	"theme": "Flatland Dark.sublime-theme",
 	"trailing_spaces_include_current_line": true,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,

@@ -14,40 +14,16 @@
   ,{ "keys": ["super+o"], "command": "indent" }
   ,{ "keys": ["super+shift+,"], "command": "open_file", "args": {"file": "${packages}/User/Default (OSX).sublime-keymap"} }
 
+  ,{ "keys": ["ctrl+shift+:"], "command": "expand_selection", "args": {"to": "brackets"} }
+  ,{ "keys": ["ctrl+:"], "command": "move_to", "args": {"to": "brackets"} }
+
+  // 検索結果の画面でカーソル位置のファイルや行数にジャンプする
+  ,{ "keys": ["super+j", "m"], "command": "prev_result" }
+  ,{ "keys": ["super+j", "n"], "command": "next_result" }
+
   // Easy Motion (https://github.com/tednaleid/sublime-EasyMotion)
   ,{ "keys": ["super+:", "<character>"], "command": "easy_motion", "args": {"select_text": false} }
   ,{ "keys": ["super+shift+:", "<character>"], "command": "easy_motion", "args": {"select_text": true} }
-
-  // Clipboard History (https://github.com/kemayo/sublime-text-2-clipboard-history)
-  ,{ "keys": ["super+c"], "command": "clipboard_copy"
-    ,"context": [{"key": "clipboardcopy_fake", "operator":"equal", "operand":true}]
-  }
-  ,{ "keys": ["super+x"], "command": "clipboard_copy"
-    ,"context": [{"key": "clipboardcopy_fake", "operator":"equal", "operand":true}]
-  }
-  ,{ "keys": ["super+shift+v"], "command": "clipboard_display" }
-  ,{ "keys": ["super+ctrl+alt+v"], "command": "clipboard_paste_previous" }
-  ,{ "keys": ["super+shift+alt+v"], "command": "clipboard_paste_next" }
-  ,{ "keys": ["ctrl+f"],
-    "command": "run_multiple_commands",
-    "args": {
-      "commands": [
-          {"command": "find_under_expand", "context": "window"},
-          {"command": "slurp_find_string", "context": "window"},
-          {"command": "show_panel", "args": {"panel": "find"}, "context": "window"}
-      ]
-    }
-  }
-  ,{ "keys": ["ctrl+shift+f"],
-    "command": "run_multiple_commands",
-    "args": {
-      "commands": [
-          {"command": "find_under_expand", "context": "window"},
-          {"command": "slurp_find_string", "context": "window"},
-          {"command": "show_panel", "args": {"panel": "find_in_files"}, "context": "window"}
-      ]
-    }
-  }
 
   // *** Window split ***
   ,{
@@ -196,11 +172,6 @@
           ,"args": { "group": 2 }
           ,"context": "window"
         }
-        ,{
-          "command": "show_overlay"
-          ,"args": {"overlay": "goto" ,"show_files": true}
-          ,"context": "window"
-        }
       ]
     }
   }
@@ -222,11 +193,6 @@
         ,{
           "command": "focus_group"
           ,"args": { "group": 3 }
-          ,"context": "window"
-        }
-        ,{
-          "command": "show_overlay"
-          ,"args": {"overlay": "goto" ,"show_files": true}
           ,"context": "window"
         }
       ]
@@ -252,11 +218,6 @@
           ,"args": { "group": 4 }
           ,"context": "window"
         }
-        ,{
-          "command": "show_overlay"
-          ,"args": {"overlay": "goto" ,"show_files": true}
-          ,"context": "window"
-        }
       ]
     }
   }
@@ -268,7 +229,7 @@
   ,{ "keys": ["ctrl+shift+2"], "command": "move_to_group", "args": { "group": 1 } }
   ,{ "keys": ["ctrl+shift+3"], "command": "move_to_group", "args": { "group": 2 } }
   ,{ "keys": ["ctrl+shift+4"], "command": "move_to_group", "args": { "group": 3 } }
-  ,{ "keys": ["ctrl+0"], "command": "focus_side_bar" }
+  ,{ "keys": ["ctrl+`"], "command": "focus_side_bar" }
 
   // CTags
   ,{
@@ -281,11 +242,11 @@
   }
   ,{
     "command": "search_for_definition",
-    "keys": ["super+t", "ctrl+y"]
+    "keys": ["super+t", "super+y"]
   }
   ,{
     "command": "jump_back",
-    "keys": ["super+t", "ctrl+b"]
+    "keys": ["super+t", "super+b"]
   }
   ,{
     "command": "jump_back",
@@ -294,11 +255,11 @@
   ,{
     "command": "jump_back",
     "args": {"to": "last_modification"},
-    "keys": ["super+t", "ctrl+m"]
+    "keys": ["super+t", "super+m"]
   }
   ,{
     "command": "rebuild_tags",
-    "keys": ["super+t", "ctrl+r"]
+    "keys": ["super+t", "super+r"]
   }
   ,{
     "command": "show_symbols",
