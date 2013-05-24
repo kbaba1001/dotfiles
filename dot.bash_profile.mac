@@ -61,7 +61,7 @@ alias t='touch'
 alias m='mkdir'
 alias mp='mkdir -p'
 alias d='cd'
-alias bp='nano ~/.bash_profile ; source ~/.bash_profile'
+alias bp='vim ~/.bash_profile ; source ~/.bash_profile'
 alias tree='tree -C'
 alias ct='ctags -R -f .tags'
 
