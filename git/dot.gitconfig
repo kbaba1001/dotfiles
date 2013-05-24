@@ -1,0 +1,38 @@
+[user]
+  name = kbaba1001
+  email = kbaba1001@gmail.com
+[color]
+  ui = true
+  diff = true
+[core]
+  editor = nano
+  excludesfile = /home/kbaba/.gitignore
+  pager = less -X
+[alias]
+  co = checkout
+  s = status -s
+  pr = pull --rebase
+  c = commit -v
+  cm = commit -m
+  ca = commit --amend -v
+  a = add
+  al = add -A .
+  au = add -u
+  ap = add -p
+  b = branch
+  ba = branch -a
+  bm = branch --merged
+  d = diff
+  ds = diff --staged
+  wd = diff --word-diff
+  l = log --decorate
+  lo = log --oneline --decorate --graph
+  ls = log --stat --decorate
+  lp = log -p --decorate
+  ru = remote update --prune
+  gn = grep -n
+  su = submodule update
+  rh = reset HEAD^
+  ri = !sh -c 'git rebase -i HEAD~$0'
+  rmrf = !sh -c 'git branch -d $0 && git push origin :$0'
+  t = tag

@@ -35,6 +35,7 @@ alias t="touch"
 alias m="mkdir"
 alias d="cd"
 alias cm="chmod"
+alias v="vim"
 
 # rm command to trash
 alias rm="trash"
@@ -45,8 +46,8 @@ alias s="show"
 # ls
 alias ls="ls -F --color"
 alias l="ls -l"
-alias la="ls -a"
-alias lla="ls -la"
+alias a="ls -a"
+alias la="ls -la"
 
 # less
 alias less="less -X"
