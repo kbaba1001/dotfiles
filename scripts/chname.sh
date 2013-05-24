@@ -1,9 +1,9 @@
-#!/bin/sh
- 
+#!/bin/bash
+
 n=0
 name=$1
 kakutyousi=$2
- 
+
 if [ $# -ne 2 ]; then
     echo "error!"
 else

@@ -3,16 +3,21 @@ if [ -e $HOME/.bash_profile.private ]; then
   source $HOME/.bash_profile.private
 fi
 
-# rbenv
-export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$PATH"
-eval "$(rbenv init -)"
+# # rbenv
+# export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$PATH"
+# eval "$(rbenv init -)"
 
 # https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
-source /usr/local/git/contrib/completion/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWCOLORHINTS=true
+source ${HOME}/dotfiles/git/git-prompt.sh
+source ${HOME}/dotfiles/git/git-completion.bash
 
 # (ruby version)(branch name)(dir name)$
-export PS1='\[\033[1;31m\]$(rbenv version | cut -c 1-5)\[\033[1;32m\]$(__git_ps1)\[\033[1;33m\]\W\[\033[00m\]\$ '
+# export PS1='\[\033[1;31m\]$(rbenv version | cut -c 1-5)\[\033[1;32m\]$(__git_ps1)\[\033[1;33m\]\W\[\033[00m\]\$ '
+PROMPT_COMMAND='__git_ps1 "(ruby)" "\[\e[1;33m\]\W\[\e[0m\]\$ " "\[\e[1;32m\](%s\[\e[1;32m\])"'
 
 # gem open & bundle open
 export BUNDLER_EDITOR="/usr/local/bin/subl"
@@ -29,10 +34,10 @@ alias bra="bundle exec rails"
 alias t="touch"
 alias m="mkdir"
 alias d="cd"
+alias cm="chmod"
 
 # rm command to trash
 alias rm="trash"
-alias prm="/bin/rm"
 
 # show (ls & less)
 alias s="show"
@@ -46,14 +51,17 @@ alias lla="ls -la"
 # less
 alias less="less -X"
 
+# tmux
+alias ta="tmux attach"
+
 # update .bash_prifile
-alias bp="nano $HOME/.bash_profile ; source $HOME/.bash_profile"
+alias bp="vim $HOME/.bash_profile ; source $HOME/.bash_profile"
 
 # sublime text
 alias st="/usr/local/bin/subl"
 
 # git
-alias git="hub"
+# alias git="hub"
 alias g="git"
 alias gup="git pull --rebase ; git remote update --prune ; git branch --merged | grep -v '*' | xargs -I % git branch -d %"
 
@@ -67,10 +75,11 @@ export PATH="$HOME/dotfiles/scripts:$PATH"
 alias essid="iwlist wlan0 scan | grep ESSID"
 
 # irb to pry
-alias irb='pry'
+# alias irb='pry'
 
 # show remaining battery
-alias battery='acpi'
+# alias battery='acpi'
 
 # xscreensaver
 alias ss='xscreensaver-command -lock'
+

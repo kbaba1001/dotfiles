@@ -1,8 +1,4 @@
-#!/bin/sh
-
-# /etc/X11/xinit/xinitrc
-#
-# global xinitrc file, used by all X sessions started by xinit (startx)
+#!/bin/bash
 
 # 画面の設定
 xrandr --output eDP1 --left-of HDMI1
@@ -10,24 +6,25 @@ xrandr --output eDP1 --mode 1024x768 --rate 60
 xrandr --output HDMI1 --mode 1920x1080 --rate 60
 xbacklight -set 25
 
-# ibus 日本語入力
-export GTK_IM_MODULE=ibus
-export QT_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-/usr/bin/ibus-daemon --xim -d
+# 日本語入力
+export GTK_IM_MODULE=scim-bridge
+export QT_IM_MODULE=scim-bridge
+export XMODIFIERS="@im=SCIM"
+#export LC_CTYPE=ja_JP.utf8
+#/usr/bin/ibus-daemon --xim -d
+scim -d &
 
 # キーボード設定
 xset r rate 150 80
 xmodmap ~/.xmodmaprc
 
 # ターミナルの起動
-mlterm &
+/usr/bin/terminator &
 
 # 透明化の設定
-xcompmgr &
+# xcompmgr &
 
 # Dropbox起動
-dropbox start -i &
+# dropbox start -i &
 
-# invoke global X session script
-. /etc/X11/Xsession
+exec awesome
