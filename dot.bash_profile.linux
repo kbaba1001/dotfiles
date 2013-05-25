@@ -3,11 +3,25 @@ if [ -e $HOME/.bash_profile.private ]; then
   source $HOME/.bash_profile.private
 fi
 
-# # rbenv
-# export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$PATH"
-# eval "$(rbenv init -)"
+# rbenv
+export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$PATH"
+eval "$(rbenv init -)"
 
-# https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
+# https://gist.github.com/1668822
+# prompt with ruby version
+__rbenv_ps1 ()
+{
+  version_string=$(rbenv version | cut -c 1-5)
+  case $version_string in
+    2.0.0) version_string="2.0" ;;
+    1.9.3) version_string="9.3" ;;
+    1.9.2) version_string="9.2" ;;
+    *)     version_string=$(rbenv version) ;;
+  esac
+  printf $version_string
+}
+
+# git-prompt & git-completion
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
@@ -15,9 +29,9 @@ GIT_PS1_SHOWCOLORHINTS=true
 source ${HOME}/dotfiles/git/git-prompt.sh
 source ${HOME}/dotfiles/git/git-completion.bash
 
+# prompt setting
 # (ruby version)(branch name)(dir name)$
-# export PS1='\[\033[1;31m\]$(rbenv version | cut -c 1-5)\[\033[1;32m\]$(__git_ps1)\[\033[1;33m\]\W\[\033[00m\]\$ '
-PROMPT_COMMAND='__git_ps1 "(ruby)" "\[\e[1;33m\]\W\[\e[0m\]\$ " "\[\e[1;32m\](%s\[\e[1;32m\])"'
+PROMPT_COMMAND='__git_ps1 "\[\033[1;31m\]$(__rbenv_ps1)" "\[\e[1;33m\]\W\[\e[0m\]\$ " "\[\e[1;32m\](%s\[\e[1;32m\])"'
 
 # gem open & bundle open
 export BUNDLER_EDITOR="/usr/local/bin/subl"
@@ -41,7 +55,7 @@ alias v="vim"
 alias rm="trash"
 
 # show (ls & less)
-alias s="show"
+alias s="${HOME}/dotfiles/scripts/show-linux"
 
 # ls
 alias ls="ls -F --color"
