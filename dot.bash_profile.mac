@@ -48,7 +48,7 @@ alias grep='grep --color=auto -n'
 
 # show
 # showは引数がディレクトリならls, ファイルならlessするスクリプト
-alias s='show'
+alias s='show-mac'
 
 # rm
 # trashは削除する代わりに.Trash(ゴミ箱)にファイルを移動する。実態は単なるmv
