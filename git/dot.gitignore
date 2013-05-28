@@ -1,0 +1,9 @@
+.DS_Store
+.~lock.*
+*.swp
+.tags
+.gemtags
+Thumbs.db
+tags
+*.sublime-workspace
+*.sublime-project
