@@ -14,9 +14,6 @@
   ,{ "keys": ["super+o"], "command": "indent" }
   ,{ "keys": ["super+shift+,"], "command": "open_file", "args": {"file": "${packages}/User/Default (OSX).sublime-keymap"} }
 
-  ,{ "keys": ["ctrl+shift+:"], "command": "expand_selection", "args": {"to": "brackets"} }
-  ,{ "keys": ["ctrl+:"], "command": "move_to", "args": {"to": "brackets"} }
-
   // 検索結果の画面でカーソル位置のファイルや行数にジャンプする
   ,{ "keys": ["super+j", "m"], "command": "prev_result" }
   ,{ "keys": ["super+j", "n"], "command": "next_result" }
