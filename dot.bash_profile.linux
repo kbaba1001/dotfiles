@@ -90,10 +90,10 @@ export PATH="$HOME/dotfiles/scripts:$PATH"
 alias essid="iwlist wlan0 scan | grep ESSID"
 
 # irb to pry
-# alias irb='pry'
+alias irb='pry'
 
 # show remaining battery
-# alias battery='acpi'
+alias battery='acpitool -b'
 
 # xscreensaver
 alias ss='xscreensaver-command -lock'

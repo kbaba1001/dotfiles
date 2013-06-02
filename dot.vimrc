@@ -1,5 +1,7 @@
-﻿syntax on
+syntax on
 colorscheme torte
+
+set number
 
 " UTF-8
 set encoding=utf-8
