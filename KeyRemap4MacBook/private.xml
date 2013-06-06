@@ -42,9 +42,9 @@
     </item>
 
     <item>
-    <name>PIANIST b</name>
-    <identifier>private.pianist_b</identifier>
-    <autogen>--KeyToKey-- KeyCode::B, ModifierFlag::FN, KeyCode::TAB</autogen>
+    <name>PIANIST r</name>
+    <identifier>private.pianist_r</identifier>
+    <autogen>--KeyToKey-- KeyCode::R, ModifierFlag::FN, KeyCode::TAB</autogen>
     </item>
 
     <item>

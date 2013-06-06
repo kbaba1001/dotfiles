@@ -1,0 +1,26 @@
+# Prefix
+set-option -g prefix C-w
+
+# vim keybind
+set-window-option -g mode-keys vi
+
+# reload ~/.tmux.conf
+bind r source-file ~/.tmux.conf; display-message "Reload ~/.tmux.conf"
+
+# http://www.glidenote.com/archives/1767
+## status
+set -g status-fg black
+set -g status-bg cyan
+
+set -g status-position top
+set -g status-left '#[fg=black]#S#[default]'
+set -g status-right ''
+
+## window-status-current
+setw -g window-status-current-fg black
+setw -g window-status-current-bg white
+setw -g window-status-current-attr bold#,underscore
+
+## pane-active-border
+set -g pane-active-border-fg black
+set -g pane-active-border-bg cyan

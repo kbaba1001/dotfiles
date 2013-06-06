@@ -1,4 +1,4 @@
-source ~/dotfiles/.private_bash_profile
+source ~/.bash_profile.private
 
 #rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -66,6 +66,7 @@ alias d='cd'
 alias bp='vim ~/.bash_profile ; source ~/.bash_profile'
 alias tree='tree -C'
 alias ct='ctags -R -f .tags'
+alias ta='tmux attach'
 
 #gui application
 alias st="/usr/local/bin/subl"
