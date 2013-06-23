@@ -1,9 +1,8 @@
 #!/bin/bash
 
 # 画面の設定
-xrandr --output eDP1 --left-of HDMI1
-xrandr --output eDP1 --mode 1024x768 --rate 60
-xrandr --output HDMI1 --mode 1920x1080 --rate 60
+xrandr --output eDP1 --mode 1024x768 --rate 60 --left-of HDMI1
+xrandr --output HDMI1 --mode 1920x1080 --rate 60 --primary
 xbacklight -set 25
 
 # キーボード設定

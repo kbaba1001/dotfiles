@@ -15,9 +15,9 @@ keycode 65 = Mode_switch
 add mod5 = Mode_switch
 
 ! thumb key
-keycode 100 = space NoSymbol space NoSymbol
+keycode 100 = Return NoSymbol Return NoSymbol
 keycode 101 = BackSpace NoSymbol Delete
-keycode 102 = Return NoSymbol Return NoSymbol
+keycode 102 = space NoSymbol space NoSymbol
 
 ! create delete key
 keycode 51 = Delete NoSymbol Delete

@@ -50,6 +50,7 @@ alias m="mkdir"
 alias d="cd"
 alias cm="chmod"
 alias v="vim"
+alias h="head"
 
 # rm command to trash
 alias rm="trash"
@@ -97,3 +98,6 @@ alias battery='acpitool -b'
 
 # xscreensaver
 alias ss='xscreensaver-command -lock'
+
+# Heroku
+PATH="/usr/local/heroku/bin:$PATH"
