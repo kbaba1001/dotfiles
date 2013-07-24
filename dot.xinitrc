@@ -10,6 +10,9 @@ xset r rate 150 80
 setxkbmap -layout "us, se"
 xmodmap ~/.xmodmaprc
 
+# カーソル設定
+# xrdb ~/.Xresources &
+
 # 日本語入力
 export XMODIFIERS="@im=ibus"
 export GTK_IM_MODULE=ibus
