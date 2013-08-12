@@ -1,7 +1,9 @@
 #!/bin/sh
 
-eval `ssh-agent`
 for key in ${HOME}/.ssh/*.id_rsa
 do
-    ssh-add $key
+    keychain -q $key
 done
+
+sh ~/.keychain/$HOSTNAME-sh
+
