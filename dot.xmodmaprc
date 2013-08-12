@@ -9,21 +9,26 @@ keysym Caps_Lock = Control_L
 add Control = Control_L
 add mod4 = Super_L
 
-! SpaceKey => Mode_switch(Fn)
+! Japanese Keyboard 'ro' is ctrl_r
+keycode 97 = Control_R
+
+! SpaceKey(65) => Mode_switch(Fn)
+! F5(71) => Mode_switch(Fn)
 clear mod5
 keycode 65 = Mode_switch
+! keycode 71 = Mode_switch
 add mod5 = Mode_switch
 
 ! thumb key
 keycode 100 = Return NoSymbol Return NoSymbol
-keycode 101 = BackSpace NoSymbol Delete
-keycode 102 = space NoSymbol space NoSymbol
+keycode 102 = BackSpace NoSymbol Delete
+keycode 101 = space NoSymbol space NoSymbol
 
 ! create delete key
 keycode 51 = Delete NoSymbol Delete
 
 ! command left => space
-keycode 133 = space NoSymbol space NoSymbol
+! keycode 133 = space NoSymbol space NoSymbol
 
 ! create
 
