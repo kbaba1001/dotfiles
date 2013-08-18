@@ -55,3 +55,60 @@ eval "$(rbenv init -)"
 
 ## Emacsライクキーバインド設定
 bindkey -e
+
+# gem open & bundle open
+export BUNDLER_EDITOR="/usr/local/bin/st"
+export GEM_EDITOR="/usr/local/bin/st"
+alias bi="bundle install"
+alias bu="bundle update"
+alias be="bundle exec"
+alias bo="bundle open"
+alias ber="bundle exec rake"
+alias brs="bundle exec rspec"
+alias bra="bundle exec rails"
+
+# short command
+alias t="touch"
+alias m="mkdir"
+alias d="cd"
+alias cm="chmod"
+alias v="vim"
+alias h="head"
+
+# rm command to trash
+alias rm="trash"
+
+# show (ls & less)
+alias s="${HOME}/dotfiles/scripts/show-linux"
+
+# ls
+alias ls="ls -F --color"
+alias l="ls -l"
+alias a="ls -a"
+alias la="ls -la"
+
+# less
+alias less="less -X"
+
+# tmux
+alias ta="tmux attach"
+
+# update .zshrc
+alias zr="vim $HOME/.zshrc ; source $HOME/.zshrc"
+
+# git
+# alias git="hub"
+alias g="git"
+alias gup="git pull --rebase ; git remote update --prune ; git branch --merged | grep -v '*' | xargs -I % git branch -d %"
+
+# search ESSID
+alias essid="iwlist wlan0 scan | grep ESSID"
+
+# irb to pry
+alias irb='pry'
+
+# show remaining battery
+alias battery='acpitool -b'
+
+# xscreensaver
+alias ss='xscreensaver-command -lock'
