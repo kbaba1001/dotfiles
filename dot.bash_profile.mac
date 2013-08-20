@@ -39,7 +39,7 @@ export PS1='\[\033[1;31m\]$(__rbenv_ps1)\[\033[0;32m\]$(__git_ps1)\[\033[33m\]\W
 export LSCOLORS=gxfxcxdxbxegedabagacad
 alias ls='ls -FG'
 alias l='ls -lh'
-alias la='ls -a'
+alias a='ls -a'
 
 # syntax for less
 # @see http://c-brains.jp/blog/wsg/07/12/07-033558.php
@@ -57,6 +57,9 @@ alias s='show-mac'
 alias rm='trash'
 alias rr='rm -r'
 alias rf='rm -fr'
+
+# diff
+alias diff='colordiff'
 
 #bash short
 alias t='touch'
