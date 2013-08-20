@@ -1,7 +1,5 @@
 syntax on
-" colorscheme my_torte
 colorscheme molokai
-" set bg&
 
 set number
 
