@@ -110,7 +110,7 @@ alias zr="vim $HOME/.zshrc ; source $HOME/.zshrc"
 # alias git="hub"
 alias g="git"
 alias gup="git pull --rebase ; git remote update --prune ; git branch --merged | grep -v '*' | xargs -I % git branch -d %"
-for local command in $(sed -ne '/^\[alias\]/,$p' ${HOME}/.gitconfig | grep -v '\[alias\]' | awk '{print $1}')
+for command in $(sed -ne '/^\[alias\]/,$p' ${HOME}/.gitconfig | grep -v '\[alias\]' | awk '{print $1}')
 do
   alias "g${command}"="git ${command}"
 done
