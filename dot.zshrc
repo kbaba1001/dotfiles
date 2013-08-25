@@ -59,6 +59,13 @@ bindkey -e
 # z ( https://github.com/rupa/z )
 source ${HOME}/.z-sh/z.sh
 
+# keychain
+keychain -q ${HOME}/.ssh/*.id_rsa
+
+[ -z "$HOSTNAME" ] && HOSTNAME=`uname -n`
+[ -f $HOME/.keychain/$HOSTNAME-sh ] && source $HOME/.keychain/$HOSTNAME-sh
+[ -f $HOME/.keychain/$HOSTNAME-sh-gpg ] && source $HOME/.keychain/$HOSTNAME-sh-gpg
+
 # gem open & bundle open
 export BUNDLER_EDITOR="/usr/local/bin/st"
 export GEM_EDITOR="/usr/local/bin/st"
