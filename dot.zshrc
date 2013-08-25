@@ -110,6 +110,7 @@ alias zr="vim $HOME/.zshrc ; source $HOME/.zshrc"
 # alias git="hub"
 alias g="git"
 alias gup="git pull --rebase ; git remote update --prune ; git branch --merged | grep -v '*' | xargs -I % git branch -d %"
+source "${HOME}/dotfiles/shell/convert_gitconfig_alias_to_zshrc"
 
 # search ESSID
 alias essid="iwlist wlan0 scan | grep ESSID"
