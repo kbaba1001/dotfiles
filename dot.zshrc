@@ -56,6 +56,9 @@ eval "$(rbenv init -)"
 ## Emacsライクキーバインド設定
 bindkey -e
 
+# z ( https://github.com/rupa/z )
+source ${HOME}/.z-sh/z.sh
+
 # gem open & bundle open
 export BUNDLER_EDITOR="/usr/local/bin/st"
 export GEM_EDITOR="/usr/local/bin/st"
