@@ -173,14 +173,3 @@ function do_enter() {
 }
 zle -N do_enter
 bindkey '^m' do_enter
-
-
-# '^' を押すと上のディレクトリに移動する
-# http://qiita.com/PSP_T/items/0678178be19ea99c33f7
-function cdup() {
-echo
-cd ..
-zle reset-prompt
-}
-zle -N cdup
-bindkey '\^' cdup
