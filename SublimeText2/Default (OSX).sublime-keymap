@@ -14,13 +14,33 @@
   ,{ "keys": ["super+o"], "command": "indent" }
   ,{ "keys": ["super+shift+,"], "command": "open_file", "args": {"file": "${packages}/User/Default (OSX).sublime-keymap"} }
 
-  // 検索結果の画面でカーソル位置のファイルや行数にジャンプする
-  ,{ "keys": ["super+j", "m"], "command": "prev_result" }
-  ,{ "keys": ["super+j", "n"], "command": "next_result" }
-
   // Easy Motion (https://github.com/tednaleid/sublime-EasyMotion)
   ,{ "keys": ["super+:", "<character>"], "command": "easy_motion", "args": {"select_text": false} }
   ,{ "keys": ["super+shift+:", "<character>"], "command": "easy_motion", "args": {"select_text": true} }
+
+  // create new file (by RubyTest)
+  ,{ "keys": ["super+n"], "command": "generate_file" }
+
+  // 検索結果の画面でカーソル位置のファイルや行数にジャンプする
+  ,{ "keys": ["j", "j", "p"], "command": "prev_result" }
+  ,{ "keys": ["j", "j", "n"], "command": "next_result" }
+
+  // Rails File Switcher
+  ,{ "keys": ["j", "j", "m"], "command": "open_related_rails_model" }
+  ,{ "keys": ["j", "j", "c"], "command": "open_related_rails_controller" }
+  ,{ "keys": ["j", "j", "v"], "command": "open_related_rails_view" }
+  ,{ "keys": ["j", "j", "r", "m"], "command": "open_related_rspec_model" }
+  ,{ "keys": ["j", "j", "r", "c"], "command": "open_related_rspec_controller" }
+
+  // Simple Rails Navigator
+  ,{ "keys": ["r", "l", "m"], "command": "list_rails_models" }
+  ,{ "keys": ["r", "l", "c"], "command": "list_rails_controllers" }
+  ,{ "keys": ["r", "l", "v"], "command": "list_rails_views" }
+  ,{ "keys": ["r", "l", "h"], "command": "list_rails_helpers" }
+  ,{ "keys": ["r", "l", "f"], "command": "list_rails_fixtures" }
+  ,{ "keys": ["r", "l", "r"], "command": "list_rails_tests" }
+  ,{ "keys": ["r", "l", "j"], "command": "list_rails_javascripts" }
+  ,{ "keys": ["r", "l", "s"], "command": "list_rails_stylesheets" }
 
   // *** Window split ***
   ,{
