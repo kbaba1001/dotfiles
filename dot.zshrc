@@ -7,7 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="my_theme"
+# ZSH_THEME="my_theme"
 # ZSH_THEME="gentoo"
 
 # Example aliases
@@ -30,7 +30,7 @@ CASE_SENSITIVE="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
+DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
@@ -43,12 +43,27 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(cap gitfast heroku rails3 rake rbenv ruby tmux)
+plugins=(cap heroku rails3 rake rbenv ruby tmux)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH="$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$HOME/dotfiles/scripts:/sbin:/usr/local/heroku/bin:"
+
+source ~/.zsh/git-prompt/zshrc.sh
+ZSH_THEME_GIT_PROMPT_NOCACHE="true"
+ZSH_THEME_GIT_PROMPT_PREFIX="("
+ZSH_THEME_GIT_PROMPT_SUFFIX=")"
+ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
+ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[green]%}"
+ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[red]%}\xF0\x9F\x8D\xB6 "
+ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[gray]%}\xF0\x9F\x91\xBD "
+ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[yellow]%}\xF0\x9f\x8d\xba "
+ZSH_THEME_GIT_PROMPT_REMOTE=""
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[red]%}\xF0\x9F\x8D\xB7 "
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[white]%}\xF0\x9F\x8D\xA3 "
+
+PROMPT='%{$fg_bold[red]%}$(rbenv version | sed -e "s/ (set.*$//")%{$reset_color%}%{$fg_bold[cyan]%}%C%{$reset_color%}$(git_super_status)%{$reset_color%}%# '
 
 # rbenv
 eval "$(rbenv init -)"
