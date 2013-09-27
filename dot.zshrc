@@ -7,7 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="my_theme"
+# ZSH_THEME="my_theme"
 # ZSH_THEME="gentoo"
 
 # Example aliases
@@ -18,7 +18,7 @@ ZSH_THEME="my_theme"
 CASE_SENSITIVE="true"
 
 # Comment this out to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment to change how often before auto-updates occur? (in days)
 # export UPDATE_ZSH_DAYS=13
@@ -27,10 +27,10 @@ CASE_SENSITIVE="true"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
+DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
@@ -43,18 +43,37 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(cap gitfast heroku rails3 rake rbenv ruby tmux)
+plugins=(cap heroku rails3 rake rbenv ruby)
 
 source $ZSH/oh-my-zsh.sh
-
-# Customize to your needs...
-export PATH="$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$HOME/dotfiles/scripts:/sbin:/usr/local/heroku/bin:"
 
 # rbenv
 eval "$(rbenv init -)"
 
 ## Emacsライクキーバインド設定
 bindkey -e
+#### Customize to your needs...
+
+# git prompt
+source ~/.zsh/git-prompt/git-prompt.sh
+ZSH_THEME_GIT_PROMPT_NOCACHE="true"
+ZSH_THEME_GIT_PROMPT_PREFIX="("
+ZSH_THEME_GIT_PROMPT_SUFFIX=")"
+ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
+ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[magenta]%}"
+ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[red]%}🍶 "
+ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}👽 "
+ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[cyan]%}🍺 "
+ZSH_THEME_GIT_PROMPT_REMOTE=""
+ZSH_THEME_GIT_PROMPT_UNTRACKED="🍷 "
+ZSH_THEME_GIT_PROMPT_CLEAN="🍣 "
+
+PROMPT='%{$fg_bold[yellow]%}%C%{$reset_color%}$(git_super_status)%# '
+
+# bundle open & gem open
+export BUNDLER_EDITOR="/usr/local/bin/subl -w"
+export GEM_EDITOR="/usr/local/bin/subl -w"
+export EDITOR="/usr/local/bin/subl -w"
 
 # z ( https://github.com/rupa/z )
 source ${HOME}/.z-sh/z.sh
@@ -84,6 +103,19 @@ alias d="cd"
 alias cm="chmod"
 alias v="vim"
 alias h="head"
+alias so="source"
+alias vgc="vim ~/.gitconfig"
+alias st="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
+alias ct='ctags -f .tags'
+
+# grep
+alias grep="\grep --color=auto -n -C 2"
+
+# colordiff
+alias diff="colordiff -u"
+
+# global alias
+alias -g G="| grep"
 
 # rm command to trash
 alias rm="trash"
@@ -92,7 +124,8 @@ alias rm="trash"
 alias s="${HOME}/dotfiles/scripts/show-linux"
 
 # ls
-alias ls="ls -F --color"
+export LSCOLORS=gxfxcxdxbxegedabagacad
+alias ls="ls -FG"
 alias l="ls -l"
 alias a="ls -a"
 alias la="ls -la"
@@ -110,7 +143,7 @@ alias zr="vim $HOME/.zshrc ; source $HOME/.zshrc"
 # alias git="hub"
 alias g="git"
 alias gup="git pull --rebase ; git remote update --prune ; git branch --merged | grep -v '*' | xargs -I % git branch -d %"
-for command in $(sed -ne '/^\[alias\]/,$p' ${HOME}/.gitconfig | grep -v '\[alias\]' | awk '{print $1}')
+for command in $(\sed -ne '/^\[alias\]/,$p' ${HOME}/.gitconfig | \grep -v '\[alias\]' | \awk '{print $1}')
 do
   alias "g${command}"="git ${command}"
 done
@@ -169,9 +202,8 @@ function do_enter() {
     echo
     ls
     if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
-        echo
         echo -e "\e[0;33m--- git status ---\e[0m"
-        git status -sb
+        git status -s
     fi
     zle reset-prompt
     return 0

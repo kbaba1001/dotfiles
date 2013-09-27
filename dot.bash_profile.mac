@@ -40,6 +40,7 @@ export LSCOLORS=gxfxcxdxbxegedabagacad
 alias ls='ls -FG'
 alias l='ls -lh'
 alias a='ls -a'
+alias la='ls -alh'
 
 # syntax for less
 # @see http://c-brains.jp/blog/wsg/07/12/07-033558.php
@@ -55,8 +56,8 @@ alias s='show-mac'
 # rm
 # trashは削除する代わりに.Trash(ゴミ箱)にファイルを移動する。実態は単なるmv
 alias rm='trash'
-alias rr='rm -r'
-alias rf='rm -fr'
+alias rr='\rm -r'
+alias rf='\rm -fr'
 
 # diff
 alias diff='colordiff'
@@ -70,6 +71,7 @@ alias bp='vim ~/.bash_profile ; source ~/.bash_profile'
 alias tree='tree -C'
 alias ct='ctags -R -f .tags'
 alias ta='tmux attach'
+alias so='source'
 
 #gui application
 alias st="/usr/local/bin/subl"
@@ -88,6 +90,10 @@ alias g="git"
 alias gg='git grep -n'
 alias gbc="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
 alias gup="git pull --rebase ; git remote update --prune ; gbc ; git fetch --tags ; ctags -R -f .tags"
+for command in $(\sed -ne '/^\[alias\]/,$p' ${HOME}/.gitconfig | \grep -v '\[alias\]' | \awk '{print $1}')
+do
+  alias "g${command}"="git ${command}"
+done
 
 #ruby, rails short
 alias ru='ruby'
