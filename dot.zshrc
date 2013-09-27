@@ -18,7 +18,7 @@ ZSH=$HOME/.oh-my-zsh
 CASE_SENSITIVE="true"
 
 # Comment this out to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment to change how often before auto-updates occur? (in days)
 # export UPDATE_ZSH_DAYS=13
@@ -27,7 +27,7 @@ CASE_SENSITIVE="true"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want to disable command autocorrection
 DISABLE_CORRECTION="true"
@@ -47,9 +47,16 @@ plugins=(cap heroku rails3 rake rbenv ruby)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+# rbenv
+eval "$(rbenv init -)"
+
+## Emacsライクキーバインド設定
+bindkey -e
+#### Customize to your needs.
+
 export PATH="$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$HOME/dotfiles/scripts:/sbin:/usr/local/heroku/bin:"
 
+# git prompt
 source ~/.zsh/git-prompt/zshrc.sh
 ZSH_THEME_GIT_PROMPT_NOCACHE="true"
 ZSH_THEME_GIT_PROMPT_PREFIX="("
@@ -65,11 +72,10 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[white]%}\xF0\x9F\x8D\xA3 "
 
 PROMPT='%{$fg_bold[red]%}$(rbenv version | sed -e "s/ (set.*$//")%{$reset_color%}%{$fg_bold[cyan]%}%C%{$reset_color%}$(git_super_status)%{$reset_color%}%# '
 
-# rbenv
-eval "$(rbenv init -)"
-
-## Emacsライクキーバインド設定
-bindkey -e
+# bundle open & gem open
+export BUNDLER_EDITOR="/usr/local/bin/subl -w"
+export GEM_EDITOR="/usr/local/bin/subl -w"
+export EDITOR="/usr/local/bin/subl -w"
 
 # z ( https://github.com/rupa/z )
 source ${HOME}/.z-sh/z.sh
@@ -99,6 +105,19 @@ alias d="cd"
 alias cm="chmod"
 alias v="vim"
 alias h="head"
+alias so="source"
+alias vgc="vim ~/.gitconfig"
+alias st="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
+alias ct='ctags -f .tags'
+
+# grep
+alias grep="\grep --color=auto -n -C 2"
+
+# colordiff
+alias diff="colordiff -u"
+
+# global alias
+alias -g G="| grep"
 
 # rm command to trash
 alias rm="trash"
@@ -107,7 +126,8 @@ alias rm="trash"
 alias s="${HOME}/dotfiles/scripts/show-linux"
 
 # ls
-alias ls="ls -F --color"
+export LSCOLORS=gxfxcxdxbxegedabagacad
+alias ls="ls -FG"
 alias l="ls -l"
 alias a="ls -a"
 alias la="ls -la"
@@ -125,7 +145,7 @@ alias zr="vim $HOME/.zshrc ; source $HOME/.zshrc"
 # alias git="hub"
 alias g="git"
 alias gup="git pull --rebase ; git remote update --prune ; git branch --merged | grep -v '*' | xargs -I % git branch -d %"
-for command in $(sed -ne '/^\[alias\]/,$p' ${HOME}/.gitconfig | grep -v '\[alias\]' | awk '{print $1}')
+for command in $(\sed -ne '/^\[alias\]/,$p' ${HOME}/.gitconfig | \grep -v '\[alias\]' | \awk '{print $1}')
 do
   alias "g${command}"="git ${command}"
 done
@@ -184,9 +204,8 @@ function do_enter() {
     echo
     ls
     if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
-        echo
         echo -e "\e[0;33m--- git status ---\e[0m"
-        git status -sb
+        git status -s
     fi
     zle reset-prompt
     return 0
