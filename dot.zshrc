@@ -97,6 +97,7 @@ alias bo="bundle open"
 alias ber="bundle exec rake"
 alias brs="bundle exec rspec"
 alias bra="bundle exec rails"
+alias bcu="bundle exec cucumber"
 
 # short command
 alias t="touch"
@@ -107,7 +108,7 @@ alias v="vim"
 alias h="head"
 alias so="source"
 alias vgc="vim ~/.gitconfig"
-alias st="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
+alias st="/usr/local/bin/st"
 alias ct='ctags -f .tags'
 
 # grep
