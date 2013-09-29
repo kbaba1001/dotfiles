@@ -54,7 +54,7 @@ set cut
 # set fill -8
 
 ## Enable ~/.nano_history for saving and reading search/replace strings.
-set historylog
+# set historylog
 
 ## The opening and closing brackets that can be found by bracket
 ## searches.  They cannot contain blank characters.  The former set must
