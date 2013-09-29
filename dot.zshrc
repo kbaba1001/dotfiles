@@ -63,7 +63,7 @@ ZSH_THEME_GIT_PROMPT_PREFIX="("
 ZSH_THEME_GIT_PROMPT_SUFFIX=")"
 ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
 ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[green]%}"
-ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[red]%}\xF0\x9F\x8D\xB6 "
+ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}\xF0\x9F\x8D\xB6 "
 ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[gray]%}\xF0\x9F\x91\xBD "
 ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[yellow]%}\xF0\x9f\x8d\xba "
 ZSH_THEME_GIT_PROMPT_REMOTE=""
@@ -127,13 +127,19 @@ alias s="${HOME}/dotfiles/scripts/show-linux"
 
 # ls
 export LSCOLORS=gxfxcxdxbxegedabagacad
-alias ls="ls -FG"
-alias l="ls -l"
+alias ls="ls -F --color"
+alias l="ls -lh"
 alias a="ls -a"
-alias la="ls -la"
+alias la="ls -lha"
 
 # less
 alias less="less -X"
+
+# du
+alias du="du -hs"
+
+# diff
+alias diff="colordiff -u"
 
 # tmux
 alias ta="tmux attach"
@@ -150,7 +156,6 @@ do
   alias "g${command}"="git ${command}"
 done
 
-
 # search ESSID
 alias essid="iwlist wlan0 scan | grep ESSID"
 
@@ -162,6 +167,18 @@ alias battery='acpitool -b'
 
 # xscreensaver
 alias ss='xscreensaver-command -lock'
+
+# cdd ( http://blog.m4i.jp/entry/2012/01/26/064329 )
+autoload -Uz compinit
+compinit
+. ~/.zsh/cdd/cdd
+
+chpwd() {
+    _cdd_chpwd
+}
+
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'
 
 # cd した直後に ls する。ファイルが多いときは省略表示する。
 # http://qiita.com/yuyuchu3333/items/b10542db482c3ac8b059
