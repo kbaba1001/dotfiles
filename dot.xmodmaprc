@@ -11,6 +11,7 @@ add mod4 = Super_L
 
 ! Japanese Keyboard 'ro' is ctrl_r
 keycode 97 = Control_R
+add Control = Control_R
 
 ! SpaceKey(65) => Mode_switch(Fn)
 ! F5(71) => Mode_switch(Fn)
