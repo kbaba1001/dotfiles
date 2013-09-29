@@ -22,7 +22,7 @@ add mod5 = Mode_switch
 
 ! thumb key
 keycode 100 = Return NoSymbol Return NoSymbol
-keycode 101 = BackSpace NoSymbol Delete
+keycode 101 = BackSpace NoSymbol Delete NoSymbol
 keycode 102 = space NoSymbol space NoSymbol
 
 ! create delete key
