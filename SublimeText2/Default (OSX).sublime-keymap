@@ -15,6 +15,18 @@
   { "keys": ["super+shift+,"], "command": "open_file", "args": {"file": "${packages}/User/Default (OSX).sublime-keymap"} },
   { "keys": ["super+j", "super+j"], "command": "find_under_expand_skip" },
 
+  { "keys": ["super+ctrl+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "#"} },
+  { "keys": ["super+l"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
+
+  // JumpAlongIndent ( https://github.com/mwean/sublime_jump_along_indent )
+  { "keys": ["super+j", "s"], "command": "jump_prev_indent" },
+  { "keys": ["super+j", "x"], "command": "jump_prev_indent", "args": { "extend_selection": true} },
+  { "keys": ["super+j", "d"], "command": "jump_next_indent" },
+  { "keys": ["super+j", "c"], "command": "jump_next_indent", "args": { "extend_selection": true} },
+
+  // SublimeGit
+  { "keys": ["super+g"], "command": "show_overlay", "args": {"overlay": "command_palette", "text": "Git: "} },
+
   // Mark And Moce ( https://github.com/colinta/SublimeMarkAndMove )
   { "keys": ["ctrl+m", "ctrl+m"], "command": "mark_and_move_do_it_all" },
   { "keys": ["ctrl+m", "n"], "command": "mark_and_move_next" },
@@ -136,7 +148,7 @@
   { "keys": ["super+k", "super+z"], "command": "zoom_pane", "args": {"fraction": 0.9} },
   { "keys": ["super+k", "super+shift+z"], "command": "unzoom_pane", "args": {} },
 
-  // 画面分割をやめる
+  // 画面分割を解除する
   {
     "keys": ["super+1"]
     ,"command": "set_layout"
@@ -147,6 +159,14 @@
       "cells": [[0, 0, 1, 1]]
     }
   },
+
+  // Resize gruup with keyboard
+  { "keys": ["ctrl+a"], "command": "resize_active_group", "args" : { "direction" : "left" }, "context": "window" },
+  { "keys": ["ctrl+f"], "command": "resize_active_group", "args" : { "direction" : "right" }, "context": "window" },
+  { "keys": ["ctrl+s"], "command": "resize_active_group", "args" : { "direction" : "up" }, "context": "window" },
+  { "keys": ["ctrl+d"], "command": "resize_active_group", "args" : { "direction" : "down" }, "context": "window" },
+
+  // *** End - Window split ***
 
   // CTags
   {

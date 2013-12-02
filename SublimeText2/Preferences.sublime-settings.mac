@@ -23,8 +23,10 @@
 		"*.class",
 		"*.psd",
 		"*.db",
-		".tags"
+		".tags",
+		"*.log"
 	],
+	"find_selected_text": true,
 	"folder_exclude_patterns":
 	[
 		".svn",
