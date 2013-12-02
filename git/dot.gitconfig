@@ -1,6 +1,6 @@
 [user]
-  name = kbaba1001
-  email = kbaba1001@gmail.com
+  name = vbaabk
+  email = k-baba@esm.co.jp
 [color]
   ui = true
   diff = true
@@ -14,8 +14,14 @@
   sh = show
   st = stash
   pr = pull --rebase
-  c = commit -v
-  cm = commit -m
+  #c = commit
+  #c = !sh -c 'git commit -m "`git describe --contains --all HEAD` " && git commit --amend -v'
+  c = !sh -c 'git commit -m \"`echo $DEV_NUM` \" && git commit --amend -v'
+  wip = commit -m '[wip]'
+  #cm = commit -m
+  #cm = !sh -c 'git commit -m \"`git describe --contains --all HEAD` $0\"'
+  cm = !sh -c 'git commit -m \"`echo $DEV_NUM` $0\"'
+  cd = !sh -c 'git commit -m \"`echo $DEV_NUM` 作業用コミット\" && git tag -f dev'
   ca = commit --amend -v
   a = add
   al = add -A .
@@ -26,8 +32,9 @@
   bm = branch --merged
   d = diff
   ds = diff --staged
+  dw = diff -w
   wd = diff --word-diff
-  l = log --oneline --decorate -n 15
+  l = !sh -c 'git --no-pager log --oneline --decorate -n 15'
   lo = log --oneline --decorate --graph
   ld = log --decorate
   ls = log --stat --decorate
@@ -40,5 +47,7 @@
   rmrf = !sh -c 'git branch -d $0 && git push origin :$0'
   t = tag
   f = fetch
-  nipo = !sh -c 'git commit -m \"kbaba1001の愛と情熱の日々 $(date +%Y/%m/%d)\"'
+  nipo = !sh -c 'git commit -m \"kbaba1001の十字陵 $(date +%Y/%m/%d)\"'
   chd = cherry-pick dev
+  ch = cherry-pick
+  g = grep
