@@ -1,11 +1,11 @@
 # Prefix
-set-option -g prefix C-w
+set-option -g prefix C-t
 
 # vim keybind
 set-window-option -g mode-keys vi
 
 # reload ~/.tmux.conf
-bind r source-file ~/.tmux.conf; display-message "Reload ~/.tmux.conf"
+#bind r source-file ~/.tmux.conf; display-message "Reload ~/.tmux.conf"
 
 # http://www.glidenote.com/archives/1767
 ## status
