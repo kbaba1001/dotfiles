@@ -1,10 +1,10 @@
 export SHELL=/usr/local/bin/zsh
 
+# MacPorkts
+#export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
 # Homebrew
 export PATH=/opt/local/bin/pkg-config:$PATH
-
-# MacPorkts
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
 # MySQL
 export PATH=/opt/local/lib/mysql55/bin:$PATH
@@ -12,9 +12,10 @@ export PATH=/opt/local/lib/mysql55/bin:$PATH
 # my scripts's PATH
 export PATH=$HOME/dotfiles/scripts/:$PATH
 
-# rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-export PATH=/Users/vbabak/.rvm/gems/ruby-1.9.3-p448/bin:$PATH
+# rbenv
+export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$PATH"
+eval "$(rbenv init -)"
+source ~/.rbenv/completions/rbenv.zsh
 
 ## Emacsライクキーバインド設定
 bindkey -e
@@ -64,11 +65,9 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(cap heroku rails3 rake rbenv rvm ruby)
+plugins=(cap heroku rails3 rake ruby)
 
 source $ZSH/oh-my-zsh.sh
-
-export PATH=/usr/local/bin:/usr/bin:$PATH
 
 #### Customize to your needs...
 
@@ -86,16 +85,13 @@ ZSH_THEME_GIT_PROMPT_REMOTE=""
 ZSH_THEME_GIT_PROMPT_UNTRACKED="🍷 "
 ZSH_THEME_GIT_PROMPT_CLEAN="🍣 "
 
-rvm_prompt_info_short() {
-  echo "$(rvm_prompt_info)" | cut -c 7-11
-}
-
-export DEV_NUM="DEV-002544"
+export DEV_NUM="DEV-002471"
 dev_number() {
   echo "$DEV_NUM" | cut -c 5-10
 }
 
-PROMPT='%{$fg_bold[yellow]%}$(dev_number)%{$fg_bold[red]%}$(rvm_prompt_info)%{$fg_bold[cyan]%}%C%{$reset_color%}$(git_super_status)%# '
+# $(rvm_prompt_info)
+PROMPT='%{$fg_bold[yellow]%}$(dev_number)%{$fg_bold[red]%}$(rbenv version | sed -e "s/ (set.*$//")%{$fg_bold[cyan]%}%C%{$reset_color%}$(git_super_status)%# '
 
 # bundle open & gem open
 export BUNDLER_EDITOR="/usr/local/bin/subl -w"
@@ -190,6 +186,16 @@ export QMAKE='/usr/bin/qmake-4.8'
 # irb to pry
 alias irb='pry'
 
+# rbenv rehash を自動化
+function gem(){
+    $HOME/.rbenv/shims/gem $*
+    if [ "$1" = "install" ] || [ "$1" = "i" ] || [ "$1" = "uninstall" ] || [ "$1" = "uni" ]
+    then
+        rbenv rehash
+        rehash
+    fi
+}
+
 # cd した直後に ls する。ファイルが多いときは省略表示する。
 # http://qiita.com/yuyuchu3333/items/b10542db482c3ac8b059
 chpwd() {
@@ -197,7 +203,7 @@ chpwd() {
 }
 
 # 空 Enter で ls と git status を表示する
-# http://qiita.com/yuyuchu3333/items/e9af05670c95e2cc5b4d
+#http://qiita.com/yuyuchu3333/items/e9af05670c95e2cc5b4d
 function do_enter() {
     if [ -n "$BUFFER" ]; then
         zle accept-line
@@ -215,5 +221,3 @@ function do_enter() {
 zle -N do_enter
 bindkey '^m' do_enter
 
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
