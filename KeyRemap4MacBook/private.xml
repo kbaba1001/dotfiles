@@ -7,48 +7,6 @@
     </item>
 
     <item>
-        <name>F5 to Space</name>
-        <identifier>private.pianist_f5_space</identifier>
-        <autogen>--KeyToKey-- KeyCode::F5, KeyCode::SPACE</autogen>
-        <autogen>--KeyToKey-- KeyCode::F5, ModifierFlag::FN, KeyCode::DELETE</autogen>
-    </item>
-
-    <item>
-        <name>F4 to backspace/delete</name>
-        <identifier>private.pianist_f4_delete</identifier>
-        <autogen>--KeyToKey-- KeyCode::F4, ModifierFlag::NONE, KeyCode::DELETE</autogen>
-        <autogen>--KeyToKey-- KeyCode::F4, ModifierFlag::FN, KeyCode::FORWARD_DELETE</autogen>
-    </item>
-
-    <item>
-        <name>F4 to Space</name>
-        <identifier>private.pianist_f4_space</identifier>
-        <autogen>--KeyToKey-- KeyCode::F4, KeyCode::SPACE</autogen>
-        <autogen>--KeyToKey-- KeyCode::F4, ModifierFlag::FN, KeyCode::DELETE</autogen>
-    </item>
-
-    <item>
-        <name>F3 to Return</name>
-        <identifier>private.pianist_f3_return</identifier>
-        <autogen>--KeyToKey-- KeyCode::F3, KeyCode::RETURN</autogen>
-        <autogen>--KeyToKey-- KeyCode::F3, ModifierFlag::FN, KeyCode::FORWARD_DELETE</autogen>
-    </item>
-
-    <item>
-        <name>j to backspace/delete</name>
-        <identifier>private.pianist_j</identifier>
-        <autogen>--KeyToKey-- KeyCode::J, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::DELETE</autogen>
-        <autogen>--KeyToKey-- KeyCode::J, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::FORWARD_DELETE</autogen>
-    </item>
-
-    <item>
-        <name>k, l to  space, return</name>
-        <identifier>private.pianist_k_l</identifier>
-        <autogen>--KeyToKey-- KeyCode::K, ModifierFlag::FN, KeyCode::SPACE</autogen>
-        <autogen>--KeyToKey-- KeyCode::L, ModifierFlag::FN, KeyCode::RETURN</autogen>
-    </tem>
-
-    <item>
         <name>PIANIST</name>
         <identifier>private.pianist</identifier>
         <autogen>--KeyToKey-- KeyCode::SHIFT_R, KeyCode::VK_LOCK_SHIFT_L</autogen>
@@ -98,6 +56,10 @@
         <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::BACKSLASH</autogen>
         <autogen>--KeyToKey-- KeyCode::H, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::MINUS</autogen>
         <autogen>--KeyToKey-- KeyCode::H, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::EQUAL, ModifierFlag::SHIFT_L</autogen>
+        <autogen>--KeyToKey-- KeyCode::J, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::DELETE</autogen>
+        <autogen>--KeyToKey-- KeyCode::J, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::FORWARD_DELETE</autogen>
+        <autogen>--KeyToKey-- KeyCode::K, ModifierFlag::FN, KeyCode::SPACE</autogen>
+        <autogen>--KeyToKey-- KeyCode::L, ModifierFlag::FN, KeyCode::RETURN</autogen>
         <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::NONE, KeyCode::SEMICOLON, ModifierFlag::SHIFT_L</autogen>
         <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::SHIFT_L | ModifierFlag::NONE, KeyCode::SEMICOLON</autogen>
         <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::KEY_5, ModifierFlag::SHIFT_L</autogen>
@@ -111,7 +73,19 @@
         <autogen>--KeyToKey-- KeyCode::O, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::EQUAL, KeyCode::DOT, ModifierFlag::SHIFT_L</autogen>
         <autogen>--KeyToKey-- KeyCode::P, ModifierFlag::FN | ModifierFlag::NONE, KeyCode::KEY_3, ModifierFlag::SHIFT_L</autogen>
         <autogen>--KeyToKey-- KeyCode::P, ModifierFlag::FN | ModifierFlag::SHIFT_L, KeyCode::KEY_6, ModifierFlag::SHIFT_L</autogen>
-        <autogen>--PointingButtonToKey-- PointingButton::BUTTON5, KeyCode::DELETE, ModifierFlag::SHIFT_R</autogen>
-        <autogen>--PointingButtonToKey-- PointingButton::BUTTON4, KeyCode::DELETE</autogen>
+    </item>
+
+    <item>
+        <name>Mouse Setting</name>
+        <identifier>private.pianist_mouse</identifier>
+        <autogen>--PointingButtonToKey-- PointingButton::LEFT, ModifierFlag::SHIFT_L, KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L</autogen>
+        <autogen>--PointingButtonToKey-- PointingButton::MIDDLE, ModifierFlag::SHIFT_L, KeyCode::CURSOR_UP, ModifierFlag::CONTROL_L</autogen>
+        <autogen>--PointingButtonToKey-- PointingButton::RIGHT, ModifierFlag::SHIFT_L, KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L</autogen>
+
+        <autogen>--PointingButtonToKey-- PointingButton::LEFT, ModifierFlag::SHIFT_R, KeyCode::DELETE</autogen>
+        <autogen>--PointingButtonToKey-- PointingButton::RIGHT, ModifierFlag::SHIFT_R, KeyCode::DELETE, ModifierFlag::SHIFT_R</autogen>
+
+        <autogen>--PointingButtonToKey-- PointingButton::BUTTON4, KeyCode::SHIFT_L</autogen>
+        <autogen>--PointingButtonToKey-- PointingButton::BUTTON5, KeyCode::SHIFT_R</autogen>
     </item>
 </root>
