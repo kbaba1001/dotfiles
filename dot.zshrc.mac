@@ -1,21 +1,15 @@
-export SHELL=/usr/local/bin/zsh
-
-# MacPorkts
-#export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-
-# Homebrew
-export PATH=/opt/local/bin/pkg-config:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$PATH
 
 # MySQL
-export PATH=/opt/local/lib/mysql55/bin:$PATH
+#export PATH=/opt/local/lib/mysql55/bin:$PATH
 
 # my scripts's PATH
-export PATH=$HOME/dotfiles/scripts/:$PATH
+export PATH=$HOME/dotfiles/scripts:$PATH
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$PATH"
-eval "$(rbenv init -)"
 source ~/.rbenv/completions/rbenv.zsh
+eval "$(rbenv init -)"
 
 ## Emacsライクキーバインド設定
 bindkey -e
@@ -65,14 +59,14 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(cap heroku rails3 rake ruby)
+plugins=(brew cap rails rake ruby)
 
 source $ZSH/oh-my-zsh.sh
 
 #### Customize to your needs...
 
 # git prompt
-source ~/.zsh/git-prompt/git-prompt.sh
+source ~/.zsh/git-prompt/zshrc.sh
 ZSH_THEME_GIT_PROMPT_NOCACHE="true"
 ZSH_THEME_GIT_PROMPT_PREFIX="("
 ZSH_THEME_GIT_PROMPT_SUFFIX=")"
@@ -93,24 +87,13 @@ dev_number() {
 # $(rvm_prompt_info)
 PROMPT='%{$fg_bold[yellow]%}$(dev_number)%{$fg_bold[red]%}$(rbenv version | sed -e "s/ (set.*$//")%{$fg_bold[cyan]%}%C%{$reset_color%}$(git_super_status)%# '
 
-# bundle open & gem open
-export BUNDLER_EDITOR="/usr/local/bin/subl -w"
-export GEM_EDITOR="/usr/local/bin/subl -w"
-export EDITOR="/usr/local/bin/subl -w"
-
 # z ( https://github.com/rupa/z )
-source ${HOME}/.z-sh/z.sh
+source ${HOME}/.zsh/z/z.sh
 
 # Incremental completion on zsh
 #source ${HOME}/dotfiles/shell/incr-0.2.zsh
 
-# sl
-## oh-my-zsh が sl を ls に alias しているようなので
-alias sl='\sl -laF'
-
 # gem open & bundle open
-export BUNDLER_EDITOR="/usr/local/bin/st"
-export GEM_EDITOR="/usr/local/bin/st"
 alias bi="bundle install"
 alias bu="bundle update"
 alias be="bundle exec"
@@ -129,8 +112,11 @@ alias v="vim"
 alias h="head"
 alias so="source"
 alias vgc="vim ~/.gitconfig"
-alias st="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
+alias st="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias ct='ctags -f .tags'
+
+# locate
+alias updatedb="/usr/libexec/locate.updatedb"
 
 # Rails
 alias -g RT="RAILS_ENV=test"
@@ -138,7 +124,7 @@ alias -g RD="RAILS_ENV=development"
 alias -g RP="RAILS_ENV=production"
 
 # grep
-alias grep="\grep --color=auto -n -C 2"
+alias grep="\grep --color=auto -n"
 
 # colordiff
 alias diff="colordiff -u"
@@ -172,16 +158,11 @@ alias zr="vim $HOME/.zshrc ; source $HOME/.zshrc"
 # alias git="hub"
 alias g="git"
 alias gup="git pull --rebase ; git remote update --prune ; git branch --merged | grep -v '*' | xargs -I % git branch -d %"
+
 for command in $(\sed -ne '/^\[alias\]/,$p' ${HOME}/.gitconfig | \grep -v '\[alias\]' | \awk '{print $1}')
 do
   alias "g${command}"="git ${command}"
 done
-
-# Java
-export JAVA_HOME=`/usr/libexec/java_home`
-
-# qt4.8
-export QMAKE='/usr/bin/qmake-4.8'
 
 # irb to pry
 alias irb='pry'
@@ -196,14 +177,13 @@ function gem(){
     fi
 }
 
-# cd した直後に ls する。ファイルが多いときは省略表示する。
-# http://qiita.com/yuyuchu3333/items/b10542db482c3ac8b059
+# cd した直後に ls する。
 chpwd() {
     ls -FG
 }
 
 # 空 Enter で ls と git status を表示する
-#http://qiita.com/yuyuchu3333/items/e9af05670c95e2cc5b4d
+# http://qiita.com/yuyuchu3333/items/e9af05670c95e2cc5b4d
 function do_enter() {
     if [ -n "$BUFFER" ]; then
         zle accept-line
