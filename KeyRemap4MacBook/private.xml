@@ -76,6 +76,13 @@
     </item>
 
     <item>
+        <name>Right Command and Control</name>
+        <identifier>private.pianist_right_cmd_ctrl</identifier>
+        <autogen>--KeyToKey-- KeyCode::CONTROL_R, KeyCode::COMMAND_R</autogen>
+        <autogen>--KeyToKey-- KeyCode::OPTION_R, KeyCode::CONTROL_R</autogen>
+    </item>
+
+    <item>
         <name>Mouse Setting</name>
         <identifier>private.pianist_mouse</identifier>
         <autogen>--PointingButtonToKey-- PointingButton::LEFT, ModifierFlag::SHIFT_L, KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L</autogen>
