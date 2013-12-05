@@ -89,10 +89,11 @@
         <autogen>--PointingButtonToKey-- PointingButton::MIDDLE, ModifierFlag::SHIFT_L, KeyCode::CURSOR_UP, ModifierFlag::CONTROL_L</autogen>
         <autogen>--PointingButtonToKey-- PointingButton::RIGHT, ModifierFlag::SHIFT_L, KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L</autogen>
 
-        <autogen>--PointingButtonToKey-- PointingButton::LEFT, ModifierFlag::SHIFT_R, KeyCode::DELETE</autogen>
-        <autogen>--PointingButtonToKey-- PointingButton::RIGHT, ModifierFlag::SHIFT_R, KeyCode::DELETE, ModifierFlag::SHIFT_R</autogen>
+        <autogen>--PointingButtonToKey-- PointingButton::LEFT, ModifierFlag::COMMAND_L, KeyCode::DELETE</autogen>
+        <autogen>--PointingButtonToKey-- PointingButton::MIDDLE, ModifierFlag::COMMAND_L, KeyCode::W, ModifierFlag::COMMAND_L </autogen>
+        <autogen>--PointingButtonToKey-- PointingButton::RIGHT, ModifierFlag::COMMAND_L, KeyCode::DELETE, ModifierFlag::SHIFT_R</autogen>
 
         <autogen>--PointingButtonToKey-- PointingButton::BUTTON4, KeyCode::SHIFT_L</autogen>
-        <autogen>--PointingButtonToKey-- PointingButton::BUTTON5, KeyCode::SHIFT_R</autogen>
+        <autogen>--PointingButtonToKey-- PointingButton::BUTTON5, KeyCode::COMMAND_L</autogen>
     </item>
 </root>
