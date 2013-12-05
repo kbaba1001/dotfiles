@@ -14,6 +14,9 @@ eval "$(rbenv init -)"
 ## Emacsライクキーバインド設定
 bindkey -e
 
+# private setting
+source ~/.private_zshrc
+
 #######################################################
 
 # Path to your oh-my-zsh configuration.
@@ -79,9 +82,9 @@ ZSH_THEME_GIT_PROMPT_REMOTE=""
 ZSH_THEME_GIT_PROMPT_UNTRACKED="🍷 "
 ZSH_THEME_GIT_PROMPT_CLEAN="🍣 "
 
-export DEV_NUM="DEV-002471"
+export DEV_NUM="DEV-002471 STORY_NUM"
 dev_number() {
-  echo "$DEV_NUM" | cut -c 5-10
+  echo "$DEV_NUM" | sed -e "s/DEV-//"
 }
 
 # $(rvm_prompt_info)
@@ -131,6 +134,7 @@ alias diff="colordiff -u"
 
 # global alias
 alias -g G="| grep"
+alias -g AG="| ag"
 
 # rm command to trash
 alias rm="trash"
