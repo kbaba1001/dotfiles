@@ -3,17 +3,6 @@ export SHELL=/bin/zsh
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-# ZSH_THEME="my_theme"
-# ZSH_THEME="gentoo"
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"
 
@@ -47,14 +36,14 @@ DISABLE_CORRECTION="true"
 
 source $ZSH/oh-my-zsh.sh
 
+#### Customize to your needs.
+export PATH="$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$HOME/dotfiles/scripts:/sbin:"
+
 # rbenv
 eval "$(rbenv init -)"
 
 ## Emacsライクキーバインド設定
 bindkey -e
-#### Customize to your needs.
-
-export PATH="$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$HOME/dotfiles/scripts:/sbin:"
 
 # git prompt
 source ~/.zsh/git-prompt/zshrc.sh

@@ -7,38 +7,44 @@
 [core]
   editor = vim
   excludesfile = ~/.gitignore
-  pager = less -X
+[push]
+  default = nothing
+[pull]
+  rebase = true
+[log]
+  date = iso
+[pager]
+  log = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -X
+  show = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -X
+  diff = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -X
 [alias]
   co = checkout
-  s = status -s
+  s  = status -s
   sh = show
-  st = stash
+  p  = pull
   pr = pull --rebase
-  c = commit -v
+  c  = commit -v
   cm = commit -m
   ca = commit --amend -v
-  a = add
+  a  = add
   al = add -A .
   au = add -u
   ap = add -p
-  b = branch
+  b  = branch
   ba = branch -a
   bm = branch --merged
-  d = diff
+  d  = diff
+  dw = diff -w
   ds = diff --staged
   wd = diff --word-diff
-  l = log --oneline --decorate -n 15
+  l  = !sh -c 'git --no-pager log --oneline --decorate -n 15'
   lo = log --oneline --decorate --graph
   ld = log --decorate
   ls = log --stat --decorate
   lp = log -p --decorate
   ru = remote update --prune
-  gn = grep -n
-  su = submodule update
-  rh = reset HEAD^
+  g  = grep
   ri = !sh -c 'git rebase -i HEAD~$0'
-  rmrf = !sh -c 'git branch -d $0 && git push origin :$0'
-  t = tag
-  f = fetch
+  t  = tag
+  f  = fetch
   nipo = !sh -c 'git commit -m \"kbaba1001の愛と情熱の日々 $(date +%Y/%m/%d)\"'
-  chd = cherry-pick dev
