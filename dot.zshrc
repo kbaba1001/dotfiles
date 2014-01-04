@@ -43,7 +43,7 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(cap heroku rails3 rake rbenv ruby)
+# plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
@@ -54,14 +54,14 @@ eval "$(rbenv init -)"
 bindkey -e
 #### Customize to your needs.
 
-export PATH="$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$HOME/dotfiles/scripts:/sbin:/usr/local/heroku/bin:"
+export PATH="$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$HOME/dotfiles/scripts:/sbin:"
 
 # git prompt
 source ~/.zsh/git-prompt/zshrc.sh
 ZSH_THEME_GIT_PROMPT_NOCACHE="true"
-ZSH_THEME_GIT_PROMPT_PREFIX="("
-ZSH_THEME_GIT_PROMPT_SUFFIX=")"
-ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
+ZSH_THEME_GIT_PROMPT_PREFIX=""
+ZSH_THEME_GIT_PROMPT_SUFFIX=""
+ZSH_THEME_GIT_PROMPT_SEPARATOR=""
 ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[green]%}"
 ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}\xF0\x9F\x8D\xB6 "
 ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[gray]%}\xF0\x9F\x91\xBD "
@@ -73,23 +73,21 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[white]%}\xF0\x9F\x8D\xA3 "
 PROMPT='%{$fg_bold[red]%}$(rbenv version | sed -e "s/ (set.*$//")%{$reset_color%}%{$fg_bold[cyan]%}%C%{$reset_color%}$(git_super_status)%{$reset_color%}%# '
 
 # bundle open & gem open
-export BUNDLER_EDITOR="/usr/local/bin/subl -w"
-export GEM_EDITOR="/usr/local/bin/subl -w"
-export EDITOR="/usr/local/bin/subl -w"
+export BUNDLER_EDITOR="subl -w"
+export GEM_EDITOR="subl -w"
+export EDITOR="subl -w"
 
 # z ( https://github.com/rupa/z )
 source ${HOME}/.z-sh/z.sh
 
 # keychain
-keychain -q ${HOME}/.ssh/*.id_rsa
+keychain -q ${HOME}/.ssh/*.rsa
 
 [ -z "$HOSTNAME" ] && HOSTNAME=`uname -n`
 [ -f $HOME/.keychain/$HOSTNAME-sh ] && source $HOME/.keychain/$HOSTNAME-sh
 [ -f $HOME/.keychain/$HOSTNAME-sh-gpg ] && source $HOME/.keychain/$HOSTNAME-sh-gpg
 
 # gem open & bundle open
-export BUNDLER_EDITOR="/usr/local/bin/st"
-export GEM_EDITOR="/usr/local/bin/st"
 alias bi="bundle install"
 alias bu="bundle update"
 alias be="bundle exec"
@@ -103,22 +101,17 @@ alias bcu="bundle exec cucumber"
 alias t="touch"
 alias m="mkdir"
 alias d="cd"
-alias cm="chmod"
-alias v="vim"
-alias h="head"
 alias so="source"
 alias vgc="vim ~/.gitconfig"
-alias st="/usr/local/bin/st"
 alias ct='ctags -f .tags'
+alias st='subl'
 
 # grep
 alias grep="\grep --color=auto -n -C 2"
 
-# colordiff
-alias diff="colordiff -u"
-
 # global alias
-alias -g G="| grep"
+alias -g G='| grep'
+alias -g H='| head'
 
 # rm command to trash
 alias rm="trash"
@@ -146,7 +139,7 @@ alias diff="colordiff -u"
 alias ta="tmux attach"
 
 # update .zshrc
-alias zr="vim $HOME/.zshrc ; source $HOME/.zshrc"
+alias zr="vim $HOME/.zshrc && source $HOME/.zshrc"
 
 # git
 # alias git="hub"
@@ -184,32 +177,7 @@ zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'
 # cd した直後に ls する。ファイルが多いときは省略表示する。
 # http://qiita.com/yuyuchu3333/items/b10542db482c3ac8b059
 chpwd() {
-    ls_abbrev
-}
-ls_abbrev() {
-    if [[ ! -r $PWD ]]; then
-        return
-    fi
-    # -a : Do not ignore entries starting with ..
-    # -C : Force multi-column output.
-    # -F : Append indicator (one of */=>@|) to entries.
-    local cmd_ls='ls'
-    local -a opt_ls
-    opt_ls=('-CF' '--color=always')
-
-    local ls_result
-    ls_result=$(CLICOLOR_FORCE=1 COLUMNS=$COLUMNS command $cmd_ls ${opt_ls[@]} | sed $'/^\e\[[0-9;]*m$/d')
-
-    local ls_lines=$(echo "$ls_result" | wc -l | tr -d ' ')
-
-    if [ $ls_lines -gt 10 ]; then
-        echo "$ls_result" | head -n 5
-        echo '...'
-        echo "$ls_result" | tail -n 5
-        echo "$(command ls -1 -A | wc -l | tr -d ' ') files exist"
-    else
-        echo "$ls_result"
-    fi
+    ls -F --color
 }
 
 # 空 Enter で ls と git status を表示する
@@ -220,7 +188,7 @@ function do_enter() {
         return 0
     fi
     echo
-    ls
+    ls -F --color
     if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
         echo -e "\e[0;33m--- git status ---\e[0m"
         git status -s
