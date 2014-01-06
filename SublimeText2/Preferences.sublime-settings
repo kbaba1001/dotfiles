@@ -1,7 +1,38 @@
 {
-	"color_scheme": "Packages/Color Scheme - Default/Monokai Bright.tmTheme",
+	"color_scheme": "Packages/User/Big Duo (SL).tmTheme",
 	"disable_formatted_linebreak": true,
 	"ensure_newline_at_eof_on_save": true,
+	"file_exclude_patterns":
+	[
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		".tags"
+	],
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"coverage"
+	],
 	"font_face": "VL Gothic",
 	"font_size": 16.0,
 	"highlight_line": true,
@@ -10,15 +41,15 @@
 		"Vintage"
 	],
 	"move_to_limit_on_up_down": true,
-	"open_with_vim_path": "/usr/bin/nano",
 	"rulers":
 	[
-		80
+		120
 	],
 	"save_on_focus_lost": true,
 	"scroll_past_end": true,
+	"show_full_path": true,
 	"tab_size": 2,
-	"theme": "Flatland Dark.sublime-theme",
+	"theme": "Nil.sublime-theme",
 	"trailing_spaces_include_current_line": true,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
