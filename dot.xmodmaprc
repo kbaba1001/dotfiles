@@ -29,9 +29,7 @@ keycode 102 = space NoSymbol space NoSymbol
 keycode 51 = Delete NoSymbol Delete
 
 ! command left => space
-! keycode 133 = space NoSymbol space NoSymbol
-
-! keycode 36 = Zenkaku_Hankaku Return Return NoSymbol
+keycode 133 = space NoSymbol space NoSymbol
 
 ! shift lock
 clear lock

@@ -1,3 +1,3 @@
 #!/bin/sh
 echo 'start clamscan...'
-clamscan -l /home/kbaba/log/clamav.log -i -r /home/kbaba > /dev/null 2>&1
+clamscan -l ~/log/clamav.log -i -r ~ > /dev/null 2>&1

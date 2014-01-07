@@ -11,7 +11,7 @@ do
   if [ -d "$input" ]; then
     $LS "$input"
   elif [ -f "$input" ]; then
-    /usr/share/vim/vim74/macros/less.sh "$input"
+    /usr/share/vim/vim73/macros/less.sh "$input"
   else
     echo "Sorry, i dont no ..."
   fi

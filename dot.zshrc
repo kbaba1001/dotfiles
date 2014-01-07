@@ -37,7 +37,7 @@ DISABLE_CORRECTION="true"
 source $ZSH/oh-my-zsh.sh
 
 #### Customize to your needs.
-export PATH="$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$HOME/dotfiles/scripts:/sbin:"
+export PATH="$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$HOME/dotfiles/scripts:$HOME/bin:/sbin:"
 
 # rbenv
 eval "$(rbenv init -)"
@@ -62,9 +62,9 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[white]%}\xF0\x9F\x8D\xA3 "
 PROMPT='%{$fg_bold[red]%}$(rbenv version | sed -e "s/ (set.*$//")%{$reset_color%}%{$fg_bold[cyan]%}%C%{$reset_color%}$(git_super_status)%{$reset_color%}%# '
 
 # bundle open & gem open
-export BUNDLER_EDITOR="subl -w"
-export GEM_EDITOR="subl -w"
-export EDITOR="subl -w"
+export BUNDLER_EDITOR="st -w"
+export GEM_EDITOR="st -w"
+export EDITOR="vim -y"
 
 # z ( https://github.com/rupa/z )
 source ${HOME}/.z-sh/z.sh
@@ -93,7 +93,6 @@ alias d="cd"
 alias so="source"
 alias vgc="vim ~/.gitconfig"
 alias ct='ctags -f .tags'
-alias st='subl'
 
 # grep
 alias grep="\grep --color=auto -n -C 2"
@@ -151,14 +150,17 @@ alias battery='acpitool -b'
 # xscreensaver
 alias ss='xscreensaver-command -lock'
 
-# cdd ( http://blog.m4i.jp/entry/2012/01/26/064329 )
-autoload -Uz compinit
-compinit
-. ~/.zsh/cdd/cdd
+# pravete setting
+source ~/.zshrc.private
 
-chpwd() {
-    _cdd_chpwd
-}
+# cdd ( http://blog.m4i.jp/entry/2012/01/26/064329 )
+#autoload -Uz compinit
+#compinit
+#. ~/.zsh/cdd/cdd
+#
+#chpwd() {
+#    _cdd_chpwd
+#}
 
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'
