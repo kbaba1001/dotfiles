@@ -45,7 +45,7 @@ set autoindent
 # set const
 
 ## Use cut to end of line by default.
-set cut
+# set cut
 
 ## Set the line length for wrapping text and justifying paragraphs.
 ## If fill is 0 or less, the line length will be the screen width less
@@ -76,7 +76,7 @@ set morespace
 ## separate buffer).  You must have configured with --enable-multibuffer
 ## for this to work.
 ##
-# set multibuffer
+set multibuffer
 
 ## Don't convert files from DOS/Mac format.
 # set noconvert
@@ -118,7 +118,7 @@ set nowrap
 ## The email-quote string, used to justify email-quoted paragraphs.
 ## This is an extended regular expression if your system supports them,
 ## otherwise a literal string.  Default:
-# set quotestr "^([ 	]*[#:>\|}])+"
+# set quotestr "^([   ]*[#:>\|}])+"
 ## if you have extended regular expression support, otherwise:
 # set quotestr "> "
 
@@ -136,7 +136,7 @@ set regexp
 ## will jump to that beginning (either forwards or backwards).  If the
 ## cursor is already at that position, it will jump to the true
 ## beginning of the line.
-# set smarthome
+set smarthome
 
 ## Use smooth scrolling as the default.
 set smooth
@@ -171,7 +171,7 @@ set undo
 ## The two single-column characters used to display the first characters
 ## of tabs and spaces.  187 in ISO 8859-1 (0000BB in Unicode) and 183 in
 ## ISO-8859-1 (0000B7 in Unicode) seem to be good values for these.
-# set whitespace "  "
+#set whitespace "  "
 
 ## Detect word boundaries more accurately by treating punctuation
 ## characters as parts of words.
@@ -187,12 +187,14 @@ bind ^Z undo        main
 bind ^Y redo        main
 bind ^F whereis     main
 bind ^G gotoline    main
-bind ^I indent      main
+bind ^O indent      main
+bind ^I unindent    main
 bind ^Q exit        main
 bind ^M enter       main
 bind ^S writeout    main
 bind ^R replace     main
 bind ^K mark        main
+bind ^L curpos      main
 
 ## Color setup
 ##
@@ -247,29 +249,74 @@ bind ^K mark        main
 
 ## Set this if your backspace key sends delete most of the time (2.1.3+)
 # bind kdel backspace all
-include "/usr/share/nano/nanorc.nanorc"
-include "/usr/share/nano/c.nanorc"
-include "/usr/share/nano/makefile.nanorc"
-include "/usr/share/nano/css.nanorc"
-include "/usr/share/nano/debian.nanorc"
-include "/usr/share/nano/gentoo.nanorc"
-include "/usr/share/nano/html.nanorc"
-include "/usr/share/nano/php.nanorc"
-include "/usr/share/nano/tcl.nanorc"
-include "/usr/share/nano/tex.nanorc"
-include "/usr/share/nano/mutt.nanorc"
-include "/usr/share/nano/patch.nanorc"
-include "/usr/share/nano/man.nanorc"
-include "/usr/share/nano/groff.nanorc"
-include "/usr/share/nano/perl.nanorc"
-include "/usr/share/nano/python.nanorc"
-include "/usr/share/nano/ruby.nanorc"
-include "/usr/share/nano/java.nanorc"
-include "/usr/share/nano/fortran.nanorc"
-include "/usr/share/nano/objc.nanorc"
-include "/usr/share/nano/ocaml.nanorc"
-include "/usr/share/nano/awk.nanorc"
-include "/usr/share/nano/asm.nanorc"
-include "/usr/share/nano/sh.nanorc"
-include "/usr/share/nano/pov.nanorc"
-include "/usr/share/nano/xml.nanorc"
+
+## https://github.com/scopatz/nanorc
+include "/home/kbaba/.nano/nanorc/apacheconf.nanorc"
+include "/home/kbaba/.nano/nanorc/asm.nanorc"
+include "/home/kbaba/.nano/nanorc/awk.nanorc"
+include "/home/kbaba/.nano/nanorc/c.nanorc"
+include "/home/kbaba/.nano/nanorc/cmake.nanorc"
+include "/home/kbaba/.nano/nanorc/coffeescript.nanorc"
+include "/home/kbaba/.nano/nanorc/colortest.nanorc"
+include "/home/kbaba/.nano/nanorc/conf.nanorc"
+include "/home/kbaba/.nano/nanorc/csharp.nanorc"
+include "/home/kbaba/.nano/nanorc/css.nanorc"
+include "/home/kbaba/.nano/nanorc/cython.nanorc"
+include "/home/kbaba/.nano/nanorc/dot.nanorc"
+include "/home/kbaba/.nano/nanorc/email.nanorc"
+include "/home/kbaba/.nano/nanorc/fish.nanorc"
+include "/home/kbaba/.nano/nanorc/fortran.nanorc"
+include "/home/kbaba/.nano/nanorc/gentoo.nanorc"
+include "/home/kbaba/.nano/nanorc/git.nanorc"
+include "/home/kbaba/.nano/nanorc/gitcommit.nanorc"
+include "/home/kbaba/.nano/nanorc/glsl.nanorc"
+include "/home/kbaba/.nano/nanorc/go.nanorc"
+include "/home/kbaba/.nano/nanorc/groff.nanorc"
+include "/home/kbaba/.nano/nanorc/haml.nanorc"
+include "/home/kbaba/.nano/nanorc/html.nanorc"
+include "/home/kbaba/.nano/nanorc/ini.nanorc"
+include "/home/kbaba/.nano/nanorc/inputrc.nanorc"
+include "/home/kbaba/.nano/nanorc/java.nanorc"
+include "/home/kbaba/.nano/nanorc/javascript.nanorc"
+include "/home/kbaba/.nano/nanorc/js.nanorc"
+include "/home/kbaba/.nano/nanorc/json.nanorc"
+include "/home/kbaba/.nano/nanorc/keymap.nanorc"
+include "/home/kbaba/.nano/nanorc/kickstart.nanorc"
+include "/home/kbaba/.nano/nanorc/ledger.nanorc"
+include "/home/kbaba/.nano/nanorc/lisp.nanorc"
+include "/home/kbaba/.nano/nanorc/lua.nanorc"
+include "/home/kbaba/.nano/nanorc/makefile.nanorc"
+include "/home/kbaba/.nano/nanorc/man.nanorc"
+include "/home/kbaba/.nano/nanorc/markdown.nanorc"
+include "/home/kbaba/.nano/nanorc/mpdconf.nanorc"
+include "/home/kbaba/.nano/nanorc/mutt.nanorc"
+include "/home/kbaba/.nano/nanorc/nanorc.nanorc"
+include "/home/kbaba/.nano/nanorc/nginx.nanorc"
+include "/home/kbaba/.nano/nanorc/patch.nanorc"
+include "/home/kbaba/.nano/nanorc/peg.nanorc"
+include "/home/kbaba/.nano/nanorc/perl.nanorc"
+include "/home/kbaba/.nano/nanorc/php.nanorc"
+include "/home/kbaba/.nano/nanorc/pkg-config.nanorc"
+include "/home/kbaba/.nano/nanorc/pkgbuild.nanorc"
+include "/home/kbaba/.nano/nanorc/po.nanorc"
+include "/home/kbaba/.nano/nanorc/pov.nanorc"
+include "/home/kbaba/.nano/nanorc/privoxy.nanorc"
+include "/home/kbaba/.nano/nanorc/python.nanorc"
+include "/home/kbaba/.nano/nanorc/reST.nanorc"
+include "/home/kbaba/.nano/nanorc/rpmspec.nanorc"
+include "/home/kbaba/.nano/nanorc/ruby.nanorc"
+include "/home/kbaba/.nano/nanorc/sed.nanorc"
+include "/home/kbaba/.nano/nanorc/sh.nanorc"
+include "/home/kbaba/.nano/nanorc/sql.nanorc"
+include "/home/kbaba/.nano/nanorc/systemd.nanorc"
+include "/home/kbaba/.nano/nanorc/tex.nanorc"
+include "/home/kbaba/.nano/nanorc/vala.nanorc"
+include "/home/kbaba/.nano/nanorc/vi.nanorc"
+include "/home/kbaba/.nano/nanorc/xml.nanorc"
+include "/home/kbaba/.nano/nanorc/xresources.nanorc"
+include "/home/kbaba/.nano/nanorc/yaml.nanorc"
+include "/home/kbaba/.nano/nanorc/yum.nanorc"
+include "/home/kbaba/.nano/nanorc/zshrc.nanorc"
+
+## https://github.com/mikelietz/feature.nanorc
+include "/home/kbaba/.nano/feature.nanorc/feature.nanorc"
