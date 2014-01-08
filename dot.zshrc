@@ -178,8 +178,9 @@ export JSTESTDRIVER_HOME=~/bin
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'
 
-# cd した直後に ls する。ファイルが多いときは省略表示する。
-# http://qiita.com/yuyuchu3333/items/b10542db482c3ac8b059
+# cd した直後に ls する。
+# ( ファイルが多いときは省略表示する方法もあるが今は使ってない
+#   http://qiita.com/yuyuchu3333/items/b10542db482c3ac8b059 )
 chpwd() {
     ls -F --color
 }
