@@ -85,11 +85,15 @@ alias ber="bundle exec rake"
 alias brs="bundle exec rspec"
 alias bra="bundle exec rails"
 alias bcu="bundle exec cucumber"
+alias -g RT="RAILS_ENV=test"
+alias -g RD="RAILS_ENV=development"
+alias -g RP="RAILS_ENV=production"
 
 # short command
 alias t="touch"
 alias m="mkdir"
 alias d="cd"
+alias v="vim"
 alias so="source"
 alias vgc="vim ~/.gitconfig"
 alias ct='ctags -f .tags'
@@ -139,7 +143,7 @@ do
 done
 
 # search ESSID
-alias essid="iwlist wlan0 scan | grep ESSID"
+alias essid="iwlist wlan0 scan | \grep ESSID"
 
 # irb to pry
 alias irb='pry'
@@ -152,6 +156,15 @@ alias ss='xscreensaver-command -lock'
 
 # pravete setting
 source ~/.zshrc.private
+
+# karma用の設定
+export CHROME_BIN='/usr/bin/google-chrome-beta'
+
+# Python用
+export PYTHONPATH='/usr/lib64/python2.7/site-packages'
+
+# JsTestDriver
+export JSTESTDRIVER_HOME=~/bin
 
 # cdd ( http://blog.m4i.jp/entry/2012/01/26/064329 )
 #autoload -Uz compinit
