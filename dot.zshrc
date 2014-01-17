@@ -159,7 +159,7 @@ alias battery='acpi -b'
 alias ss='xscreensaver-command -lock'
 
 # pravete setting
-source ~/.zshrc.private
+[ -f ~/.zshrc.private ] && source ~/.zshrc.private
 
 # karma用の設定
 export CHROME_BIN='/usr/bin/google-chrome-beta'
