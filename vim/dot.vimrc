@@ -1,5 +1,5 @@
 syntax on
-colorscheme torte
+colorscheme molokai
 
 set number
 

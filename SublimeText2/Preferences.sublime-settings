@@ -31,7 +31,9 @@
 		".git",
 		".hg",
 		"CVS",
-		"coverage"
+		"coverage",
+		"tmp",
+		"log"
 	],
 	"font_face": "VL Gothic",
 	"font_size": 16.0,

@@ -48,9 +48,9 @@ bindkey -e
 # git prompt
 source ~/.zsh/git-prompt/zshrc.sh
 ZSH_THEME_GIT_PROMPT_NOCACHE="true"
-ZSH_THEME_GIT_PROMPT_PREFIX=""
-ZSH_THEME_GIT_PROMPT_SUFFIX=""
-ZSH_THEME_GIT_PROMPT_SEPARATOR=""
+ZSH_THEME_GIT_PROMPT_PREFIX="("
+ZSH_THEME_GIT_PROMPT_SUFFIX=")"
+ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
 ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[green]%}"
 ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}\xF0\x9F\x8D\xB6 "
 ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[gray]%}\xF0\x9F\x91\xBD "
@@ -96,7 +96,8 @@ alias d="cd"
 alias v="vim"
 alias so="source"
 alias vgc="vim ~/.gitconfig"
-alias ct='ctags -f .tags'
+alias ct='ctags -f .tags -R'
+alias sl='gnome-screensaver-command -l'
 
 # grep
 alias grep="\grep --color=auto -n -C 2"
@@ -104,6 +105,9 @@ alias grep="\grep --color=auto -n -C 2"
 # global alias
 alias -g G='| grep'
 alias -g H='| head'
+alias -g RT='RAILS_ENV=test'
+alias -g RD='RAILS_ENV=development'
+alias -g RP='RAILS_ENV=production'
 
 # rm command to trash
 alias rm="trash"
@@ -149,7 +153,7 @@ alias essid="iwlist wlan0 scan | \grep ESSID"
 alias irb='pry'
 
 # show remaining battery
-alias battery='acpitool -b'
+alias battery='acpi -b'
 
 # xscreensaver
 alias ss='xscreensaver-command -lock'
