@@ -11,7 +11,13 @@ do
   if [ -d "$input" ]; then
     $LS "$input"
   elif [ -f "$input" ]; then
-    /usr/share/vim/vim74/macros/less.sh "$input"
+    if [ -f /usr/share/vim/vim73/macros/less.sh ]; then
+      /usr/share/vim/vim73/macros/less.sh "$input"
+    elif [ -f /usr/share/vim/vim74/macros/less.sh ]; then
+      /usr/share/vim/vim74/macros/less.sh "$input"
+    else
+      echo "less.sh not found"
+    fi
   else
     echo "Sorry, i dont no ..."
   fi
