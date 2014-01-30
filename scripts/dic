@@ -1,0 +1,20 @@
+#!/bin/bash
+# 辞書ツール
+# ag (The Silver Searcher) で辞書ファイルを検索する
+#
+# [USAGE]
+#   オプションは ag と同じ物が渡せる
+#
+#     dic [PATTERN]
+#
+# [EXAMPLE]
+#   -i をつけると大文字小文字を区別しない。ただし和英が使えなくなる...
+#
+#     dic -i Completion
+#
+
+# ~/lib/edict/ には http://www.edrdg.org/jmdict/edict.html の辞書ファイルを
+# UTF-8 に変換していれている
+DICTIONARY_PATH="${HOME}/lib/edict/"
+
+ag --no-numbers --pager 'less -X' "$@" "${DICTIONARY_PATH}"
