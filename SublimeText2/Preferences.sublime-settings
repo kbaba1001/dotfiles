@@ -1,32 +1,40 @@
 {
-	"color_scheme": "Packages/User/Big Duo (SL).tmTheme",
+	"always_prompt_for_file_reload": true,
+	"auto_find_in_selection": false,
+	"bold_folder_labels": true,
+	"caret_extra_width": 3,
+	"color_scheme": "Packages/User/cobalt2 (SL).tmTheme",
 	"disable_formatted_linebreak": true,
+	"enable_telemetry": false,
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
 	[
+		"*.a",
+		"*.class",
+		"*.db",
+		"*.dll",
+		"*.dylib",
+		"*.exe",
+		"*.idb",
+		"*.lib",
+		"*.ncb",
+		"*.o",
+		"*.obj",
+		"*.pdb",
+		"*.psd",
 		"*.pyc",
 		"*.pyo",
-		"*.exe",
-		"*.dll",
-		"*.obj",
-		"*.o",
-		"*.a",
-		"*.lib",
-		"*.so",
-		"*.dylib",
-		"*.ncb",
 		"*.sdf",
+		"*.so",
+		"*.sublime-workspace",
 		"*.suo",
-		"*.pdb",
-		"*.idb",
 		".DS_Store",
-		"*.class",
-		"*.psd",
-		"*.db",
 		".tags"
 	],
+	"fold_buttons": false,
 	"folder_exclude_patterns":
 	[
+		".bundle",
 		".svn",
 		".git",
 		".hg",
@@ -36,22 +44,34 @@
 		"log"
 	],
 	"font_face": "VL Gothic",
-	"font_size": 16.0,
+	"font_size": 18.0,
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Vintage"
+		"FileBrowser",
+		"SublimeLinter-jshint",
+		"Markdown Preview",
+		"Vintage",
+		"Git Conflict Resolver"
 	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"margin": 0,
 	"move_to_limit_on_up_down": true,
+	"remember_open_files": false,
 	"rulers":
 	[
-		120
+		110
 	],
 	"save_on_focus_lost": true,
 	"scroll_past_end": true,
+	"show_encoding": true,
 	"show_full_path": true,
 	"tab_size": 2,
-	"theme": "Nil.sublime-theme",
+	"theme": "Cobalt2.sublime-theme",
 	"trailing_spaces_include_current_line": true,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,

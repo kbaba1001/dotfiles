@@ -42,7 +42,7 @@ keycode  24 = q Q Escape Escape
 keycode  25 = w W w W
 keycode  26 = e E e E
 keycode  27 = r R r R
-keycode  28 = t T t T
+keycode  28 = t T Tab ISO_Left_Tab
 
 keycode  38 = a A Left Left
 keycode  39 = s S Up Up
@@ -65,7 +65,7 @@ keycode  43 = h H minus plus
 keycode  44 = j J BackSpace Delete
 keycode  45 = k K space space
 keycode  46 = l L Return Return
-keycode  47 = colon semicolon percent ampersand
+keycode  47 = colon semicolon ampersand percent
 keycode  48 = apostrophe quotedbl grave grave
 
 keycode  57 = n N parenleft braceleft

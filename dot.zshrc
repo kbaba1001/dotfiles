@@ -48,9 +48,9 @@ bindkey -e
 # git prompt
 source ~/.zsh/git-prompt/zshrc.sh
 ZSH_THEME_GIT_PROMPT_NOCACHE="true"
-ZSH_THEME_GIT_PROMPT_PREFIX="("
-ZSH_THEME_GIT_PROMPT_SUFFIX=")"
-ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
+ZSH_THEME_GIT_PROMPT_PREFIX=""
+ZSH_THEME_GIT_PROMPT_SUFFIX=""
+ZSH_THEME_GIT_PROMPT_SEPARATOR=""
 ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[green]%}"
 ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}\xF0\x9F\x8D\xB6 "
 ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[gray]%}\xF0\x9F\x91\xBD "
@@ -98,6 +98,7 @@ alias so="source"
 alias vgc="vim ~/.gitconfig"
 alias ct='ctags -f .tags -R'
 alias sl='gnome-screensaver-command -l'
+alias h='head'
 
 # grep
 alias grep="\grep --color=auto -n -C 2"
@@ -105,6 +106,7 @@ alias grep="\grep --color=auto -n -C 2"
 # global alias
 alias -g G='| grep'
 alias -g H='| head'
+alias -g L='| less -X'
 alias -g RT='RAILS_ENV=test'
 alias -g RD='RAILS_ENV=development'
 alias -g RP='RAILS_ENV=production'
@@ -140,7 +142,7 @@ alias zr="vim $HOME/.zshrc && source $HOME/.zshrc"
 # git
 # alias git="hub"
 alias g="git"
-alias gup="git pull --rebase ; git remote update --prune ; git branch --merged | grep -v '*' | xargs -I % git branch -d %"
+alias gup="git pull --rebase && git remote update --prune && git branch --merged | \grep -v '*' | xargs -I % git branch -d % && ct"
 for command in $(\sed -ne '/^\[alias\]/,$p' ${HOME}/.gitconfig | \grep -v '\[alias\]' | \awk '{print $1}')
 do
   alias "g${command}"="git ${command}"
