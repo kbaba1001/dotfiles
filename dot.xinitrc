@@ -1,7 +1,6 @@
 eval "$(dbus-launch --sh-syntax --exit-with-session)"
 
 # 画面の設定
-#xrandr --output eDP1 --mode 1024x768 --rate 60 --left-of HDMI1
 xrandr --output eDP1 --mode 1366x768 --below HDMI1
 xrandr --output HDMI1 --mode 1920x1080 --rate 60 --primary
 xbacklight -set 25
@@ -33,5 +32,8 @@ xcompmgr &
 
 # Dropbox起動
 dropbox start -i &
+
+# LAN
+wicd-client -t &
 
 exec awesome
