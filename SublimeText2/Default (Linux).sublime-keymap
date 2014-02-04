@@ -56,6 +56,10 @@
   { "keys": ["ctrl+k", "c"], "command": "surround_change" },
   { "keys": ["ctrl+k", "d"], "command": "surround_delete" },
 
+  // RubyBlockConverter
+  { "keys": ["ctrl+k", "d", "b"], "command": "do_end_to_brace" },
+  { "keys": ["ctrl+k", "b", "d"], "command": "brace_to_do_end" },
+
   // GitGutter
   { "keys": ["ctrl+j", "g", "n"], "command": "git_gutter_next_change" },
   { "keys": ["ctrl+j", "g", "p"], "command": "git_gutter_prev_change" },
@@ -69,10 +73,6 @@
 
   // SublimeFiles
   { "keys": ["ctrl+shift+n"], "command": "sublime_files", "args": {"command": "navigate"} },
-
-  // Cucumber
-  { "keys": ["alt+:"], "command": "table_cleaner" },
-  { "keys": ["alt+shift+:"], "command": "table_import" },
 
   // *** Window split ***
   // Origami

@@ -1,6 +1,6 @@
 {
-	"always_prompt_for_file_reload": true,
-	"auto_find_in_selection": false,
+	"always_prompt_for_file_reload": false,
+	"auto_find_in_selection": true,
 	"bold_folder_labels": true,
 	"caret_extra_width": 3,
 	"color_scheme": "Packages/User/cobalt2 (SL).tmTheme",
@@ -48,11 +48,12 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"FileBrowser",
+		"Git Conflict Resolver",
+		"SublimeLinter",
 		"SublimeLinter-jshint",
-		"Markdown Preview",
 		"Vintage",
-		"Git Conflict Resolver"
+		"Markdown Preview",
+		"FileBrowser"
 	],
 	"indent_guide_options":
 	[

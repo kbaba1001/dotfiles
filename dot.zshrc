@@ -64,7 +64,7 @@ PROMPT='%{$fg_bold[red]%}$(rbenv version | sed -e "s/ (set.*$//")%{$reset_color%
 # bundle open & gem open
 export BUNDLER_EDITOR="st -w"
 export GEM_EDITOR="st -w"
-export EDITOR="vim -y"
+export EDITOR="vim"
 
 # z ( https://github.com/rupa/z )
 source ${HOME}/.z-sh/z.sh
@@ -104,7 +104,7 @@ alias h='head'
 alias grep="\grep --color=auto -n -C 2"
 
 # global alias
-alias -g G='| grep'
+alias -g G='| ag'
 alias -g H='| head'
 alias -g L='| less -X'
 alias -g RT='RAILS_ENV=test'
