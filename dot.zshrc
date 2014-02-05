@@ -89,6 +89,9 @@ alias -g RT="RAILS_ENV=test"
 alias -g RD="RAILS_ENV=development"
 alias -g RP="RAILS_ENV=production"
 
+# rspec-git-diff (my dotfiles/scripts)
+alias brsd="rspec-git-diff"
+
 # short command
 alias t="touch"
 alias m="mkdir"
