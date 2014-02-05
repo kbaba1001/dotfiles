@@ -48,12 +48,13 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Git Conflict Resolver",
 		"SublimeLinter",
-		"SublimeLinter-jshint",
-		"Vintage",
 		"Markdown Preview",
-		"FileBrowser"
+		"Vintage",
+		"Git Conflict Resolver",
+		"FileBrowser",
+		"SublimeLinter-jshint",
+		"Clipboard Manager"
 	],
 	"indent_guide_options":
 	[
@@ -76,5 +77,5 @@
 	"trailing_spaces_include_current_line": true,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
-	"word_wrap": true
+	"word_wrap": false
 }
