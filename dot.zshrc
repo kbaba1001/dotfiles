@@ -103,6 +103,7 @@ alias vgc="vim ~/.gitconfig"
 alias ct='ctags -f .tags -R'
 alias sl='gnome-screensaver-command -l'
 alias h='head'
+alias p='xsel --clipboard --output'
 
 # grep
 alias grep="\grep --color=auto -n -C 2"
@@ -111,6 +112,7 @@ alias grep="\grep --color=auto -n -C 2"
 alias -g G='| ag'
 alias -g H='| head'
 alias -g L='| less -X'
+alias -g CP='| xsel --clipboard --input'
 alias -g RT='RAILS_ENV=test'
 alias -g RD='RAILS_ENV=development'
 alias -g RP='RAILS_ENV=production'
@@ -139,6 +141,7 @@ alias diff="colordiff -u"
 
 # tmux
 alias ta="tmux attach"
+alias tc="tmux save-buffer - | xsel --clipboard --input"
 
 # update .zshrc
 alias zr="vim $HOME/.zshrc && source $HOME/.zshrc"
