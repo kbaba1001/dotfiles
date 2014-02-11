@@ -192,6 +192,7 @@ chpwd() {
     # cd した直後に ls する。
     # ( ファイルが多いときは省略表示する方法もあるが今は使ってない
     #   http://qiita.com/yuyuchu3333/items/b10542db482c3ac8b059 )
+    echo "$fg_bold[yellow]$PWD$reset_color"
     ls -F --color
 
     # cdd
