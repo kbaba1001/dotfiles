@@ -44,9 +44,6 @@ keycode 108 = Return NoSymbol Return NoSymbol
 ! Windows key => Alt_L
 keycode 133 = Alt_L
 
-! Ctrl_R => Alt_R
-keycode 105 = Alt_R
-
 ! left hand
 keycode  24 = q Q Escape Escape
 keycode  25 = w W quotedbl quotedbl
