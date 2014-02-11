@@ -38,6 +38,7 @@ source $ZSH/oh-my-zsh.sh
 
 #### Customize to your needs.
 export PATH="$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$HOME/dotfiles/scripts:$HOME/bin:/sbin:"
+export WORDCHARS="*?_-.[]~=&;#$%^(){}<>"
 
 # rbenv
 eval "$(rbenv init -)"
