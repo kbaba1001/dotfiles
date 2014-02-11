@@ -1,5 +1,6 @@
 ! http://www.in-ulm.de/~mascheck/X11/xmodmap.html
 ! CapsLock Key => Ctrl, Ctrl key => Mod4
+! Enter => mod4
 remove Control = Control_L
 clear mod4
 
@@ -7,20 +8,26 @@ keysym Control_L = Super_L
 keysym Caps_Lock = Control_L
 
 add Control = Control_L
+keycode 36 = Super_L
 add mod4 = Super_L
 
-! Japanese Keyboard 'ro' is ctrl_r
-keycode 97 = Control_R
-add Control = Control_R
-
 ! SpaceKey(65) => Mode_switch(Fn)
-! F5(71) => Mode_switch(Fn)
 clear mod5
 keycode 65 = Mode_switch
-! keycode 71 = Mode_switch
 add mod5 = Mode_switch
 
-! thumb key
+! (space + shift_r) =>shift lock
+clear lock
+remove Shift = Shift_R
+keysym Shift_R = Shift_Lock
+keycode 62 = Shift_L NoSymbol Shift_Lock Shift_Lock
+add lock = Shift_Lock
+
+! ' key => ctrl_r
+keycode 48 = Control_R
+add Control = Control_R
+
+! Japanese thumb key
 keycode 100 = Return NoSymbol Return NoSymbol
 keycode 101 = BackSpace NoSymbol Delete NoSymbol
 keycode 102 = space NoSymbol space NoSymbol
@@ -28,20 +35,23 @@ keycode 102 = space NoSymbol space NoSymbol
 ! create delete key
 keycode 51 = Delete NoSymbol Delete
 
-! command left => space
-keycode 133 = space NoSymbol space NoSymbol
+! Alt_L => space
+keycode 64 = space NoSymbol space NoSymbol
 
-! shift lock
-clear lock
-remove Shift = Shift_R
-keysym Shift_R = Shift_Lock
-add lock = Shift_Lock
+! Alt_R => Enter
+keycode 108 = Return NoSymbol Return NoSymbol
+
+! Windows key => Alt_L
+keycode 133 = Alt_L
+
+! Ctrl_R => Alt_R
+keycode 105 = Alt_R
 
 ! left hand
 keycode  24 = q Q Escape Escape
-keycode  25 = w W w W
-keycode  26 = e E e E
-keycode  27 = r R r R
+keycode  25 = w W quotedbl quotedbl
+keycode  26 = e E apostrophe apostrophe
+keycode  27 = r R grave grave
 keycode  28 = t T Tab ISO_Left_Tab
 
 keycode  38 = a A Left Left
@@ -66,23 +76,10 @@ keycode  44 = j J BackSpace Delete
 keycode  45 = k K space space
 keycode  46 = l L Return Return
 keycode  47 = colon semicolon ampersand percent
-keycode  48 = apostrophe quotedbl grave grave
 
 keycode  57 = n N parenleft braceleft
 keycode  58 = m M parenright braceright
 keycode  59 = comma less bracketleft exclam
 keycode  60 = period greater bracketright question
 keycode  61 = slash asciitilde bar backslash
-
-! number + Mode_switch(Fn) = Function
-keycode  10 = 1 exclam F1 F1
-keycode  11 = 2 at F2 F2
-keycode  12 = 3 numbersign F3 F3
-keycode  13 = 4 dollar F4 F4
-keycode  14 = 5 percent F5 F5
-keycode  15 = 6 asciicircum F6 F6
-keycode  16 = 7 ampersand F7 F7
-keycode  17 = 8 asterisk F8 F8
-keycode  18 = 9 parenleft F9 F9
-keycode  19 = 0 parenright F10 F10
 
