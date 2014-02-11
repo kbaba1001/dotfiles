@@ -174,7 +174,7 @@ export CHROME_BIN='/usr/bin/google-chrome-beta'
 export PYTHONPATH='/usr/lib64/python2.7/site-packages'
 
 # JsTestDriver
-export JSTESTDRIVER_HOME=~/bin
+export JSTESTDRIVER_HOME=~/Dropbox/tdd_javascript/
 
 # cdd ( http://blog.m4i.jp/entry/2012/01/26/064329 )
 #autoload -Uz compinit
