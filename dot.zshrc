@@ -177,22 +177,22 @@ export PYTHONPATH='/usr/lib64/python2.7/site-packages'
 export JSTESTDRIVER_HOME=~/Dropbox/tdd_javascript/
 
 # cdd ( http://blog.m4i.jp/entry/2012/01/26/064329 )
-#autoload -Uz compinit
-#compinit
-#. ~/.zsh/cdd/cdd
-#
-#chpwd() {
-#    _cdd_chpwd
-#}
+autoload -Uz compinit
+compinit
+. ~/.zsh/cdd/cdd
+
 
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'
 
-# cd した直後に ls する。
-# ( ファイルが多いときは省略表示する方法もあるが今は使ってない
-#   http://qiita.com/yuyuchu3333/items/b10542db482c3ac8b059 )
 chpwd() {
+    # cd した直後に ls する。
+    # ( ファイルが多いときは省略表示する方法もあるが今は使ってない
+    #   http://qiita.com/yuyuchu3333/items/b10542db482c3ac8b059 )
     ls -F --color
+
+    # cdd
+    _cdd_chpwd
 }
 
 # 空 Enter で ls と git status を表示する
