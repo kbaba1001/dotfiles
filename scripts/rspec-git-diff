@@ -1,10 +1,11 @@
 #!/bin/bash
 
 rspec-git-diff() {
-  local spec_files=`git diff --name-only | \grep '\_spec.rb$\|spec.*\.feature$' | ruby -pe "gsub(/\n/, ' ')"`
+  local spec_files=`git diff --name-only | \grep '\_spec.rb$\|spec.*\.feature$'`
   [ -z "${spec_files}" ] && return 0;
 
   echo "${spec_files}"
+  spec_files=`echo ${spec_files} | ruby -pe "gsub(/\n/, ' ')"`
   bundle exec rspec $@ ${spec_files}
 }
 
