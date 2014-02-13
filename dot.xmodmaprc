@@ -20,7 +20,7 @@ add mod5 = Mode_switch
 clear lock
 remove Shift = Shift_R
 keysym Shift_R = Shift_Lock
-keycode 62 = Shift_L NoSymbol Shift_Lock Shift_Lock
+keycode 62 = Shift_Lock Shift_Lock Shift_L NoSymbol
 add lock = Shift_Lock
 
 ! ' key => ctrl_r
@@ -50,6 +50,8 @@ keycode  25 = w W quotedbl quotedbl
 keycode  26 = e E apostrophe apostrophe
 keycode  27 = r R grave grave
 keycode  28 = t T Tab ISO_Left_Tab
+! remove Tab
+! keycode 23 = NoSymbol
 
 keycode  38 = a A Left Left
 keycode  39 = s S Up Up
