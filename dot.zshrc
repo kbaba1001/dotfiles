@@ -52,15 +52,34 @@ ZSH_THEME_GIT_PROMPT_NOCACHE="true"
 ZSH_THEME_GIT_PROMPT_PREFIX=""
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
 ZSH_THEME_GIT_PROMPT_SEPARATOR=""
-ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[green]%}"
-ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}\xF0\x9F\x8D\xB6 "
-ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[gray]%}\xF0\x9F\x91\xBD "
-ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[yellow]%}\xF0\x9f\x8d\xba "
+ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[yellow]%}"
+ZSH_THEME_GIT_PROMPT_STAGED="%{$fg_bold[green]%}\xF0\x9F\x8D\xB6 "
+ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg_bold[gray]%}\xF0\x9F\x91\xBD "
+ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg_bold[yellow]%}\xF0\x9f\x8d\xba "
 ZSH_THEME_GIT_PROMPT_REMOTE=""
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[red]%}\xF0\x9F\x8D\xB7 "
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}\xF0\x9F\x8D\xB7 "
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[white]%}\xF0\x9F\x8D\xA3 "
 
-PROMPT='%{$fg_bold[red]%}$(rbenv version | sed -e "s/ (set.*$//")%{$reset_color%}%{$fg_bold[cyan]%}%C%{$reset_color%}$(git_super_status)%{$reset_color%}%# '
+function git_diff_shortstat_master() {
+  gitdir=`git rev-parse --git-dir 2>/dev/null`
+  if [ -n "${gitdir}" ]; then
+    #git --no-pager diff --shortstat master | awk '{print "+" $4 "-" $6}'
+    #git --no-pager diff --shortstat master | ruby -ne '$_.match(/(\d+)\D*(\d+)\D*(\d+)/); print "#{$2} #{$3}"'
+    diff_shortstat=`git --no-pager diff --shortstat master`
+    file_count=`echo "${diff_shortstat}" | awk '{print "\xF0\x9F\x92\xBE " $1}'`
+    plus_lines=`echo "${diff_shortstat}" | awk '{print "\xF0\x9F\x92\xB0 " $4}'`
+    minus_lines=`echo "${diff_shortstat}" | awk '{print "\xE2\x9C\x82" $6}'`
+
+    echo "%{$fg_bold[magenta]%}${file_count}%{$fg_bold[green]%}${plus_lines}%{$fg_bold[red]%}${minus_lines}%{$reset_color%}"
+  fi
+}
+
+PROMPT='%{$fg_bold[red]%}$(rbenv version | sed -e "s/ (set.*$//")%{$reset_color%}%{$fg_bold[cyan]%}%C%{$reset_color%}$(git_super_status)[$(git_diff_shortstat_master)]%{$reset_color%}%# '
+
+# master ブランチと比較して何行 diff があるかを RPROMPT に表示
+
+RPROMPT=""
+#RPROMPT='$fg_bold[green]$(git_diff_shortstat_master)$reset_color'
 
 # bundle open & gem open
 export BUNDLER_EDITOR="st -w"
@@ -209,7 +228,7 @@ function do_enter() {
     echo
     ls -F --color
     if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
-        echo -e "\e[0;33m--- git status ---\e[0m"
+        echo -e "\e[0;33m*** git status ***\e[0m"
         git status -s
     fi
     zle reset-prompt
