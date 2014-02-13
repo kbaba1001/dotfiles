@@ -48,12 +48,12 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
+		"FileBrowser",
+		"SublimeLinter",
 		"Git Conflict Resolver",
+		"SublimeLinter-jshint",
 		"Markdown Preview",
 		"Vintage",
-		"SublimeLinter-jshint",
-		"SublimeLinter",
-		"FileBrowser",
 		"Clipboard Manager"
 	],
 	"indent_guide_options":
