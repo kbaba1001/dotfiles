@@ -1,0 +1,9 @@
+#!/bin/bash
+
+taisya() {
+  local now=`date`
+  echo ${now}
+  echo ${now} >> ~/log/taisya.log
+}
+
+taisya

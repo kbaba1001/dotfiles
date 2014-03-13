@@ -77,6 +77,9 @@ function git_diff_shortstat_master() {
 PROMPT='%{$fg_bold[red]%}$(rbenv version | sed -e "s/ (set.*$//")%{$reset_color%}%{$fg_bold[cyan]%}%C%{$reset_color%}$(git_super_status)%{$reset_color%}%# '
 RPROMPT='$(git_diff_shortstat_master)%{$reset_color%}'
 
+# history に時刻を表示する
+export HISTTIMEFORMAT='%Y-%m-%d %T '
+
 # bundle open & gem open
 export BUNDLER_EDITOR="st -w"
 export GEM_EDITOR="st -w"
@@ -93,7 +96,7 @@ keychain -q ${HOME}/.ssh/*.rsa
 [ -f $HOME/.keychain/$HOSTNAME-sh-gpg ] && source $HOME/.keychain/$HOSTNAME-sh-gpg
 
 # gem open & bundle open
-alias bi="bundle install"
+alias bi="bundle install --without production"
 alias bu="bundle update"
 alias be="bundle exec"
 alias bo="bundle open"
@@ -108,6 +111,9 @@ alias -g RP="RAILS_ENV=production"
 # rspec-git-diff (my dotfiles/scripts)
 alias brsd="rspec-git-diff"
 
+# halt
+alias halt='taisya && sudo halt'
+
 # short command
 alias t="touch"
 alias m="mkdir"
@@ -119,9 +125,13 @@ alias ct='ctags -f .tags -R'
 alias sl='gnome-screensaver-command -l'
 alias h='head'
 alias p='xsel --clipboard --output'
+alias open='xdg-open'
+
+# firefox
+alias firefox='iceweasel'
 
 # grep
-alias grep="\grep --color=auto -n -C 2"
+alias grep="\grep --color=auto -n -C 2 -E"
 
 # global alias
 alias -g G='| ag'
@@ -164,7 +174,7 @@ alias zr="vim $HOME/.zshrc && source $HOME/.zshrc"
 # git
 # alias git="hub"
 alias g="git"
-alias gup="git pull --rebase && git remote update --prune && git branch --merged | \grep -v '*' | xargs -I % git branch -d % && ct"
+alias gup="git pull --rebase && git remote update --prune && git branch --merged | \grep -v -E \"(\*|master)\" | xargs -I % git branch -d % && ct"
 for command in $(\sed -ne '/^\[alias\]/,$p' ${HOME}/.gitconfig | \grep -v '\[alias\]' | \awk '{print $1}')
 do
   alias "g${command}"="git ${command}"
@@ -193,6 +203,10 @@ export PYTHONPATH='/usr/lib64/python2.7/site-packages'
 
 # JsTestDriver
 export JSTESTDRIVER_HOME=~/Dropbox/tdd_javascript/
+
+# color management
+# http://sourceforge.net/mailarchive/forum.php?set=custom&viewmonth=&viewday=&forum_name=dispcalgui-users&style=nested&max_rows=75&submit=Change+View
+XDG_DATA_DIRS=/opt/local:/usr/local
 
 # cdd ( http://blog.m4i.jp/entry/2012/01/26/064329 )
 autoload -Uz compinit

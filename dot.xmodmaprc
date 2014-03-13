@@ -8,7 +8,7 @@ keysym Control_L = Super_L
 keysym Caps_Lock = Control_L
 
 add Control = Control_L
-keycode 36 = Super_L
+! keycode 36 = Super_L
 add mod4 = Super_L
 
 ! SpaceKey(65) => Mode_switch(Fn)
@@ -39,7 +39,7 @@ keycode 51 = Delete NoSymbol Delete
 keycode 64 = space NoSymbol space NoSymbol
 
 ! Alt_R => Enter
-keycode 108 = Return NoSymbol Return NoSymbol
+! keycode 108 = Return Return Return Return
 
 ! Windows key => Alt_L
 keycode 133 = Alt_L
