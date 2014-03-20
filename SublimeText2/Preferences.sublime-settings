@@ -4,7 +4,7 @@
 	"bold_folder_labels": true,
 	"caret_extra_width": 3,
 	"close_windows_when_empty": true,
-	"color_scheme": "Packages/User/cobalt2 (SL).tmTheme",
+	"color_scheme": "Packages/Theme - Nil/Big Duo.tmTheme",
 	"disable_formatted_linebreak": true,
 	"enable_telemetry": false,
 	"ensure_newline_at_eof_on_save": true,
@@ -49,13 +49,14 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Clipboard Manager",
-		"Markdown Preview",
 		"SublimeLinter",
+		"Clipboard Manager",
 		"FileBrowser",
-		"SublimeLinter-jshint",
+		"Markdown Preview",
+		"Vintage",
 		"Git Conflict Resolver",
-		"Vintage"
+		"SublimeLinter-jshint",
+		"CTags"
 	],
 	"indent_guide_options":
 	[
@@ -74,7 +75,7 @@
 	"show_encoding": true,
 	"show_full_path": true,
 	"tab_size": 2,
-	"theme": "Cobalt2.sublime-theme",
+	"theme": "Nil.sublime-theme",
 	"trailing_spaces_include_current_line": true,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,

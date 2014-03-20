@@ -36,7 +36,7 @@ keycode 102 = space NoSymbol space NoSymbol
 keycode 51 = Delete NoSymbol Delete
 
 ! Alt_L => space
-keycode 64 = space NoSymbol space NoSymbol
+! keycode 64 = space NoSymbol space NoSymbol
 
 ! Alt_R => Enter
 ! keycode 108 = Return Return Return Return
