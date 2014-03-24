@@ -1,0 +1,42 @@
+#!/bin/bash
+
+DOTDIR="${HOME}/Dropbox/my/dotfiles"
+
+# rm ~/.gitconfig
+# ln -s "${DOTDIR}/git/dot.gitconfig" ~/.gitconfig
+# cp "${DOTDIR}/git/dot.gitignore" ~/.gitignore
+#
+# rm ~/.zshrc
+# ln -s "${DOTDIR}/dot.zshrc" ~/.zshrc
+# git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+# mkdir ~/.zsh
+# git clone git@github.com:olivierverdier/zsh-git-prompt.git ~/.zsh/git-prompt
+# git clone git@github.com:rupa/z.git ~/.zsh/z
+# git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+# git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+#
+# rm ~/.xinitrc
+# ln -s "${DOTDIR}/dot.xinitrc" ~/.xinitrc
+#
+# rm ~/.Xmodmap
+# ln -s "${DOTDIR}/dot.xmodmaprc" ~/.Xmodmap
+
+# rm ~/.tmux.conf
+# ln -s "${DOTDIR}/dot.tmux.conf" ~/.tmux.conf
+#
+# rm ~/.vimrc
+# ln -s "${DOTDIR}/vim/dot.vimrc" ~/.vimrc
+# sudo cp ~/Dropbox/my/dotfiles/vim/molokai.vim /usr/share/vim/vim??/colors/
+#
+# rm ~/.gemrc
+# ln -s "${DOTDIR}/dot.gemrc" ~/.gemrc
+#
+# rm ~/.pryrc
+# ln -s "${DOTDIR}/dot.pryrc" ~/.pryrc
+#
+# rm ~/.rspec
+# ln -s "${DOTDIR}/dot.rspec" ~/.rspec
+
+mkdir -p ~/.config/awesome/
+[ -f ~/.config/awesome/rc.lua ] && rm ~/.config/awesome/rc.lua
+ln -s "${DOTDIR}/awesome/rc.lua" ~/.config/awesome/rc.lua
