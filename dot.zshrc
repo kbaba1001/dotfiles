@@ -72,6 +72,7 @@ function git_diff_shortstat_master() {
   fi
 }
 
+# ThinkPad x240 のバッテリー残量を表示
 function show_battery() {
   local ac_adapter_status=`acpi -a | awk '{print $3}'`
   if [ ${ac_adapter_status} = 'off-line' ]; then
