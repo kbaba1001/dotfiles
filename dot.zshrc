@@ -1,5 +1,3 @@
-export SHELL=/bin/zsh
-
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -37,7 +35,7 @@ DISABLE_CORRECTION="true"
 source $ZSH/oh-my-zsh.sh
 
 #### Customize to your needs.
-export PATH="$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$HOME/dotfiles/scripts:$HOME/bin:/sbin:"
+export PATH="$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$HOME/Dropbox/my/dotfiles/scripts:$HOME/bin:$HOME/Dropbox/my/bin:/sbin:"
 export WORDCHARS="*?_-.[]~=&;#$%^(){}<>"
 
 # rbenv
@@ -74,8 +72,20 @@ function git_diff_shortstat_master() {
   fi
 }
 
+function show_battery() {
+  local ac_adapter_status=`acpi -a | awk '{print $3}'`
+  if [ ${ac_adapter_status} = 'off-line' ]; then
+    local battery0=`acpi -b | awk '{print $4}' | head -n 1`
+    local battery1=`acpi -b | awk '{print $4}' | tail -n 1`
+
+    echo "[\xf0\x9f\x94\x8b ${battery0}%%,${battery1}%]"
+  else
+    echo "\xf0\x9f\x94\x8c"
+  fi
+}
+
 PROMPT='%{$fg_bold[red]%}$(rbenv version | sed -e "s/ (set.*$//")%{$reset_color%}%{$fg_bold[cyan]%}%C%{$reset_color%}$(git_super_status)%{$reset_color%}%# '
-RPROMPT='$(git_diff_shortstat_master)%{$reset_color%}'
+RPROMPT='$(git_diff_shortstat_master)$(show_battery)%{$reset_color%}'
 
 # history に時刻を表示する
 export HISTTIMEFORMAT='%Y-%m-%d %T '
@@ -86,10 +96,10 @@ export GEM_EDITOR="st -w"
 export EDITOR="vim"
 
 # z ( https://github.com/rupa/z )
-source ${HOME}/.z-sh/z.sh
+source ${HOME}/.zsh/z/z.sh
 
 # keychain
-keychain -q ${HOME}/.ssh/*.rsa
+# keychain -q ${HOME}/.ssh/*.rsa
 
 [ -z "$HOSTNAME" ] && HOSTNAME=`uname -n`
 [ -f $HOME/.keychain/$HOSTNAME-sh ] && source $HOME/.keychain/$HOSTNAME-sh
@@ -126,6 +136,7 @@ alias sl='gnome-screensaver-command -l'
 alias h='head'
 alias p='xsel --clipboard --output'
 alias open='xdg-open'
+alias dp='display'
 
 # firefox
 alias firefox='iceweasel'
@@ -146,7 +157,7 @@ alias -g RP='RAILS_ENV=production'
 alias rm="trash"
 
 # show (ls & less)
-alias s="${HOME}/dotfiles/scripts/show-linux"
+alias s="show-linux"
 
 # ls
 export LSCOLORS=gxfxcxdxbxegedabagacad
@@ -209,10 +220,9 @@ export JSTESTDRIVER_HOME=~/Dropbox/tdd_javascript/
 XDG_DATA_DIRS=/opt/local:/usr/local
 
 # cdd ( http://blog.m4i.jp/entry/2012/01/26/064329 )
-autoload -Uz compinit
-compinit
-. ~/.zsh/cdd/cdd
-
+# autoload -Uz compinit
+# compinit
+# . ~/.zsh/cdd/cdd
 
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'
@@ -225,7 +235,7 @@ chpwd() {
     ls -F --color
 
     # cdd
-    _cdd_chpwd
+    # _cdd_chpwd
 }
 
 # 空 Enter で ls と git status を表示する
@@ -246,3 +256,13 @@ function do_enter() {
 }
 zle -N do_enter
 bindkey '^m' do_enter
+
+# rbenv rehash ( http://rhysd.hatenablog.com/entry/20120226/1330265121 )
+function gem(){
+    $HOME/.rbenv/shims/gem $*
+    if [ "$1" = "install" ] || [ "$1" = "i" ] || [ "$1" = "uninstall" ] || [ "$1" = "uni" ]
+    then
+        rbenv rehash
+        rehash
+    fi
+}
