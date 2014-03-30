@@ -1,48 +1,35 @@
-! http://www.in-ulm.de/~mascheck/X11/xmodmap.html
-! CapsLock Key => Ctrl, Ctrl key => Mod4
-! Enter => mod4
-remove Control = Control_L
-clear mod4
+! CapsLock ( 66) => Ctrl_L
+! Ctrl_L   ( 37) => Super_L
+! Super_L  (133) => Space
+! Ctrl_R   (105) => Shift_R
+! Shift_R  ( 62) => Shift_Lock
+! Quart    ( 48) => Ctrl_R
+! Space    ( 65) => Mode_switch
+clear Lock
+clear Control
+remove Shift = Shift_R
+clear Mod4
+clear Mod5
 
-keysym Control_L = Super_L
-keysym Caps_Lock = Control_L
+keycode 66  = Control_L
+keycode 37  = Super_L
+keycode 133 = space
+keycode 105 = Shift_R
+keycode 62  = Shift_Lock
+keycode 48  = Control_R
+keycode 65  = Mode_switch
 
 add Control = Control_L
-! keycode 36 = Super_L
-add mod4 = Super_L
-
-! SpaceKey(65) => Mode_switch(Fn)
-clear mod5
-keycode 65 = Mode_switch
-add mod5 = Mode_switch
-
-! (space + shift_r) =>shift lock
-clear lock
-remove Shift = Shift_R
-keysym Shift_R = Shift_Lock
-keycode 62 = Shift_Lock Shift_Lock Shift_L NoSymbol
-add lock = Shift_Lock
-
-! ' key => ctrl_r
-keycode 48 = Control_R
+add Mod4    = Super_L
+add Shift   = Shift_R
+add Lock    = Shift_Lock
 add Control = Control_R
+add Mod5    = Mode_switch
 
 ! Japanese thumb key
 keycode 100 = Return NoSymbol Return NoSymbol
 keycode 101 = BackSpace NoSymbol Delete NoSymbol
 keycode 102 = space NoSymbol space NoSymbol
-
-! create delete key
-keycode 51 = Delete NoSymbol Delete
-
-! Alt_L => space
-! keycode 64 = space NoSymbol space NoSymbol
-
-! Alt_R => Enter
-! keycode 108 = Return Return Return Return
-
-! Windows key => Alt_L
-keycode 133 = Alt_L
 
 ! left hand
 keycode  24 = q Q Escape Escape
@@ -50,8 +37,6 @@ keycode  25 = w W quotedbl quotedbl
 keycode  26 = e E apostrophe apostrophe
 keycode  27 = r R grave grave
 keycode  28 = t T Tab ISO_Left_Tab
-! remove Tab
-! keycode 23 = NoSymbol
 
 keycode  38 = a A Left Left
 keycode  39 = s S Up Up
