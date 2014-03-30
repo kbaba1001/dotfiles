@@ -98,7 +98,7 @@ export EDITOR="vim"
 source ${HOME}/.zsh/z/z.sh
 
 # keychain
-# keychain -q ${HOME}/.ssh/*.rsa
+keychain -q ${HOME}/.ssh/*.rsa
 
 [ -z "$HOSTNAME" ] && HOSTNAME=`uname -n`
 [ -f $HOME/.keychain/$HOSTNAME-sh ] && source $HOME/.keychain/$HOSTNAME-sh
