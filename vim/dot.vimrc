@@ -1,7 +1,7 @@
 syntax on
 colorscheme molokai
 
-set number
+"set number
 
 "encoding
 set enc=utf-8

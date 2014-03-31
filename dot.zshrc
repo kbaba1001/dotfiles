@@ -136,6 +136,7 @@ alias h='head'
 alias p='xsel --clipboard --output'
 alias open='xdg-open'
 alias dp='display'
+alias f='feh'
 
 # firefox
 alias firefox='iceweasel'

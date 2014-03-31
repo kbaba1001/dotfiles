@@ -4,7 +4,7 @@
 	"bold_folder_labels": true,
 	"caret_extra_width": 3,
 	"close_windows_when_empty": true,
-	"color_scheme": "Packages/Theme - Nil/Big Duo.tmTheme",
+	"color_scheme": "Packages/User/Big Duo (SL).tmTheme",
 	"disable_formatted_linebreak": true,
 	"enable_telemetry": false,
 	"ensure_newline_at_eof_on_save": true,
@@ -49,12 +49,7 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"SublimeLinter-jshint",
 		"Git Conflict Resolver",
-		"Markdown Preview",
-		"CTags",
-		"SublimeLinter",
-		"FileBrowser",
 		"Clipboard Manager",
 		"Vintage"
 	],
@@ -79,5 +74,5 @@
 	"trailing_spaces_include_current_line": true,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
-	"word_wrap": true
+	"word_wrap": false
 }

@@ -9,7 +9,6 @@
   },
   { "keys": ["ctrl+shift+d"], "command": "find_all_under" },
   { "keys": ["ctrl+e"], "command": "toggle_comment", "args": { "block": false } },
-  { "keys": ["ctrl+alt+e"], "command": "toggle_comment", "args": { "block": true } },
   { "keys": ["ctrl+i"], "command": "unindent" },
   { "keys": ["ctrl+o"], "command": "indent" },
   { "keys": ["ctrl+j", "ctrl+j"], "command": "find_under_expand_skip" },
@@ -19,6 +18,7 @@
   { "keys": ["ctrl+g"], "command": "show_overlay", "args": {"overlay": "command_palette", "text": "git:"} },
   { "keys": ["ctrl+b"], "command": "show_overlay", "args": {"overlay": "command_palette", "text": "SublimeBookmarks:"} },
   { "keys": ["ctrl+shift+alt+f"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
+  { "keys": ["ctrl+u"], "command": "toggle_side_bar" },
 
   // Convert Case: Swap Caseを割り当てたいがうまく動かない
   // { "keys": ["ctrl+k", "s"], "command": "swap_case" },
