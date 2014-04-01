@@ -1,3 +1,6 @@
+! @see http://www.in-ulm.de/~mascheck/X11/xmodmap.html
+! @see `man xmodmap`
+
 ! CapsLock ( 66) => Ctrl_L
 ! Ctrl_L   ( 37) => Super_L
 ! Super_L  (133) => Space
