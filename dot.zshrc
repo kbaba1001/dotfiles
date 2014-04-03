@@ -212,7 +212,7 @@ export CHROME_BIN='/usr/bin/google-chrome-beta'
 export PYTHONPATH='/usr/lib64/python2.7/site-packages'
 
 # JsTestDriver
-export JSTESTDRIVER_HOME=~/Dropbox/tdd_javascript/
+export JSTESTDRIVER_HOME=~/Dropbox/project/tdd_javascript
 
 # color management
 # http://sourceforge.net/mailarchive/forum.php?set=custom&viewmonth=&viewday=&forum_name=dispcalgui-users&style=nested&max_rows=75&submit=Change+View

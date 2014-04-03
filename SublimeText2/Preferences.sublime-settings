@@ -49,14 +49,14 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"SublimeLinter",
-		"Clipboard Manager",
-		"FileBrowser",
-		"Markdown Preview",
-		"Vintage",
-		"Git Conflict Resolver",
 		"SublimeLinter-jshint",
-		"CTags"
+		"Git Conflict Resolver",
+		"Markdown Preview",
+		"CTags",
+		"SublimeLinter",
+		"FileBrowser",
+		"Clipboard Manager",
+		"Vintage"
 	],
 	"indent_guide_options":
 	[

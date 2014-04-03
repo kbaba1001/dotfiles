@@ -1,6 +1,5 @@
 [
   { "keys": ["Tab"], "command": "auto_complete" },
-  { "keys": ["ctrl+shift+z"], "command": "open_with_vim" },
   { "keys": ["Tab"], "command": "replace_completion_with_auto_complete", "context":
     [
       { "key": "last_command", "operator": "equal", "operand": "insert_best_completion" },
@@ -28,13 +27,6 @@
   { "keys": ["ctrl+j", "p"], "command": "prev_result" },
   { "keys": ["ctrl+j", "n"], "command": "next_result" },
 
-  // SublimeFileBrowser
-  {
-    "keys": ["f1"],
-    "command": "dired",
-    "args": { "immediate": true}
-  },
-
   // メソッド等の折りたたみ
   { "keys": ["ctrl+k", "h"], "command": "fold" },
   { "keys": ["ctrl+k", "o"], "command": "unfold" },
@@ -55,10 +47,6 @@
   { "keys": ["ctrl+k", "s"], "command": "surround_selection" },
   { "keys": ["ctrl+k", "c"], "command": "surround_change" },
   { "keys": ["ctrl+k", "d"], "command": "surround_delete" },
-
-  // RubyBlockConverter
-  { "keys": ["ctrl+k", "d", "b"], "command": "do_end_to_brace" },
-  { "keys": ["ctrl+k", "b", "d"], "command": "brace_to_do_end" },
 
   // GitGutter
   { "keys": ["ctrl+j", "g", "n"], "command": "git_gutter_next_change" },
@@ -155,80 +143,4 @@
       "cells": [[0, 0, 1, 1]]
     }
   },
-
-  // CTags
-  {
-    "command": "navigate_to_definition",
-    "keys": ["ctrl+t", "ctrl+t"]
-  },
-  {
-    "command": "navigate_to_definition",
-    "keys": ["ctrl+shift+period"]
-  },
-  {
-    "command": "search_for_definition",
-    "keys": ["ctrl+t", "ctrl+y"]
-  },
-  {
-    "command": "jump_back",
-    "keys": ["ctrl+t", "ctrl+b"]
-  },
-  {
-    "command": "jump_back",
-    "keys": ["ctrl+shift+comma"]
-  },
-  {
-    "command": "jump_back",
-    "args": {"to": "last_modification"},
-    "keys": ["ctrl+t", "ctrl+m"]
-  },
-  {
-    "command": "rebuild_tags",
-    "keys": ["ctrl+t", "ctrl+r"]
-  },
-  {
-    "command": "show_symbols",
-    "context": [
-      {
-        "key": "selector",
-        "match_all": true,
-        "operand": "source -source.css",
-        "operator": "equal"
-      }
-    ],
-    "keys": ["alt+s"]
-  },
-  {
-    "command": "show_symbols",
-    "args": {"type": "multi"},
-    "context": [
-      {
-        "key": "selector",
-        "match_all": true,
-        "operand": "source -source.css",
-        "operator": "equal"
-      }
-    ],
-    "keys": ["alt+shift+s"]
-  },
-  {
-    "command": "show_symbols",
-    "args": {"type": "lang"},
-    "context": [
-      {
-        "key": "selector",
-        "match_all": true,
-        "operand": "source -source.css",
-        "operator": "equal"
-      }
-    ],
-    "keys": ["ctrl+alt+shift+s"]
-  },
-  { // override current default
-    "command": "transpose",
-    "context": [
-      { "key": "num_selections", "operator": "not_equal", "operand": 1 }
-    ],
-    "keys": ["ctrl+t"]
-  }
 ]
