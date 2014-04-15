@@ -1,0 +1,119 @@
+clear Lock
+clear Control
+clear Shift
+clear Mod1
+clear Mod4
+clear Mod5
+
+keycode   9 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+keycode  10 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+keycode  11 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+keycode  12 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+keycode  13 = Shift_Lock Shift_Lock Shift_Lock Shift_Lock Shift_Lock Shift_Lock Shift_Lock Shift_Lock
+keycode  14 = Shift_R Shift_R Shift_R Shift_R Shift_R Shift_R Shift_R Shift_R
+keycode  15 = Control_R Control_R Control_R Control_R Control_R Control_R Control_R Control_R
+keycode  16 = Control_L Control_L Control_L Control_L Control_L Control_L Control_L Control_L
+keycode  17 = Shift_L Shift_L Shift_L Shift_L Shift_L Shift_L Shift_L Shift_L
+keycode  18 = Escape Escape Escape Escape
+
+keycode  19 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+keycode  20 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+keycode  21 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+keycode  22 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+
+keycode  23 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+keycode  24 = slash asciitilde bar backslash
+keycode  25 = period greater bracketright question
+keycode  26 = comma less bracketleft exclam
+keycode  27 = m M parenright braceright
+keycode  28 = n N parenleft braceleft
+keycode  29 = b B b B
+keycode  30 = v V End End
+keycode  31 = c C Next Next
+keycode  32 = x X Prior Prior
+keycode  33 = z Z Home Home
+keycode  34 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+keycode  35 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+
+! Enter
+keycode  36 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+
+! Control_L
+keycode  37 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+
+keycode  38 = colon semicolon ampersand percent
+keycode  39 = l L numbersign equal
+keycode  40 = k K underscore at
+keycode  41 = j J asterisk dollar
+keycode  42 = h H minus plus
+keycode  43 = g G 6 F6
+keycode  44 = f F Right Right
+keycode  45 = d D Down Down
+keycode  46 = s S Up Up
+keycode  47 = a A Left Left
+keycode  48 =
+
+! grave (^)
+keycode  49 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+
+! Shift_L
+keycode  50 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+
+! backslash (\)
+keycode  51 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+
+keycode  52 = p P 0 F10
+keycode  53 = o O 9 F9
+keycode  54 = i I 8 F8
+keycode  55 = u U 7 F7
+keycode  56 = y Y y Y
+keycode  57 = t T 5 F5
+keycode  58 = r R 4 F4
+keycode  59 = e E 3 F3
+keycode  60 = w W 2 F2
+keycode  61 = q Q 1 F1
+keycode  62 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+
+! unknown
+keycode  63 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+
+! Alt_L
+keycode  64 = BackSpace BackSpace BackSpace BackSpace
+
+! space
+keycode  65 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+
+! Caps Lock
+keycode  66 = apostrophe quotedbl grave asciicircum
+
+keycode  67 = Return Return Delete Delete
+keycode  68 = Return Return Delete Delete
+keycode  69 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+keycode  70 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+keycode  71 = Zenkaku_Hankaku Zenkaku_Hankaku Zenkaku_Hankaku Zenkaku_Hankaku Zenkaku_Hankaku Zenkaku_Hankaku Zenkaku_Hankaku Zenkaku_Hankaku
+keycode  72 = space space BackSpace BackSpace
+keycode  73 = Mode_switch Mode_switch Mode_switch Mode_switch Mode_switch Mode_switch Mode_switch Mode_switch
+keycode  74 = Mode_switch Mode_switch Mode_switch Mode_switch Mode_switch Mode_switch Mode_switch Mode_switch
+keycode  75 = Super_L Super_L Super_L Super_L Super_L Super_L Super_L Super_L
+keycode  76 = Alt_L Alt_L Alt_L Alt_L Alt_L Alt_L Alt_L Alt_L
+
+keycode  95 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+keycode  96 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+keycode 107 = Tab ISO_Left_Tab Tab ISO_Left_Tab
+keycode 119 = Tab ISO_Left_Tab Tab ISO_Left_Tab
+
+! Control_R
+keycode 105 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+
+! Alt_R
+keycode 108 = Delete Delete Delete Delete
+
+! Super_L
+keycode 133 = NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol NoSymbol
+
+add Lock    = Shift_Lock
+add Mod4    = Super_L
+add Control = Control_L Control_R
+add Shift   = Shift_L Shift_R
+add Mod5    = Mode_switch
+add Mod1    = Alt_L Alt_R

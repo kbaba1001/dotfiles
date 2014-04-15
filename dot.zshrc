@@ -79,7 +79,7 @@ function show_battery() {
     local battery0=`acpi -b | awk '{print $4}' | head -n 1`
     local battery1=`acpi -b | awk '{print $4}' | tail -n 1`
 
-    echo "[${battery0}%%,${battery1}%]"
+    echo "\xf0\x9f\x94\x8b ${battery0}%%,${battery1}%"
   fi
 }
 
