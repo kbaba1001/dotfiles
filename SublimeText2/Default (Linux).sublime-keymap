@@ -59,6 +59,14 @@
   { "keys": ["ctrl+m", "m"], "command": "mark_and_move_recall" },
   { "keys": ["ctrl+m", "c"], "command": "mark_and_move_clear" },
 
+  // Power Cursors
+  { "keys": ["ctrl+shift+m", "ctrl+shift+m"], "command": "power_cursor_add" },
+  { "keys": ["ctrl+shift+m", "c"], "command": "power_cursor_remove", "context": [ { "key": "in_cursor_transition" } ] },
+  { "keys": ["ctrl+shift+m", "m"], "command": "power_cursor_activate", "context": [ { "key": "in_cursor_transition" } ] },
+  { "keys": ["ctrl+shift+m", "n"], "command": "power_cursor_select", "args": { "forward": true }, "context": [ { "key": "in_cursor_transition" } ] },
+  { "keys": ["ctrl+shift+m", "p"], "command": "power_cursor_select", "args": { "forward": false }, "context": [ { "key": "in_cursor_transition" } ] },
+  { "keys": ["escape"], "command": "power_cursor_exit", "context": [ { "key": "in_cursor_transition" } ] },
+
   // SublimeFiles
   { "keys": ["ctrl+shift+n"], "command": "sublime_files", "args": {"command": "navigate"} },
 

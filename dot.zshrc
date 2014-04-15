@@ -105,7 +105,7 @@ keychain -q ${HOME}/.ssh/*.rsa
 [ -f $HOME/.keychain/$HOSTNAME-sh-gpg ] && source $HOME/.keychain/$HOSTNAME-sh-gpg
 
 # gem open & bundle open
-alias bi="bundle install --without production"
+alias bi="bundle install --without production -j4"
 alias bu="bundle update"
 alias be="bundle exec"
 alias bo="bundle open"
@@ -137,6 +137,7 @@ alias p='xsel --clipboard --output'
 alias open='xdg-open'
 alias dp='display'
 alias f='feh'
+alias agl="ag --pager 'less -X'"
 
 # firefox
 alias firefox='iceweasel'
@@ -147,6 +148,9 @@ alias grep="\grep --color=auto -n -C 2 -E"
 # global alias
 alias -g G='| ag'
 alias -g H='| head'
+alias -g First='| head -n 1'
+alias -g T='| tail'
+alias -g Last='| tail -n 1'
 alias -g L='| less -X'
 alias -g CP='| xsel --clipboard --input'
 alias -g RT='RAILS_ENV=test'
