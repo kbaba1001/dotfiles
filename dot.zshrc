@@ -143,7 +143,7 @@ alias agl="ag --pager 'less -X'"
 alias firefox='iceweasel'
 
 # grep
-alias grep="\grep --color=auto -n -C 2 -E"
+alias grep="\grep --color=auto -n -E"
 
 # global alias
 alias -g G='| ag'
