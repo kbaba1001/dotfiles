@@ -1,8 +1,8 @@
 #!/bin/bash
 
-. ~/.display
+[ -f ~/.display ] && . ~/.display
 #xrandr --output HDMI1 --mode 1920x1080 --primary --output eDP1 --mode 1366x768 --below HDMI1
-xbacklight -set 30
+#xbacklight -set 30
 
 xset r rate 150 80
 xmodmap ~/.Xmodmap
