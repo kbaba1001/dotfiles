@@ -18,8 +18,9 @@ exec uim-toolbar-gtk3-systray &
 
 exec xcompmgr &
 exec wicd-client -t &
+exec xscreensaver &
 exec dropbox start -i &
+exec clipit &
 exec google-chrome --no-startup-window &
-
 exec terminator &
 exec awesome
