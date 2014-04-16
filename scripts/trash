@@ -5,6 +5,7 @@
 # trash [ file...]
 
 TRASH_DIR="$HOME/.Trash"
+[ ! -d ${TRASH_DIR} ] && mkdir ${TRASH_DIR}
 
 while getopts "csh" opts
 do
