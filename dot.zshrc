@@ -109,6 +109,7 @@ alias ta='tmux attach'
 alias tc='tmux save-buffer - | xsel --clipboard --input'
 alias zr="vim $HOME/.zshrc && source $HOME/.zshrc"
 alias battery='acpi -b'
+alias _='sudo'
 
 # global alias
 alias -g G='| ag'
@@ -134,6 +135,12 @@ alias a='ls -a'
 alias la='ls -lha'
 alias du='du -h'
 alias diff='colordiff -u'
+
+# cd
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias -- -='cd -'
 
 # color management
 # http://sourceforge.net/mailarchive/forum.php?set=custom&viewmonth=&viewday=&forum_name=dispcalgui-users&style=nested&max_rows=75&submit=Change+View
