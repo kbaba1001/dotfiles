@@ -1,14 +1,8 @@
-export PATH="$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$HOME/Dropbox/my/dotfiles/scripts:$HOME/bin:$HOME/Dropbox/my/bin:/sbin:"
-export WORDCHARS="*?_-.[]~=&;#$%^(){}<>"
-
-# case-sensitive completion
-zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-
-## Emacsライクキーバインド設定
-bindkey -e
-
 # rbenv
 eval "$(rbenv init -)"
+
+# z ( https://github.com/rupa/z )
+source ${HOME}/.zsh/z/z.sh
 
 # git prompt
 source ~/.zsh/git-prompt/zshrc.sh
@@ -57,9 +51,6 @@ export BUNDLER_EDITOR='st -w'
 export GEM_EDITOR='st -w'
 export EDITOR='vim'
 
-# z ( https://github.com/rupa/z )
-source ${HOME}/.zsh/z/z.sh
-
 # keychain
 keychain -q ${HOME}/.ssh/*.rsa
 
@@ -67,32 +58,44 @@ keychain -q ${HOME}/.ssh/*.rsa
 [ -f $HOME/.keychain/$HOSTNAME-sh ] && source $HOME/.keychain/$HOSTNAME-sh
 [ -f $HOME/.keychain/$HOSTNAME-sh-gpg ] && source $HOME/.keychain/$HOSTNAME-sh-gpg
 
-# gem open & bundle open
-alias bi="bundle install --without production -j4"
-alias bu="bundle update"
-alias be="bundle exec"
-alias bo="bundle open"
-alias ber="bundle exec rake"
-alias brs="bundle exec rspec"
-alias bra="bundle exec rails"
-alias bcu="bundle exec cucumber"
-alias -g RT="RAILS_ENV=test"
-alias -g RD="RAILS_ENV=development"
-alias -g RP="RAILS_ENV=production"
+# git
+alias g='git'
+alias gup="git pull --rebase && git remote update --prune && git branch --merged | \grep -v -E \"(\*|master)\" | xargs -I % git branch -d % && ct"
+for command in $(\sed -ne '/^\[alias\]/,$p' ${HOME}/.gitconfig | \grep -v '\[alias\]' | \awk '{print $1}')
+do
+  alias "g${command}"="git ${command}"
+done
 
-# rspec-git-diff (my dotfiles/scripts)
-alias brsd="rspec-git-diff"
+# ruby
+alias bi='bundle install --without production -j4'
+alias bu='bundle update'
+alias be='bundle exec'
+alias bo='bundle open'
+alias ber='bundle exec rake'
+alias brs='bundle exec rspec'
+alias bra='bundle exec rails'
+alias bcu='bundle exec cucumber'
+alias -g RT='RAILS_ENV=test'
+alias -g RD='RAILS_ENV=development'
+alias -g RP='RAILS_ENV=production'
+alias irb='pry'
+
+# my dotfiles/scripts
+alias brsd='rspec-git-diff'
+alias rm='trash'
+alias s='show-linux'
 
 # halt
-alias halt='taisya && sudo halt'
+alias sd='sudo shutdown -h now'
+alias halt='taisya && sudo shutdown -h now'
 
 # short command
-alias t="touch"
-alias m="mkdir"
-alias d="cd"
-alias v="vim"
-alias so="source"
-alias vgc="vim ~/.gitconfig"
+alias t='touch'
+alias m='mkdir'
+alias d='cd'
+alias v='vim'
+alias so='source'
+alias vgc='vim ~/.gitconfig'
 alias ct='ctags -f .tags -R'
 alias sl='xscreensaver-command -lock'
 alias h='head'
@@ -100,13 +103,12 @@ alias p='xsel --clipboard --output'
 alias open='xdg-open'
 alias dp='display'
 alias f='feh'
-alias agl="ag --pager 'less -X'"
-
-# firefox
-alias firefox='iceweasel'
-
-# grep
-alias grep="\grep --color=auto -n -E"
+alias agl='ag --pager 'less -X''
+alias essid='iwlist wlan0 scan | \grep ESSID'
+alias ta='tmux attach'
+alias tc='tmux save-buffer - | xsel --clipboard --input'
+alias zr="vim $HOME/.zshrc && source $HOME/.zshrc"
+alias battery='acpi -b'
 
 # global alias
 alias -g G='| ag'
@@ -120,93 +122,42 @@ alias -g RT='RAILS_ENV=test'
 alias -g RD='RAILS_ENV=development'
 alias -g RP='RAILS_ENV=production'
 
-# rm command to trash
-alias rm="trash"
-
-# show (ls & less)
-alias s="show-linux"
+# over write
+alias ls='ls -F --color'
+alias less='less -XR'
+alias grep='\grep --color=auto -n -E'
 
 # ls
 export LSCOLORS=gxfxcxdxbxegedabagacad
-alias ls="ls -F --color"
-alias l="ls -lh"
-alias a="ls -a"
-alias la="ls -lha"
-
-# less
-alias less="less -X"
-
-# du
-alias du="du -hs"
-
-# diff
-alias diff="colordiff -u"
-
-# tmux
-alias ta="tmux attach"
-alias tc="tmux save-buffer - | xsel --clipboard --input"
-
-# update .zshrc
-alias zr="vim $HOME/.zshrc && source $HOME/.zshrc"
-
-# git
-# alias git="hub"
-alias g="git"
-alias gup="git pull --rebase && git remote update --prune && git branch --merged | \grep -v -E \"(\*|master)\" | xargs -I % git branch -d % && ct"
-for command in $(\sed -ne '/^\[alias\]/,$p' ${HOME}/.gitconfig | \grep -v '\[alias\]' | \awk '{print $1}')
-do
-  alias "g${command}"="git ${command}"
-done
-
-# search ESSID
-alias essid="iwlist wlan0 scan | \grep ESSID"
-
-# irb to pry
-alias irb='pry'
-
-# show remaining battery
-alias battery='acpi -b'
-
-# xscreensaver
-alias ss='xscreensaver-command -lock'
-
-# pravete setting
-[ -f ~/.zshrc.private ] && source ~/.zshrc.private
-
-# karma用の設定
-export CHROME_BIN='/usr/bin/google-chrome-beta'
-
-# Python用
-export PYTHONPATH='/usr/lib64/python2.7/site-packages'
-
-# JsTestDriver
-export JSTESTDRIVER_HOME=~/Dropbox/project/tdd_javascript
+alias l='ls -lh'
+alias a='ls -a'
+alias la='ls -lha'
+alias du='du -h'
+alias diff='colordiff -u'
 
 # color management
 # http://sourceforge.net/mailarchive/forum.php?set=custom&viewmonth=&viewday=&forum_name=dispcalgui-users&style=nested&max_rows=75&submit=Change+View
 XDG_DATA_DIRS=/opt/local:/usr/local
 
-# cdd ( http://blog.m4i.jp/entry/2012/01/26/064329 )
-# autoload -Uz compinit
-# compinit
-# . ~/.zsh/cdd/cdd
+export PATH="$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$HOME/Dropbox/my/dotfiles/scripts:$HOME/bin:$HOME/Dropbox/my/bin:/sbin:"
+export WORDCHARS="*?_-.[]~=&;#$%^(){}<>"
+export JSTESTDRIVER_HOME=~/Dropbox/project/tdd_javascript
+
+## Emacsライクキーバインド設定
+bindkey -e
+
+# case-sensitive completion
+zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'
 
-chpwd() {
-    # cd した直後に ls する。
-    # ( ファイルが多いときは省略表示する方法もあるが今は使ってない
-    #   http://qiita.com/yuyuchu3333/items/b10542db482c3ac8b059 )
+function chpwd() {
     echo "$fg_bold[yellow]$PWD$reset_color"
     ls -F --color
-
-    # cdd
-    # _cdd_chpwd
 }
 
-# 空 Enter で ls と git status を表示する
-# http://qiita.com/yuyuchu3333/items/e9af05670c95e2cc5b4d
+# 空 Enter で ls と git status を表示する ( http://qiita.com/yuyuchu3333/items/e9af05670c95e2cc5b4d )
 function do_enter() {
     if [ -n "$BUFFER" ]; then
         zle accept-line
@@ -233,3 +184,6 @@ function gem(){
         rehash
     fi
 }
+
+# pravete setting
+[ -f ~/.zshrc.private ] && source ~/.zshrc.private
