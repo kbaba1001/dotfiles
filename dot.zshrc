@@ -52,13 +52,10 @@ function show_battery() {
 PROMPT='%{$fg_bold[red]%}$(rbenv version | sed -e "s/ (set.*$//")%{$reset_color%}%{$fg_bold[cyan]%}%C%{$reset_color%}$(git_super_status)%{$reset_color%}%# '
 RPROMPT='$(git_diff_shortstat_master)$(show_battery)%{$reset_color%}'
 
-# history に時刻を表示する
-export HISTTIMEFORMAT='%Y-%m-%d %T '
-
 # bundle open & gem open
-export BUNDLER_EDITOR="st -w"
-export GEM_EDITOR="st -w"
-export EDITOR="vim"
+export BUNDLER_EDITOR='st -w'
+export GEM_EDITOR='st -w'
+export EDITOR='vim'
 
 # z ( https://github.com/rupa/z )
 source ${HOME}/.zsh/z/z.sh
