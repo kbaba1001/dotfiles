@@ -1,3 +1,10 @@
+ZSH=$HOME/.oh-my-zsh
+CASE_SENSITIVE='true'
+DISABLE_AUTO_UPDATE='true'
+DISABLE_AUTO_TITLE='true'
+DISABLE_CORRECTION='true'
+source $ZSH/oh-my-zsh.sh
+
 # rbenv
 eval "$(rbenv init -)"
 
@@ -152,9 +159,6 @@ export JSTESTDRIVER_HOME=~/Dropbox/project/tdd_javascript
 
 ## Emacsライクキーバインド設定
 bindkey -e
-
-# case-sensitive completion
-zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'

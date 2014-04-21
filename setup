@@ -11,7 +11,7 @@ ln -s "${DOTDIR}/dot.zshrc" ~/.zshrc
 mkdir ~/.zsh
 git clone git@github.com:olivierverdier/zsh-git-prompt.git ~/.zsh/git-prompt
 git clone git@github.com:rupa/z.git ~/.zsh/z
-
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 
