@@ -15,6 +15,6 @@
 
 # ~/lib/edict/ には http://www.edrdg.org/jmdict/edict.html の辞書ファイルを
 # UTF-8 に変換していれている
-DICTIONARY_PATH="${HOME}/lib/edict/"
+DICTIONARY_PATH="${HOME}/Dropbox/my/lib/edict/"
 
 ag --no-numbers --pager 'less -X' "$@" "${DICTIONARY_PATH}"
