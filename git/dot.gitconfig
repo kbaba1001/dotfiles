@@ -21,6 +21,7 @@
   co = checkout
   s  = status -s
   sh = show
+  shi = !sh -c 'git show HEAD~$0'
   p  = pull
   pr = pull --rebase
   c  = commit -v
@@ -47,4 +48,4 @@
   ri = !sh -c 'git rebase -i HEAD~$0'
   t  = tag
   f  = fetch
-  nipo = !sh -c 'git commit -m \"kbaba1001の愛と情熱の日々 $(date +%Y/%m/%d)\"'
+  nipo = !sh -c 'git commit -m \"kbaba1001の日報 $(date +%Y/%m/%d)\"'
