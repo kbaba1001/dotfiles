@@ -17,6 +17,8 @@
   log = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -X
   show = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -X
   diff = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -X
+[help]
+  autocorrect = 1
 [alias]
   co = checkout
   s  = status -s

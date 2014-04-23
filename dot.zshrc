@@ -160,6 +160,14 @@ export JSTESTDRIVER_HOME=~/Dropbox/project/tdd_javascript
 ## Emacsライクキーバインド設定
 bindkey -e
 
+# `cd -<Tab>` や `cd +<Tab>` を使えるようにする
+setopt AUTO_PUSHD
+
+# zmv
+autoload -Uz zmv
+alias zmv='noglob zmv -W'
+
+# 補完
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'
 
