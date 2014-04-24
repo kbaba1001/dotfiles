@@ -7,3 +7,4 @@ taisya() {
 }
 
 taisya
+sudo shutdown -h now

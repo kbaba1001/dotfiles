@@ -94,7 +94,6 @@ alias s='show-linux'
 
 # halt
 alias sd='sudo shutdown -h now'
-alias halt='taisya && sudo shutdown -h now'
 
 # short command
 alias t='touch'
