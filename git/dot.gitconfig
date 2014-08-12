@@ -1,9 +1,6 @@
 [user]
   name = kbaba1001
-  email = k-baba@esm.co.jp
-#[user]
-#  name = kbaba1001
-#  email = kbaba1001@gmail.com
+  email = kbaba1001@gmail.com
 [color]
   ui = true
   diff = true
