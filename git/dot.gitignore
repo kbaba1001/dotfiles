@@ -3,7 +3,10 @@
 *.swp
 .tags
 .gemtags
+.tags_sorted_by_file
 Thumbs.db
 tags
 *.sublime-workspace
 *.sublime-project
+
+.ruby-version

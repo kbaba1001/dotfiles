@@ -5,6 +5,12 @@ DISABLE_AUTO_TITLE='true'
 DISABLE_CORRECTION='true'
 source $ZSH/oh-my-zsh.sh
 
+# 拡張ファイルグロブが有効になり、正規表現として '#'、'~'、'^'が特別扱いになる。
+setopt extended_glob
+
+# Ctrl+s でロックしないようにする
+stty stop undef
+
 # rbenv
 eval "$(rbenv init -)"
 
@@ -25,20 +31,6 @@ ZSH_THEME_GIT_PROMPT_REMOTE=""
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}\xF0\x9F\x8D\xB7 "
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[white]%}\xF0\x9F\x8D\xA3 "
 
-function git_diff_shortstat_master() {
-  gitdir=`git rev-parse --git-dir 2>/dev/null`
-  if [ -n "${gitdir}" ]; then
-    #git --no-pager diff --shortstat master | awk '{print "+" $4 "-" $6}'
-    #git --no-pager diff --shortstat master | ruby -ne '$_.match(/(\d+)\D*(\d+)\D*(\d+)/); print "#{$2} #{$3}"'
-    diff_shortstat=`git --no-pager diff --shortstat master`
-    file_count=`echo "${diff_shortstat}" | awk '{print "\xF0\x9F\x92\xBE " $1}'`
-    plus_lines=`echo "${diff_shortstat}" | awk '{print "+" $4}'`
-    minus_lines=`echo "${diff_shortstat}" | awk '{print "-" $6}'`
-
-    echo "[%{$fg_bold[magenta]%}${file_count}%{$fg_bold[green]%}${plus_lines}%{$fg_bold[red]%}${minus_lines}%{$reset_color%}]"
-  fi
-}
-
 # ThinkPad x240 のバッテリー残量を表示
 function show_battery() {
   local ac_adapter_status=`acpi -a | awk '{print $3}'`
@@ -46,16 +38,16 @@ function show_battery() {
     local battery0=`acpi -b | awk '{print $4}' | head -n 1`
     local battery1=`acpi -b | awk '{print $4}' | tail -n 1`
 
-    echo "\xf0\x9f\x94\x8b ${battery0}%%,${battery1}%"
+    echo "${battery0}%%,${battery1}%"
   fi
 }
 
 PROMPT='%{$fg_bold[red]%}$(rbenv version | sed -e "s/ (set.*$//")%{$reset_color%}%{$fg_bold[cyan]%}%C%{$reset_color%}$(git_super_status)%{$reset_color%}%# '
-RPROMPT='$(git_diff_shortstat_master)$(show_battery)%{$reset_color%}'
+RPROMPT='$(show_battery)%{$reset_color%}'
 
 # bundle open & gem open
-export BUNDLER_EDITOR='st -w'
-export GEM_EDITOR='st -w'
+export BUNDLER_EDITOR='st'
+export GEM_EDITOR='st'
 export EDITOR='vim'
 
 # keychain
@@ -67,15 +59,19 @@ keychain -q ${HOME}/.ssh/*.rsa
 
 # git
 alias g='git'
-alias gup="git pull --rebase && git remote update --prune && git branch --merged | \grep -v -E \"(\*|master)\" | xargs -I % git branch -d % && ct"
+alias gup="git pull --rebase && git remote update --prune && git branch --merged | \grep -v -E \"(\*|master)\" | xargs -I % git branch -d %"
 for command in $(\sed -ne '/^\[alias\]/,$p' ${HOME}/.gitconfig | \grep -v '\[alias\]' | \awk '{print $1}')
 do
   alias "g${command}"="git ${command}"
 done
 
+# ctags
+alias ct='ctags -R -f .tags'
+alias ctg='ctags -R -f .gemtags `bundle show --paths`'
+
 # ruby
-alias bi='bundle install --without production -j4'
-alias bu='bundle update'
+alias bi='bundle install --without production -j4 && ctg'
+alias bu='bundle update && ctg'
 alias be='bundle exec'
 alias bo='bundle open'
 alias ber='bundle exec rake'
@@ -98,17 +94,17 @@ alias sd='sudo shutdown -h now'
 # short command
 alias t='touch'
 alias m='mkdir'
+alias mp='mkdir -p'
 alias d='cd'
 alias v='vim'
 alias so='source'
 alias vgc='vim ~/.gitconfig'
-alias ct='ctags -f .tags -R'
 alias sl='xscreensaver-command -lock'
 alias h='head'
 alias p='xsel --clipboard --output'
 alias open='xdg-open'
 alias dp='display'
-alias f='feh'
+alias f='feh -.'
 alias agl='ag --pager 'less -X''
 alias essid='iwlist wlan0 scan | \grep ESSID'
 alias ta='tmux attach'
@@ -116,13 +112,19 @@ alias tc='tmux save-buffer - | xsel --clipboard --input'
 alias zr="vim $HOME/.zshrc && source $HOME/.zshrc"
 alias battery='acpi -b'
 alias _='sudo'
+alias up='sudo aptitude update && sudo aptitude upgrade'
+alias cal='cal -3'
+alias fm='pcmanfm' #ファイルマネージャ
+alias pingg='ping www.google.com'
+alias now='date +%Y%m%d%H%M%S'
+alias today='date +%Y%m%d'
 
 # global alias
 alias -g G='| ag'
 alias -g H='| head'
-alias -g First='| head -n 1'
+alias -g FIRST='| head -n 1'
 alias -g T='| tail'
-alias -g Last='| tail -n 1'
+alias -g LAST='| tail -n 1'
 alias -g L='| less -X'
 alias -g CP='| xsel --clipboard --input'
 alias -g RT='RAILS_ENV=test'
@@ -205,3 +207,6 @@ function gem(){
 
 # pravete setting
 [ -f ~/.zshrc.private ] && source ~/.zshrc.private
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

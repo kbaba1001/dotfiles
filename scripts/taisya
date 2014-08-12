@@ -3,7 +3,7 @@
 taisya() {
   local now=`date`
   echo ${now}
-  echo ${now} >> ~/log/taisya.log
+  echo ${now} >> ~/Dropbox/my/log/taisya.log
 }
 
 taisya

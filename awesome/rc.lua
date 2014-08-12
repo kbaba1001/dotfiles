@@ -38,6 +38,7 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 beautiful.init("/usr/share/awesome/themes/sky/theme.lua")
+-- beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "x-terminal-emulator"
@@ -56,14 +57,14 @@ layouts =
 {
     awful.layout.suit.max,
     awful.layout.suit.tile,
-    awful.layout.suit.tile.bottom,
+    awful.layout.suit.tile.top,
     awful.layout.suit.floating,
-    awful.layout.suit.magnifier
+    --awful.layout.suit.magnifier
     --awful.layout.suit.max.fullscreen,
     --awful.layout.suit.fair,
     --awful.layout.suit.fair.horizontal,
     --awful.layout.suit.tile.left,
-    --awful.layout.suit.tile.top,
+    --awful.layout.suit.tile.bottom,
     --awful.layout.suit.spiral,
     --awful.layout.suit.spiral.dwindle,
 }

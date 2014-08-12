@@ -1,6 +1,9 @@
 [user]
   name = kbaba1001
-  email = kbaba1001@gmail.com
+  email = k-baba@esm.co.jp
+#[user]
+#  name = kbaba1001
+#  email = kbaba1001@gmail.com
 [color]
   ui = true
   diff = true
@@ -8,7 +11,7 @@
   editor = vim
   excludesfile = ~/.gitignore
 [push]
-  default = simple
+  default = nothing
 [pull]
   rebase = true
 [log]
@@ -25,14 +28,16 @@
   browser = google-chrome
 [alias]
   co = checkout
-  s  = status -s
-  sh = show
+  cb = checkout -b
+  s = show
   si = !sh -c 'git show HEAD~$(($0 - 1))'
   p  = pull
   pr = pull --rebase
   c  = commit -v
   cm = commit -m
+  cme = commit --allow-empty -m
   ca = commit --amend -v
+  cos = commit -m 'cosmetics'
   a  = add
   al = add -A .
   au = add -u
@@ -43,7 +48,8 @@
   d  = diff
   dw = diff -w
   ds = diff --staged
-  wd = diff --word-diff
+  dm = diff master
+  dms = !sh -c 'git --no-pager diff master --stat'
   l  = !sh -c 'git --no-pager log --oneline --decorate -n 15'
   lo = log --oneline --decorate --graph
   ld = log --decorate
@@ -51,7 +57,8 @@
   lp = log -p --decorate
   ru = remote update --prune
   g  = grep
+  re = rebase
   ri = !sh -c 'git rebase -i HEAD~$0'
   t  = tag
   f  = fetch
-  nipo = !sh -c 'git commit -m \"kbaba1001の日報 $(date +%Y/%m/%d)\"'
+  nipo = !sh -c 'git commit -m \"[kbaba1001] NoMethodError: $(date +%Y-%m-%d)\"'
