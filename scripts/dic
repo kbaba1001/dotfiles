@@ -17,4 +17,4 @@
 # UTF-8 に変換していれている
 DICTIONARY_PATH="${HOME}/Dropbox/my/lib/edict/"
 
-ag --no-numbers --pager 'less -X' "$@" "${DICTIONARY_PATH}"
+ag --no-numbers --pager 'less -XF' "$@" "${DICTIONARY_PATH}"

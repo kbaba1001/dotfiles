@@ -14,9 +14,9 @@
 [log]
   date = iso
 [pager]
-  log = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -X
-  show = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -X
-  diff = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -X
+  log = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -XF
+  show = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -XF
+  diff = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -XF
 [help]
   autocorrect = 1
 [instaweb]
@@ -46,8 +46,8 @@
   dw = diff -w
   ds = diff --staged
   dm = diff master
-  dms = !sh -c 'git --no-pager diff master --stat'
-  l  = !sh -c 'git --no-pager log --oneline --decorate -n 15'
+  dms = diff master --stat
+  l  = log --oneline --decorate -n 15
   lo = log --oneline --decorate --graph
   ld = log --decorate
   ls = log --stat --decorate
