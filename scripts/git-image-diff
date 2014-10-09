@@ -1,0 +1,3 @@
+#!/bin/bash
+echo $@
+[ $# -eq 7 ] && composite -compose difference "$2" "$5" "hoge.png"

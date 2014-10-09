@@ -1,6 +1,7 @@
 #!/bin/bash
 
 [ -f ~/.display ] && . ~/.display
+[ -f ~/.xinitrc.private ] && source ~/.xinitrc.private
 
 xset r rate 150 80
 xmodmap ~/.Xmodmap
@@ -15,7 +16,7 @@ export XMODIFIERS="@im=uim"
 exec uim-toolbar-gtk3-systray &
 
 exec xcompmgr &
-exec wicd-client -t &
+#exec wicd-client -t &
 exec xscreensaver &
 exec dropbox start -i &
 exec clipit &

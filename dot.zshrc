@@ -1,18 +1,14 @@
-ZSH=$HOME/.oh-my-zsh
-CASE_SENSITIVE='true'
-DISABLE_AUTO_UPDATE='true'
-DISABLE_AUTO_TITLE='true'
-DISABLE_CORRECTION='true'
-source $ZSH/oh-my-zsh.sh
+#ZSH=$HOME/.oh-my-zsh
+#CASE_SENSITIVE='true'
+#DISABLE_AUTO_UPDATE='true'
+#DISABLE_AUTO_TITLE='true'
+#DISABLE_CORRECTION='true'
+#source $ZSH/oh-my-zsh.sh
 
-# 拡張ファイルグロブが有効になり、正規表現として '#'、'~'、'^'が特別扱いになる。
-setopt extended_glob
-
-# Ctrl+s でロックしないようにする
-stty stop undef
-
-# rbenv
-eval "$(rbenv init -)"
+# prezto (https://github.com/sorin-ionescu/prezto)
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
 
 # z ( https://github.com/rupa/z )
 source ${HOME}/.zsh/z/z.sh
@@ -78,6 +74,7 @@ alias ber='bundle exec rake'
 alias brs='bundle exec rspec'
 alias bra='bundle exec rails'
 alias bcu='bundle exec cucumber'
+alias bmn='bundle exec middleman'
 alias -g RT='RAILS_ENV=test'
 alias -g RD='RAILS_ENV=development'
 alias -g RP='RAILS_ENV=production'
@@ -104,7 +101,7 @@ alias h='head'
 alias p='xsel --clipboard --output'
 alias open='xdg-open'
 alias f='feh -.'
-alias ag='ag -S --stats --pager "less -XF"'
+alias ag='ag -S --pager "less -XF"'
 alias essid='iwlist wlan0 scan | \grep ESSID'
 alias ta='tmux attach'
 alias tc='tmux save-buffer - | xsel --clipboard --input'
@@ -113,7 +110,7 @@ alias battery='acpi -b'
 alias _='sudo'
 alias up='sudo aptitude update && sudo aptitude upgrade'
 alias cal='cal -3'
-alias fm='pcmanfm' #ファイルマネージャ
+alias fm='pcmanfm' #ファイルマネージャ ( file manager )
 alias pingg='ping www.google.com'
 alias now='date +%Y%m%d%H%M%S'
 alias today='date +%Y%m%d'
@@ -153,23 +150,14 @@ alias -- -='cd -'
 # http://sourceforge.net/mailarchive/forum.php?set=custom&viewmonth=&viewday=&forum_name=dispcalgui-users&style=nested&max_rows=75&submit=Change+View
 XDG_DATA_DIRS=/opt/local:/usr/local
 
-export PATH="$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$HOME/Dropbox/my/dotfiles/scripts:$HOME/bin:$HOME/Dropbox/my/bin:/sbin:"
+# 環境変数
+export PATH="$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$HOME/Dropbox/my/dotfiles/scripts:$HOME/bin:$HOME/Dropbox/my/bin:/sbin:/usr/local/heroku/bin:"
 export WORDCHARS="*?_-.[]~=&;#$%^(){}<>"
 export JSTESTDRIVER_HOME=~/Dropbox/project/tdd_javascript
-
-## Emacsライクキーバインド設定
-bindkey -e
-
-# `cd -<Tab>` や `cd +<Tab>` を使えるようにする
-setopt AUTO_PUSHD
 
 # zmv
 autoload -Uz zmv
 alias zmv='noglob zmv -W'
-
-# 補完
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'
 
 function chpwd() {
     echo "$fg_bold[yellow]$PWD$reset_color"
@@ -194,6 +182,9 @@ function do_enter() {
 zle -N do_enter
 bindkey '^m' do_enter
 
+# rbenv
+eval "$(rbenv init -)"
+
 # rbenv rehash ( http://rhysd.hatenablog.com/entry/20120226/1330265121 )
 function gem(){
     $HOME/.rbenv/shims/gem $*
@@ -204,8 +195,10 @@ function gem(){
     fi
 }
 
+bindkey -e           # Emacsライクキーバインド設定
+setopt AUTO_PUSHD    # `cd -<Tab>` や `cd +<Tab>` を使えるようにする
+setopt extended_glob # 拡張ファイルグロブが有効になり、正規表現として '#'、'~'、'^'が特別扱いになる。
+stty stop undef      # Ctrl+s でロックしないようにする
+
 # pravete setting
 [ -f ~/.zshrc.private ] && source ~/.zshrc.private
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"

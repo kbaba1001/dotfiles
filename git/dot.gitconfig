@@ -59,3 +59,4 @@
   t  = tag
   f  = fetch
   nipo = !sh -c 'git commit -m \"[kbaba1001] NoMethodError: $(date +%Y-%m-%d)\"'
+  diary = !sh -c 'git commit -m \"diary $(date --rfc-3339=second)\"'
