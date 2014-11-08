@@ -19,6 +19,6 @@ do
       echo "less.sh not found"
     fi
   else
-    echo "Sorry, i dont no ..."
+    echo "(´ ･ω ･｀)知らんがな"
   fi
 done

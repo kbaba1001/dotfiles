@@ -89,11 +89,10 @@ alias s='show-linux'
 alias sd='sudo shutdown -h now'
 
 # short command
-alias t='touch'
 alias m='mkdir'
 alias mp='mkdir -p'
 alias d='cd'
-alias v='vim'
+alias v='vagrant'
 alias so='source'
 alias vgc='vim ~/.gitconfig'
 alias sl='xscreensaver-command -lock'
@@ -103,8 +102,10 @@ alias open='xdg-open'
 alias f='feh -.'
 alias ag='ag -S --pager "less -XF"'
 alias essid='iwlist wlan0 scan | \grep ESSID'
+alias t='tmux'
 alias ta='tmux attach'
 alias tc='tmux save-buffer - | xsel --clipboard --input'
+alias to='touch'
 alias zr="vim $HOME/.zshrc && source $HOME/.zshrc"
 alias battery='acpi -b'
 alias _='sudo'
@@ -126,6 +127,7 @@ alias -g CP='| xsel --clipboard --input'
 alias -g RT='RAILS_ENV=test'
 alias -g RD='RAILS_ENV=development'
 alias -g RP='RAILS_ENV=production'
+alias -g P='| peco'
 
 # over write
 alias ls='ls -F --color'
@@ -186,6 +188,15 @@ function do_enter() {
 }
 zle -N do_enter
 bindkey '^m' do_enter
+
+# peco で histry を検索 ( http://qiita.com/comutt/items/f54e755f22508a6c7d78 )
+peco-select-history() {
+    BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$LBUFFER")
+    CURSOR=${#BUFFER}
+    zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
 
 # rbenv
 eval "$(rbenv init -)"
