@@ -7,8 +7,10 @@
 [core]
   editor = vim
   excludesfile = ~/.gitignore
+  quotepath = false
 [push]
-  default = nothing
+  #default = nothing
+  default = simple
 [pull]
   rebase = true
 [log]
@@ -17,6 +19,8 @@
   log = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -XF
   show = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -XF
   diff = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -XF
+[gui]
+  encoding = utf-8
 [help]
   autocorrect = 1
 [instaweb]
@@ -27,6 +31,7 @@
   co = checkout
   cb = checkout -b
   s = show
+  ss = show --stat
   si = !sh -c 'git show HEAD~$(($0 - 1))'
   p  = pull
   pr = pull --rebase
@@ -47,7 +52,7 @@
   ds = diff --staged
   dm = diff master
   dms = diff master --stat
-  l  = log --oneline --decorate -n 15
+  l  = !sh -c 'git --no-pager log --oneline --decorate -n 15'
   lo = log --oneline --decorate --graph
   ld = log --decorate
   ls = log --stat --decorate

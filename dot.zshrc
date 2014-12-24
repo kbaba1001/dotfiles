@@ -100,16 +100,16 @@ alias h='head'
 alias p='xsel --clipboard --output'
 alias open='xdg-open'
 alias f='feh -.'
+alias i='identify'
 alias ag='ag -S --pager "less -XF"'
 alias essid='iwlist wlan0 scan | \grep ESSID'
-alias t='tmux'
+alias t='touch'
 alias ta='tmux attach'
 alias tc='tmux save-buffer - | xsel --clipboard --input'
-alias to='touch'
 alias zr="vim $HOME/.zshrc && source $HOME/.zshrc"
 alias battery='acpi -b'
 alias _='sudo'
-alias up='sudo aptitude update && sudo aptitude upgrade'
+alias up='sudo aptitude update && sudo aptitude upgrade -y'
 alias cal='cal -3'
 alias fm='pcmanfm' #ファイルマネージャ ( file manager )
 alias pingg='ping www.google.com'
@@ -124,15 +124,15 @@ alias -g T='| tail'
 alias -g LAST='| tail -n 1'
 alias -g L='| less -X'
 alias -g CP='| xsel --clipboard --input'
-alias -g RT='RAILS_ENV=test'
-alias -g RD='RAILS_ENV=development'
-alias -g RP='RAILS_ENV=production'
 alias -g P='| peco'
+alias -g X='| xargs'
+alias -g M='--help | less -X'
 
 # over write
 alias ls='ls -F --color'
-alias less='less -XR'
+alias less='less -XF'
 alias grep='\grep --color=auto -n -E'
+alias crontab='crontab -i'
 
 # ls
 export LSCOLORS=gxfxcxdxbxegedabagacad
@@ -140,6 +140,7 @@ alias l='ls -lh'
 alias a='ls -a'
 alias la='ls -lha'
 alias du='du -h'
+alias du1='du -h -d 1'
 alias diff='colordiff -u'
 
 # cd
@@ -153,7 +154,7 @@ alias -- -='cd -'
 XDG_DATA_DIRS=/opt/local:/usr/local
 
 # 環境変数
-export PATH="$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$HOME/Dropbox/my/dotfiles/scripts:$HOME/bin:$HOME/Dropbox/my/bin:/sbin:/usr/local/heroku/bin:"
+export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$HOME/Dropbox/my/dotfiles/scripts:$HOME/bin:$HOME/Dropbox/my/bin:/sbin:/usr/local/heroku/bin:$PATH:"
 export WORDCHARS="*?_-.[]~=&;#$%^(){}<>"
 export JSTESTDRIVER_HOME=~/Dropbox/project/tdd_javascript
 

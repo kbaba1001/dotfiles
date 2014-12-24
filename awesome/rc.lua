@@ -37,7 +37,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/usr/share/awesome/themes/sky/theme.lua")
+beautiful.init("/home/kbaba/.config/awesome/theme.lua")
 -- beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
