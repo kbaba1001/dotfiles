@@ -141,6 +141,7 @@ alias a='ls -a'
 alias la='ls -lha'
 alias du='du -h'
 alias du1='du -h -d 1'
+alias dus='\du -d 1 | sort -nr'
 alias diff='colordiff -u'
 
 # cd
