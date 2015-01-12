@@ -11,12 +11,12 @@ while getopts "csh" opts
 do
   case $opts in
     c)
-      rm -rf $TRASH_DIR/*
+      rm -rf $TRASH_DIR/{*,.??*}
       echo "clear ${TRASH_DIR}"
       exit 0
       ;;
     s)
-      ls -F --color $TRASH_DIR
+      ls -F --color -a $TRASH_DIR
       exit 0
       ;;
     h)
