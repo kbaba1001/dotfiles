@@ -2,11 +2,9 @@
 ! @see `man xmodmap`
 
 ! CapsLock ( 66) => Ctrl_L
-!! Ctrl_L   ( 37) => Super_L
 ! Tab      ( 23) => Super_L
 ! Super_L  (133) => Space
-!! Ctrl_R   (105) => Shift_R
-! Enter    ( 36) => Shift_R
+!! Enter    ( 36) => Super_R
 ! Shift_R  ( 62) => Shift_Lock
 ! Quart    ( 48) => Ctrl_R
 ! Space    ( 65) => Mode_switch
@@ -19,20 +17,17 @@ clear Mod5
 keycode 66  = Control_L
 keycode 23  = Super_L
 keycode 133 = space
-!keycode 105 = Shift_R
-!keycode 36  = Shift_R
+!keycode 36  = Super_R
 keycode 62  = Shift_Lock
 keycode 48  = Control_R
 keycode 65  = Mode_switch
 
 add Control = Control_L
+!add Mod4    = Super_L Super_R
 add Mod4    = Super_L
-!add Shift   = Shift_R
 add Lock    = Shift_Lock
 add Control = Control_R
 add Mod5    = Mode_switch
-
-keycode 105 = Return NoSymbol Return NoSymbol
 
 ! Japanese thumb key
 keycode 100 = Return NoSymbol Return NoSymbol

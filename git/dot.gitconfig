@@ -9,7 +9,6 @@
   excludesfile = ~/.gitignore
   quotepath = false
 [push]
-  #default = nothing
   default = simple
 [pull]
   rebase = true

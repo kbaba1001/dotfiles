@@ -46,6 +46,10 @@ export BUNDLER_EDITOR='st'
 export GEM_EDITOR='st'
 export EDITOR='vim'
 
+# atomがうまく動かないので対策。これで直るかどうか不明...
+# https://code.google.com/p/chromium/wiki/LinuxSUIDSandboxDevelopment
+export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
+
 # keychain
 keychain -q ${HOME}/.ssh/*.rsa
 
@@ -100,6 +104,7 @@ alias h='head'
 alias p='xsel --clipboard --output'
 alias open='xdg-open'
 alias f='feh -.'
+alias za='zathura'
 alias i='identify'
 alias ag='ag -S --pager "less -XF"'
 alias essid='iwlist wlan0 scan | \grep ESSID'
