@@ -41,9 +41,12 @@ function show_battery() {
 PROMPT='%{$fg_bold[red]%}$(rbenv version | sed -e "s/ (set.*$//")%{$reset_color%}%{$fg_bold[cyan]%}%C%{$reset_color%}$(git_super_status)%{$reset_color%}%# '
 RPROMPT='$(show_battery)%{$reset_color%}'
 
+# editor
+alias st='subl'
+
 # bundle open & gem open
-export BUNDLER_EDITOR='st'
-export GEM_EDITOR='st'
+export BUNDLER_EDITOR='subl'
+export GEM_EDITOR='subl'
 export EDITOR='vim'
 
 # atomがうまく動かないので対策。これで直るかどうか不明...
@@ -138,6 +141,7 @@ alias ls='ls -F --color'
 alias less='less -XF'
 alias grep='\grep --color=auto -n -E'
 alias crontab='crontab -i'
+alias pwgen='pwgen -s'
 
 # ls
 export LSCOLORS=gxfxcxdxbxegedabagacad
