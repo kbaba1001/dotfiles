@@ -1,13 +1,13 @@
 [user]
-  name = kbaba1001
+  name  = kbaba1001
   email = kbaba1001@gmail.com
 [color]
-  ui = true
+  ui   = true
   diff = true
 [core]
-  editor = vim
+  editor       = vim
   excludesfile = ~/.gitignore
-  quotepath = false
+  quotepath    = false
 [push]
   default = simple
 [pull]
@@ -15,7 +15,7 @@
 [log]
   date = iso
 [pager]
-  log = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -XF
+  log  = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -XF
   show = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -XF
   diff = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -XF
 [gui]
@@ -23,44 +23,43 @@
 [help]
   autocorrect = 1
 [instaweb]
-  local = true
-  httpd = webrick
+  local   = true
+  httpd   = webrick
   browser = google-chrome
 [alias]
-  co = checkout
-  cb = checkout -b
-  s = show
-  ss = show --stat
-  si = !sh -c 'git show HEAD~$(($0 - 1))'
-  p  = pull
-  pr = pull --rebase
-  c  = commit -v
-  cm = commit -m
-  cme = commit --allow-empty -m
-  ca = commit --amend -v
-  cos = commit -m 'cosmetics'
-  a  = add
-  al = add -A .
-  au = add -u
-  ap = add -p
-  b  = branch
-  ba = branch -a
-  bm = branch --merged
-  d  = diff
-  dw = diff -w
-  ds = diff --staged
-  dm = diff master
-  dms = diff master --stat
-  l  = !sh -c 'git --no-pager log --oneline --decorate -n 15'
-  lo = log --oneline --decorate --graph
-  ld = log --decorate
-  ls = log --stat --decorate
-  lp = log -p --decorate
-  ru = remote update --prune
-  g  = grep
-  re = rebase
-  ri = !sh -c 'git rebase -i HEAD~$0'
-  t  = tag
-  f  = fetch
-  nipo = !sh -c 'git commit -m \"[kbaba1001] NoMethodError: $(date +%Y-%m-%d)\"'
+  a     = add
+  al    = add -A .
+  ap    = add -p
+  au    = add -u
+  b     = branch
+  ba    = branch -a
+  bm    = branch --merged
+  c     = commit -v
+  ca    = commit --amend -v
+  cb    = checkout -b
+  cl    = clone
+  cm    = commit -m
+  cme   = commit --allow-empty -m
+  co    = checkout
+  d     = diff
   diary = !sh -c 'git commit -m \"diary $(date --rfc-3339=second)\"'
+  dm    = diff master
+  dms   = diff master --stat
+  ds    = diff --staged
+  dw    = diff -w
+  f     = fetch
+  g     = grep
+  l     = !sh -c 'git --no-pager log --oneline --decorate -n 15'
+  ld    = log --decorate
+  lo    = log --oneline --decorate --graph
+  lp    = log -p --decorate
+  ls    = log --stat --decorate
+  nipo  = !sh -c 'git commit -m \"[kbaba1001] NoMethodError: $(date +%Y-%m-%d)\"'
+  p     = pull
+  re    = rebase
+  ri    = !sh -c 'git rebase -i HEAD~$0'
+  ru    = remote update --prune
+  s     = show
+  si    = !sh -c 'git show HEAD~$(($0 - 1))'
+  ss    = show --stat
+  t     = tag
