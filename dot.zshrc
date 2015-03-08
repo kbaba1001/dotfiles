@@ -123,6 +123,7 @@ alias fm='pcmanfm' #ファイルマネージャ ( file manager )
 alias pingg='ping www.google.com'
 alias now='date +%Y%m%d%H%M%S'
 alias today='date +%Y%m%d'
+alias n='nano'
 
 # global alias
 alias -g G='| ag'
@@ -177,18 +178,20 @@ stty stop undef      # Ctrl+s でロックしないようにする
 autoload -Uz zmv
 alias zmv='noglob zmv -W'
 
+# cdした後の処理
 function chpwd() {
     echo "$fg_bold[yellow]$PWD$reset_color"
     ls -F --color
 }
 
-# 空 Enter で ls と git status を表示する ( http://qiita.com/yuyuchu3333/items/e9af05670c95e2cc5b4d )
+# 空 Enter で $PWD と ls と git status を表示する ( http://qiita.com/yuyuchu3333/items/e9af05670c95e2cc5b4d )
 function do_enter() {
     if [ -n "$BUFFER" ]; then
         zle accept-line
         return 0
     fi
     echo
+    echo "$fg_bold[yellow]$PWD$reset_color"
     ls -F --color
     if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
         echo -e "\e[0;33m*** git status ***\e[0m"

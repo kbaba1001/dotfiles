@@ -70,3 +70,7 @@ keycode  59 = comma less bracketleft exclam
 keycode  60 = period greater bracketright question
 keycode  61 = slash asciitilde bar backslash
 
+! foot pedal
+keycode 69 = space NoSymbol space NoSymbol
+keycode 70 = BackSpace NoSymbol Delete NoSymbol
+keycode 71 = Return NoSymbol Return NoSymbol

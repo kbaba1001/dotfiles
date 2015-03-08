@@ -5,7 +5,7 @@
   ui   = true
   diff = true
 [core]
-  editor       = vim
+  editor       = nano
   excludesfile = ~/.gitignore
   quotepath    = false
 [push]
@@ -56,7 +56,7 @@
   ls    = log --stat --decorate
   nipo  = !sh -c 'git commit -m \"[kbaba1001] NoMethodError: $(date +%Y-%m-%d)\"'
   p     = pull
-  re    = rebase
+  re    = rebase -i
   ri    = !sh -c 'git rebase -i HEAD~$0'
   ru    = remote update --prune
   s     = show

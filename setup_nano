@@ -1,0 +1,10 @@
+#!/bin/bash
+
+DOTDIR="${HOME}/Dropbox/my/dotfiles"
+
+ln -s -f "${DOTDIR}/dot.nanorc" ~/.nanorc
+mkdir -p ~/.nano
+git clone git@github.com:scopatz/nanorc.git ~/.nano/nanorc
+git clone git@github.com:mikelietz/feature.nanorc.git ~/.nano/feature.nanorc
+git clone git@gist.github.com:/736220.git ~/.nano/git_commit/
+mv ~/.nano/git_commit/{Nano\ Git\ Commit\ Syntax\ highlighting,git_commit.nanorc}

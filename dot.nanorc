@@ -195,6 +195,7 @@ bind ^S writeout    main
 bind ^R replace     main
 bind ^K mark        main
 bind ^L curpos      main
+bind ^H help        main
 
 ## Color setup
 ##
@@ -316,7 +317,10 @@ include "/home/kbaba/.nano/nanorc/xml.nanorc"
 include "/home/kbaba/.nano/nanorc/xresources.nanorc"
 include "/home/kbaba/.nano/nanorc/yaml.nanorc"
 include "/home/kbaba/.nano/nanorc/yum.nanorc"
-include "/home/kbaba/.nano/nanorc/zshrc.nanorc"
+#include "/home/kbaba/.nano/nanorc/zshrc.nanorc"
 
 ## https://github.com/mikelietz/feature.nanorc
 include "/home/kbaba/.nano/feature.nanorc/feature.nanorc"
+
+## https://gist.github.com/keithamus/736220
+include "/home/kbaba/.nano/git_commit/git_commit.nanorc"
