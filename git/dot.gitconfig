@@ -5,7 +5,7 @@
   ui   = true
   diff = true
 [core]
-  editor       = nano
+  editor       = vim
   excludesfile = ~/.gitignore
   quotepath    = false
 [push]
@@ -47,13 +47,15 @@
   dms   = diff master --stat
   ds    = diff --staged
   dw    = diff -w
+  dts   = diff --stat
   f     = fetch
   g     = grep
-  l     = !sh -c 'git --no-pager log --oneline --decorate -n 15'
+  l     = !sh -c 'git --no-pager log --decorate --oneline -n 15'
   ld    = log --decorate
-  lo    = log --oneline --decorate --graph
-  lp    = log -p --decorate
-  ls    = log --stat --decorate
+  lf    = log --decorate --oneline --follow
+  lo    = log --decorate --oneline --graph
+  lp    = log --decorate -p
+  ls    = log --decorate --stat
   nipo  = !sh -c 'git commit -m \"[kbaba1001] NoMethodError: $(date +%Y-%m-%d)\"'
   p     = pull
   re    = rebase -i
