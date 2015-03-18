@@ -203,6 +203,11 @@ function do_enter() {
 zle -N do_enter
 bindkey '^m' do_enter
 
+# z の履歴を peco で検索して cd する関数
+zcd() {
+  cd $(awk -F '|' '{print $1}' ~/.z | peco | head -n 1)
+}
+
 # peco で histry を検索 ( http://qiita.com/comutt/items/f54e755f22508a6c7d78 )
 peco-select-history() {
     BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$LBUFFER")
