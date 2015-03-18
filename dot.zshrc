@@ -208,9 +208,9 @@ zcd() {
   cd $(awk -F '|' '{print $1}' ~/.z | peco | head -n 1)
 }
 
-# peco で histry を検索 ( http://qiita.com/comutt/items/f54e755f22508a6c7d78 )
+# peco で histry を検索 ( http://qiita.com/comutt/items/f54e755f22508a6c7d78 を元に改良 )
 peco-select-history() {
-    BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$LBUFFER")
+    BUFFER=$(history -n 1 | tac | uniq -u | peco --query "$LBUFFER")
     CURSOR=${#BUFFER}
     zle clear-screen
 }
