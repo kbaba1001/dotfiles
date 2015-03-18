@@ -58,7 +58,7 @@
   ls    = log --decorate --stat
   nipo  = !sh -c 'git commit -m \"[kbaba1001] NoMethodError: $(date +%Y-%m-%d)\"'
   p     = pull
-  re    = rebase -i
+  re    = rebase
   ri    = !sh -c 'git rebase -i HEAD~$0'
   ru    = remote update --prune
   s     = show
