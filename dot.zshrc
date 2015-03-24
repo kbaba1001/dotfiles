@@ -44,7 +44,7 @@ export EDITOR='vim'
 
 # atomがうまく動かないので対策。これで直るかどうか不明...
 # https://code.google.com/p/chromium/wiki/LinuxSUIDSandboxDevelopment
-export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
+# export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 
 # keychain
 keychain -q ${HOME}/.ssh/*.rsa
