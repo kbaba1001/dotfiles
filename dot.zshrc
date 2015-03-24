@@ -56,9 +56,9 @@ keychain -q ${HOME}/.ssh/*.rsa
 # git
 alias g='git'
 alias gup="git pull --rebase && git remote update --prune && git branch --merged | \grep -v -E \"(\*|master)\" | xargs -I % git branch -d %"
-for command in $(\sed -ne '/^\[alias\]/,$p' ${HOME}/.gitconfig | \grep -v '\[alias\]' | \awk '{print $1}')
+for COMMAND in $(\sed -ne '/^\[alias\]/,$p' ${HOME}/.gitconfig | \grep -v '\[alias\]' | \awk '{print $1}')
 do
-  alias "g${command}"="git ${command}"
+  alias "g${COMMAND}"="git ${COMMAND}"
 done
 
 # ctags
