@@ -1,10 +1,3 @@
-#ZSH=$HOME/.oh-my-zsh
-#CASE_SENSITIVE='true'
-#DISABLE_AUTO_UPDATE='true'
-#DISABLE_AUTO_TITLE='true'
-#DISABLE_CORRECTION='true'
-#source $ZSH/oh-my-zsh.sh
-
 # prezto (https://github.com/sorin-ionescu/prezto)
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
