@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if xrandr | \grep -q -e '^DP2 connected'
+then
+  xrandr --output DP2 --mode 1920x1080 --primary --output eDP1 --mode 1366x768 --below DP2
+fi
+
+xbacklight -set 25
