@@ -1,0 +1,5 @@
+#!/bin/sh
+
+xset r rate 150 80
+xset mouse 1/2 1
+xmodmap ~/.Xmodmap

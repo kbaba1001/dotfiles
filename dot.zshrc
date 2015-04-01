@@ -85,8 +85,9 @@ alias brsd='rspec-git-diff'
 alias rm='trash'
 alias s='show-linux'
 
-# halt
+# shutdown
 alias sd='sudo shutdown -h now'
+alias sr='sudo shutdown -r now'
 
 # short command
 alias m='mkdir'
@@ -102,6 +103,7 @@ alias open='xdg-open'
 alias f='feh -.'
 alias za='zathura'
 alias i='identify'
+alias iv='identify -verbose'
 alias ag='ag -S --pager "less -XF"'
 alias essid='iwlist wlan0 scan | \grep ESSID'
 alias t='touch'
@@ -117,6 +119,7 @@ alias pingg='ping www.google.com'
 alias now='date +%Y%m%d%H%M%S'
 alias today='date +%Y%m%d'
 alias n='nano'
+alias w='which'
 
 # global alias
 alias -g G='| ag'

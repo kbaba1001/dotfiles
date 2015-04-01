@@ -33,6 +33,7 @@
   au    = add -u
   b     = branch
   ba    = branch -a
+  bn    = rev-parse --abbrev-ref HEAD
   bm    = branch --merged
   c     = commit -v
   ca    = commit --amend -v

@@ -17,6 +17,7 @@ auto_display(){
     xbacklight -set 25
   else
     xrandr --auto
+    xbacklight -set 50
   fi
 }
 

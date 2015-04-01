@@ -1,11 +1,8 @@
 #!/bin/bash
 
 [ -f ~/.display ] && . ~/.display
+[ -f ~/.input_device ] && source ~/.input_device
 [ -f ~/.xinitrc.private ] && source ~/.xinitrc.private
-
-xset r rate 150 80
-xmodmap ~/.Xmodmap
-#xmodmap ~/Dropbox/my/dotfiles/escher.xmodmap
 
 export OOO_FORCE_DESKTOP="gnome"
 
@@ -16,7 +13,6 @@ export XMODIFIERS="@im=uim"
 exec uim-toolbar-gtk3-systray &
 
 exec xcompmgr &
-#exec wicd-client -t &
 exec xscreensaver &
 exec dropbox start -i &
 exec clipit &
