@@ -55,7 +55,8 @@ keychain -q ${HOME}/.ssh/*.rsa
 
 # git
 alias g='git'
-alias gup="git pull --rebase && git remote update --prune && git branch --merged | \grep -v -E \"(\*|master)\" | xargs -I % git branch -d %"
+alias gup="git pull --rebase && git remote update --prune && git pull --tags && git branch --merged | \grep -v -E \"(\*|master)\" | xargs -I % git branch -d %"
+alias gbd="git branch | \grep -v -E \"(\*|master)\" | xargs -I % git branch -d %"
 for COMMAND in $(\sed -ne '/^\[alias\]/,$p' ${HOME}/.gitconfig | \grep -v '\[alias\]' | \awk '{print $1}')
 do
   alias "g${COMMAND}"="git ${COMMAND}"
@@ -134,21 +135,23 @@ alias -g X='| xargs'
 alias -g M='--help | less -X'
 
 # over write
-alias ls='ls -F --color'
-alias less='less -XF'
 alias grep='\grep --color=auto -n -E'
 alias crontab='crontab -i'
 alias pwgen='pwgen -s'
+alias diff='colordiff -u'
 
 # ls
 export LSCOLORS=gxfxcxdxbxegedabagacad
+alias ls='ls -F --color --group-directories-first'
 alias l='ls -lh'
 alias a='ls -a'
 alias la='ls -lha'
 alias du='du -h'
 alias du1='du -h -d 1'
 alias dus='\du -d 1 | sort -nr'
-alias diff='colordiff -u'
+
+# less
+alias less='less -XFR'
 
 # cd
 alias ..='cd ..'
@@ -161,7 +164,7 @@ alias -- -='cd -'
 XDG_DATA_DIRS=/opt/local:/usr/local
 
 # 環境変数
-export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$HOME/Dropbox/my/dotfiles/scripts:$HOME/bin:$HOME/Dropbox/my/bin:/sbin:/usr/local/heroku/bin:$PATH:"
+export PATH="$HOME/.cabal/bin:$HOME/.rbenv/bin:$HOME/.cabal/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$HOME/Dropbox/my/dotfiles/scripts:$HOME/bin:$HOME/Dropbox/my/bin:/sbin:/usr/local/heroku/bin:$PATH:"
 export WORDCHARS="*?_-.[]~=&;#$%^(){}<>"
 export JSTESTDRIVER_HOME=~/Dropbox/project/tdd_javascript
 

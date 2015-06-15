@@ -1,6 +1,6 @@
 #!/bin/sh
 
-LS="ls -F --color"
+LS="ls -F --color --group-directories-first"
 
 if [ "$#" = 0 ]; then
   $LS .

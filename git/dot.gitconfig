@@ -34,7 +34,7 @@
   b     = branch
   ba    = branch -a
   bn    = rev-parse --abbrev-ref HEAD
-  bm    = branch --merged
+  bm    = branch -m
   c     = commit -v
   ca    = commit --amend -v
   cb    = checkout -b
@@ -55,6 +55,7 @@
   ld    = log --decorate
   lf    = log --decorate --oneline --follow
   lo    = log --decorate --oneline --graph
+  lop   = log --decorate --oneline
   lp    = log --decorate -p
   ls    = log --decorate --stat
   nipo  = !sh -c 'git commit -m \"[kbaba1001] NoMethodError: $(date +%Y-%m-%d)\"'
