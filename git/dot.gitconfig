@@ -1,6 +1,6 @@
 [user]
   name  = kbaba1001
-  email = kbaba1001@gmail.com
+  email = kbaba1001@users.noreply.github.com
 [color]
   ui   = true
   diff = true
@@ -41,6 +41,7 @@
   cl    = clone
   cm    = commit -m
   cme   = commit --allow-empty -m
+  ce   = commit --allow-empty
   co    = checkout
   d     = diff
   diary = !sh -c 'git commit -m \"diary $(date --rfc-3339=second)\"'
