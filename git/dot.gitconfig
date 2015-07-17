@@ -68,3 +68,7 @@
   si    = !sh -c 'git show HEAD~$(($0 - 1))'
   ss    = show --stat
   t     = tag
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

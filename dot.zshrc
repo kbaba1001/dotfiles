@@ -20,19 +20,26 @@ ZSH_THEME_GIT_PROMPT_REMOTE=""
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}\xF0\x9F\x8D\xB7 "
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[white]%}\xF0\x9F\x8D\xA3 "
 
-# ThinkPad x240 のバッテリー残量を表示
-function show_battery() {
+showBattery() {
   local ac_adapter_status=`acpi -a | awk '{print $3}'`
   if [ ${ac_adapter_status} = 'off-line' ]; then
-    local battery0=`acpi -b | awk '{print $4}' | head -n 1`
-    local battery1=`acpi -b | awk '{print $4}' | tail -n 1`
+    local bat1_full=`cat /sys/class/power_supply/BAT1/energy_full`
+    local bat1_now=`cat /sys/class/power_supply/BAT1/energy_now`
 
-    echo "${battery0}%%,${battery1}%"
+    local bat0_full=`cat /sys/class/power_supply/BAT0/energy_full`
+    local bat0_now=`cat /sys/class/power_supply/BAT0/energy_now`
+
+    echo $bat1_now $bat1_full | awk '{printf ("%2d,",$1/$2*100)}'
+    echo $bat0_now $bat0_full | awk '{printf ("%2d\n",$1/$2*100)}'
   fi
 }
 
+setopt transient_rprompt
 PROMPT='%{$fg_bold[red]%}$(rbenv version | sed -e "s/ (set.*$//")%{$reset_color%}%{$fg_bold[cyan]%}%C%{$reset_color%}$(git_super_status)%{$reset_color%}%# '
-RPROMPT='$(show_battery)%{$reset_color%}'
+RPROMPT='$(showBattery)'
+
+# Terminal lang
+# LANG=en_US.UTF-8
 
 # editor
 alias st='subl'
@@ -113,7 +120,7 @@ alias tc='tmux save-buffer - | xsel --clipboard --input'
 alias zr="vim $HOME/.zshrc && source $HOME/.zshrc"
 alias battery='acpi -b'
 alias _='sudo'
-alias up='sudo aptitude update && sudo aptitude upgrade -y'
+alias up='sudo apt update && sudo apt upgrade -y'
 alias cal='cal -3'
 alias fm='pcmanfm' #ファイルマネージャ ( file manager )
 alias pingg='ping www.google.com'
@@ -139,6 +146,7 @@ alias grep='\grep --color=auto -n -E'
 alias crontab='crontab -i'
 alias pwgen='pwgen -s'
 alias diff='colordiff -u'
+alias unzip='unar'
 
 # ls
 export LSCOLORS=gxfxcxdxbxegedabagacad

@@ -13,9 +13,12 @@ export XMODIFIERS="@im=uim"
 exec uim-toolbar-gtk3-systray &
 
 exec xcompmgr &
+exec nm-applet &
 exec xscreensaver &
 exec dropbox start -i &
 exec clipit &
 exec google-chrome --no-startup-window &
 exec terminator &
-exec awesome
+#exec awesome
+exec i3
+#exec dwm
