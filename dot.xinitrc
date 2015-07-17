@@ -10,15 +10,16 @@ export GTK_IM_MODULE="uim"
 export QT_IM_MODULE="uim"
 exec uim-xim &
 export XMODIFIERS="@im=uim"
-exec uim-toolbar-gtk3-systray &
+#exec uim-toolbar-gtk3-systray &
 
 exec xcompmgr &
-exec nm-applet &
+exec xbindkeys &
+#exec nm-applet &
 exec xscreensaver &
-exec dropbox start -i &
+#exec dropbox start -i &
+exec dropbox start &
 exec clipit &
 exec google-chrome --no-startup-window &
 exec terminator &
 #exec awesome
 exec i3
-#exec dwm
