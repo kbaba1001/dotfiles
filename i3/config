@@ -168,3 +168,8 @@ bindsym $mod+r mode "resize"
 # bar {
 #         status_command i3status
 # }
+
+# -------------------
+
+# show battery
+bindsym $mod+b exec notify-send "$(acpi -b)"
