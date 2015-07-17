@@ -20,23 +20,10 @@ ZSH_THEME_GIT_PROMPT_REMOTE=""
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}\xF0\x9F\x8D\xB7 "
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[white]%}\xF0\x9F\x8D\xA3 "
 
-showBattery() {
-  local ac_adapter_status=`acpi -a | awk '{print $3}'`
-  if [ ${ac_adapter_status} = 'off-line' ]; then
-    local bat1_full=`cat /sys/class/power_supply/BAT1/energy_full`
-    local bat1_now=`cat /sys/class/power_supply/BAT1/energy_now`
-
-    local bat0_full=`cat /sys/class/power_supply/BAT0/energy_full`
-    local bat0_now=`cat /sys/class/power_supply/BAT0/energy_now`
-
-    echo $bat1_now $bat1_full | awk '{printf ("%2d,",$1/$2*100)}'
-    echo $bat0_now $bat0_full | awk '{printf ("%2d\n",$1/$2*100)}'
-  fi
-}
-
 setopt transient_rprompt
 PROMPT='%{$fg_bold[red]%}$(rbenv version | sed -e "s/ (set.*$//")%{$reset_color%}%{$fg_bold[cyan]%}%C%{$reset_color%}$(git_super_status)%{$reset_color%}%# '
-RPROMPT='$(showBattery)'
+RPROMPT='$(show_battery)'
+# MEMO show_batteryは自前のシェルスクリプト
 
 # Terminal lang
 # LANG=en_US.UTF-8
@@ -114,11 +101,12 @@ alias i='identify'
 alias iv='identify -verbose'
 alias ag='ag -S --pager "less -XF"'
 alias essid='iwlist wlan0 scan | \grep ESSID'
+alias wifi='nmcli device wifi'
 alias t='touch'
 alias ta='tmux attach'
 alias tc='tmux save-buffer - | xsel --clipboard --input'
 alias zr="vim $HOME/.zshrc && source $HOME/.zshrc"
-alias battery='acpi -b'
+#alias battery='acpi -b'
 alias _='sudo'
 alias up='sudo apt update && sudo apt upgrade -y'
 alias cal='cal -3'

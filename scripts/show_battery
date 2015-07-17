@@ -1,0 +1,14 @@
+#!/bin/bash
+
+showBattery() {
+  local bat1_full=`cat /sys/class/power_supply/BAT1/energy_full`
+  local bat1_now=`cat /sys/class/power_supply/BAT1/energy_now`
+
+  local bat0_full=`cat /sys/class/power_supply/BAT0/energy_full`
+  local bat0_now=`cat /sys/class/power_supply/BAT0/energy_now`
+
+  echo $bat1_now $bat1_full | awk '{printf ("%2d,",$1/$2*100)}'
+  echo $bat0_now $bat0_full | awk '{printf ("%2d\n",$1/$2*100)}'
+}
+
+showBattery
