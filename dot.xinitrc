@@ -15,7 +15,7 @@ exec uim-toolbar-gtk3-systray &
 exec xcompmgr &
 exec xbindkeys &
 exec nm-applet &
-exec xscreensaver &
+exec xautolock -time 10 -locker screen_lock &
 exec dropbox start -i &
 exec clipit &
 exec google-chrome --no-startup-window &
