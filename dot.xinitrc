@@ -21,5 +21,4 @@ exec clipit &
 exec google-chrome --no-startup-window &
 exec terminator &
 exec feh --bg-scale ~/Dropbox/wallpapers/jetpack_octocat1.jpg &
-#exec awesome
 exec i3
