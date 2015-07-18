@@ -175,4 +175,4 @@ bar {
 # -------------------
 
 # show battery
-bindsym $mod+b exec notify-send "$(acpi -b)"
+# bindsym $mod+b exec notify-send "$(acpi -b)"

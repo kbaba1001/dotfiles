@@ -22,7 +22,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[white]%}\xF0\x9F\x8D\xA3 "
 
 setopt transient_rprompt
 PROMPT='%{$fg_bold[red]%}$(rbenv version | sed -e "s/ (set.*$//")%{$reset_color%}%{$fg_bold[cyan]%}%C%{$reset_color%}$(git_super_status)%{$reset_color%}%# '
-RPROMPT='$(show_battery)'
+# RPROMPT='$(show_battery)'
 # MEMO show_batteryは自前のシェルスクリプト
 
 # Terminal lang
