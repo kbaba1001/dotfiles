@@ -169,7 +169,6 @@ bar {
     mode hide
     hidden_state hide
     status_command i3status
-    position top
     font pango:monospace 12
 }
 
