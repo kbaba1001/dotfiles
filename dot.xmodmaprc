@@ -47,7 +47,7 @@ keycode  52 = z Z Home Home
 keycode  53 = x X Prior Prior
 keycode  54 = c C Next Next
 keycode  55 = v V End End
-keycode  56 = b B asciicircum semicolon
+keycode  56 = b B asciicircum
 
 ! right hand
 keycode  29 = y Y percent semicolon
