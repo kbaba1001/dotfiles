@@ -123,6 +123,9 @@ alias du='du -h'
 alias du1='du -h -d 1'
 alias dus='\du -d 1 | sort -nr'
 
+# locate (for mac)
+alias updatedb='sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist'
+
 # less
 alias less='less -XFR'
 
@@ -163,7 +166,7 @@ function do_enter() {
     fi
     echo
     echo "$fg_bold[yellow]$PWD$reset_color"
-    ls -F --color
+    ls
     if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
         echo -e "\e[0;33m*** git status ***\e[0m"
         git status -s
