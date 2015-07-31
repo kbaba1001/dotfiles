@@ -176,7 +176,7 @@ zcd() {
 
 # peco で histry を検索 ( http://qiita.com/comutt/items/f54e755f22508a6c7d78 を元に改良 )
 peco-select-history() {
-    BUFFER=$(history -n 1 | tac | uniq -u | peco --query "$LBUFFER")
+    BUFFER=$(history -n 1 | tail -r | uniq -u | peco --query "$LBUFFER")
     CURSOR=${#BUFFER}
     zle clear-screen
 }
