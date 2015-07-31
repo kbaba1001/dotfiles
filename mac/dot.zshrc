@@ -68,30 +68,18 @@ alias mp='mkdir -p'
 alias v='vagrant'
 alias so='source'
 alias vgc='vim ~/.gitconfig'
-alias sl='screen_lock'
 alias h='head'
-alias p='xsel --clipboard --output'
-alias open='xdg-open'
-alias f='feh -.'
-alias za='zathura'
 alias i='identify'
 alias iv='identify -verbose'
 alias ag='ag -S --pager "less -XF"'
-alias essid='iwlist wlan0 scan | \grep ESSID'
-alias wifi='nmcli device wifi'
 alias t='touch'
 alias ta='tmux attach'
-alias tc='tmux save-buffer - | xsel --clipboard --input'
 alias zr="vim $HOME/.zshrc && source $HOME/.zshrc"
-alias battery='acpi -b'
 alias _='sudo'
-alias up='sudo apt update && sudo apt upgrade -y'
 alias cal='cal -3'
 alias pingg='ping www.google.com'
 alias now='date +%Y%m%d%H%M%S'
 alias today='date +%Y%m%d'
-alias n='nano'
-alias w='which'
 
 # global alias
 alias -g G='| ag'
@@ -122,7 +110,7 @@ alias du='du -h'
 alias du1='du -h -d 1'
 alias dus='\du -d 1 | sort -nr'
 
-# locate (for mac)
+# locate
 alias updatedb='sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist'
 
 # less
@@ -183,6 +171,18 @@ peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
+# ctrl-g で ghq のリポジトリを検索してcdする
+function peco-src () {
+  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-src
+bindkey '^g' peco-src
+
 # rbenv
 eval "$(rbenv init -)"
 
@@ -198,15 +198,3 @@ function gem(){
 
 # pravete setting
 [ -f ~/.zshrc.private ] && source ~/.zshrc.private
-
-# ghq
-function peco-src () {
-  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
-  if [ -n "$selected_dir" ]; then
-    BUFFER="cd ${selected_dir}"
-    zle accept-line
-  fi
-  zle clear-screen
-}
-zle -N peco-src
-bindkey '^g' peco-src
