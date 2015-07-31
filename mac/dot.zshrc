@@ -29,6 +29,7 @@ export GEM_EDITOR='atom'
 export EDITOR='vim'
 
 # git
+alias git='hub'
 alias g='git'
 alias gup="git pull --rebase && git remote update --prune && git pull --tags && git branch --merged | \grep -v -E \"(\*|master)\" | xargs -I % git branch -d %"
 alias gbd="git branch | \grep -v -E \"(\*|master)\" | xargs -I % git branch -d %"
@@ -64,7 +65,6 @@ alias s='show-mac'
 # short command
 alias m='mkdir'
 alias mp='mkdir -p'
-alias d='cd'
 alias v='vagrant'
 alias so='source'
 alias vgc='vim ~/.gitconfig'
@@ -87,7 +87,6 @@ alias battery='acpi -b'
 alias _='sudo'
 alias up='sudo apt update && sudo apt upgrade -y'
 alias cal='cal -3'
-alias fm='pcmanfm' #ファイルマネージャ ( file manager )
 alias pingg='ping www.google.com'
 alias now='date +%Y%m%d%H%M%S'
 alias today='date +%Y%m%d'
@@ -129,12 +128,6 @@ alias updatedb='sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.l
 # less
 alias less='less -XFR'
 
-# cd
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias -- -='cd -'
-
 # color management
 # http://sourceforge.net/mailarchive/forum.php?set=custom&viewmonth=&viewday=&forum_name=dispcalgui-users&style=nested&max_rows=75&submit=Change+View
 XDG_DATA_DIRS=/opt/local:/usr/local
@@ -143,14 +136,13 @@ XDG_DATA_DIRS=/opt/local:/usr/local
 export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$HOME/Dropbox/my/dotfiles/scripts:$HOME/bin:$HOME/Dropbox/my/bin:$PATH"
 export WORDCHARS="*?_-.[]~=&;#$%^(){}<>"
 
-bindkey -e           # Emacsライクキーバインド設定
 setopt AUTO_PUSHD    # `cd -<Tab>` や `cd +<Tab>` を使えるようにする
 setopt extended_glob # 拡張ファイルグロブが有効になり、正規表現として '#'、'~'、'^'が特別扱いになる。
 stty stop undef      # Ctrl+s でロックしないようにする
 
 # zmv
-autoload -Uz zmv
-alias zmv='noglob zmv -W'
+# autoload -Uz zmv
+# alias zmv='noglob zmv -W'
 
 # cdした後の処理
 function chpwd() {
@@ -206,3 +198,15 @@ function gem(){
 
 # pravete setting
 [ -f ~/.zshrc.private ] && source ~/.zshrc.private
+
+# ghq
+function peco-src () {
+  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-src
+bindkey '^g' peco-src
