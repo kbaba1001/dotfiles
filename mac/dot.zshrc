@@ -128,6 +128,9 @@ setopt AUTO_PUSHD    # `cd -<Tab>` や `cd +<Tab>` を使えるようにする
 setopt extended_glob # 拡張ファイルグロブが有効になり、正規表現として '#'、'~'、'^'が特別扱いになる。
 stty stop undef      # Ctrl+s でロックしないようにする
 
+# docker
+eval "$(boot2docker shellinit)"
+
 # zmv
 # autoload -Uz zmv
 # alias zmv='noglob zmv -W'
