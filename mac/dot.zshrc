@@ -23,4 +23,4 @@ eval "$(boot2docker shellinit)"
 # peco search history
 alias rhistory='history -n 1 | tail -r | uniq -u '
 
-source '../dot.share_zshrc'
+source "$HOME/Dropbox/my/dotfiles/dot.share_zshrc"

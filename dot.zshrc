@@ -43,4 +43,4 @@ alias ls='ls -F --color --group-directories-first'
 # peco search history
 alias rhistory='history -n 1 | tac | uniq -u '
 
-source 'dot.share_zshrc'
+source "$HOME/Dropbox/my/dotfiles/dot.share_zshrc"
