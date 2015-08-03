@@ -16,7 +16,7 @@ do
       exit 0
       ;;
     s)
-      ls -F --color -a $TRASH_DIR
+      ls -F
       exit 0
       ;;
     h)
