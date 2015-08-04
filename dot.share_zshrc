@@ -88,6 +88,7 @@ alias unzip='unar'
 
 # ls
 export LSCOLORS=gxfxcxdxbxegedabagacad
+export LS_COLORS=$LSCOLORS
 # alias ls='ls -F --color --group-directories-first'
 # alias ls='ls -FG'
 alias l='ls -lh'
