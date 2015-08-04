@@ -40,6 +40,7 @@ alias battery='acpi -b'
 alias up='sudo apt update && sudo apt upgrade -y'
 alias fm='pcmanfm' #ファイルマネージャ ( file manager )
 
+# global alias
 alias -g CP='| xsel --clipboard --input'
 
 # ls

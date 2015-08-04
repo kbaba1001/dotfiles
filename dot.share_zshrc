@@ -69,7 +69,6 @@ alias brsd='rspec-git-diff'
 alias rm='trash'
 
 # global alias
-alias -g CP='| xsel --clipboard --input'
 alias -g FIRST='| head -n 1'
 alias -g G='| ag'
 alias -g H='| head'
