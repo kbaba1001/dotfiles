@@ -16,7 +16,7 @@ do
       exit 0
       ;;
     s)
-      ls -F
+      ls -a -F $TRASH_DIR
       exit 0
       ;;
     h)

@@ -45,3 +45,23 @@ alias -g CP='| xsel --clipboard --input'
 
 # ls
 alias ls='ls -F --color --group-directories-first'
+
+# PATH
+export PATH="$HOME/Dropbox/my/bin:$PATH"
+
+# ghq風
+ghq-get() {
+  git clone "git@github.com:$1.git" "$HOME/github_repos/$1"
+}
+
+function peco-ghq-fu () {
+  local selected_dir=$(find $HOME/github_repos/ -maxdepth 2 -mindepth 2 | peco --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-ghq-fu
+bindkey '^g' peco-ghq-fu
+

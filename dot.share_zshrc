@@ -14,14 +14,13 @@ ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}\xF0\x9F\x8D\xA2%{$fg_bold[green]%} "
 ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[gray]%}\xF0\x9F\x8D\xA5%{$fg_bold[gray]%} "
 ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[yellow]%}\xF0\x9F\x8D\x99%{$fg_bold[yellow]%} "
 ZSH_THEME_GIT_PROMPT_REMOTE=""
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[red]%}\xF0\x9F\x8D\xB0 "
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[red]%}\xF0\x9F\x8D\xB0  "
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[white]%}\xF0\x9F\x8D\xA3% "
 
 PROMPT='%{$fg_bold[red]%}$(rbenv version | sed -e "s/ (set.*$//")%{$reset_color%}%{$fg_bold[cyan]%}%C%{$reset_color%}$(git_super_status)%{$reset_color%}%# '
 
 # git
-alias git='hub'
-alias g='git'
+alias g="git"
 alias gup="git pull --rebase && git remote update --prune && git pull --tags && git branch --merged | \grep -v -E \"(\*|master)\" | xargs -I % git branch -d %"
 alias gbd="git branch | \grep -v -E \"(\*|master)\" | xargs -I % git branch -d %"
 for COMMAND in $(\sed -ne '/^\[alias\]/,$p' ${HOME}/.gitconfig | \grep -v '\[alias\]' | \awk '{print $1}')
@@ -38,6 +37,7 @@ alias bi='bundle install --without production -j4'
 alias bu='bundle update'
 alias be='bundle exec'
 alias bo='bundle open'
+alias bc='bundle clean'
 alias ber='bundle exec rake'
 alias brs='bundle exec rspec'
 alias bra='bundle exec rails'
@@ -49,6 +49,7 @@ alias -g RP='RAILS_ENV=production'
 alias irb='pry'
 
 # alias
+alias d='cd'
 alias m='mkdir'
 alias mp='mkdir -p'
 alias v='vagrant'
@@ -61,6 +62,7 @@ alias ag='ag -S --pager "less -XF"'
 alias t='touch'
 alias ta='tmux attach'
 alias zr="vim ~/.zshrc && source ~/.zshrc"
+alias szr="vim ~/Dropbox/my/dotfiles/dot.share_zshrc && source ~/.zshrc"
 alias cal='cal -3'
 alias pingg='ping www.google.com'
 alias now='date +%Y%m%d%H%M%S'
@@ -88,7 +90,7 @@ alias unzip='unar'
 
 # ls
 export LSCOLORS=gxfxcxdxbxegedabagacad
-export LS_COLORS=$LSCOLORS
+#export LS_COLORS=$LSCOLORS
 # alias ls='ls -F --color --group-directories-first'
 # alias ls='ls -FG'
 alias l='ls -lh'
@@ -102,7 +104,7 @@ alias dus='\du -d 1 | sort -nr'
 alias less='less -XFR'
 
 # environment variable
-export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$HOME/Dropbox/my/dotfiles/scripts:$HOME/bin:$HOME/Dropbox/my/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.rbenv/*/**/bin:$HOME/Dropbox/my/dotfiles/scripts:$HOME/bin:$PATH"
 export WORDCHARS="*?_-.[]~=&;#$%^(){}<>"
 
 # TODO prezto に任せられそう
@@ -150,18 +152,6 @@ peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
-
-# ctrl-g で ghq のリポジトリを検索してcdする
-function peco-src () {
-  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
-  if [ -n "$selected_dir" ]; then
-    BUFFER="cd ${selected_dir}"
-    zle accept-line
-  fi
-  zle clear-screen
-}
-zle -N peco-src
-bindkey '^g' peco-src
 
 # rbenv
 eval "$(rbenv init -)"
