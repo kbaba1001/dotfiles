@@ -1,24 +1,4 @@
 #!/bin/bash
 
-auto_display(){
-  local display_info=`xrandr`
-
-  if echo "${display_info}" | \grep -q -e '^VGA1 connected'; then
-    # 自社 (t430s)
-    xrandr --output VGA1 --mode 1440x900 --primary --output LVDS1 --mode 1600x900 --below VGA1
-    xbacklight -set 60
-  elif echo "${display_info}" | \grep -q -e '^DP1 connected'; then
-    # 客先 (t430s)
-    xrandr --output DP1 --mode 2560x1080 --primary --output LVDS1 --mode 1600x900 --below DP1
-    xbacklight -set 60
-  elif echo "${display_info}" | \grep -q -e '^DP2 connected'; then
-    # 自宅 (x240)
-    xrandr --output DP2 --mode 1920x1080 --primary --output eDP1 --mode 1366x768 --below DP2
-    xbacklight -set 25
-  else
-    xrandr --auto
-    xbacklight -set 30
-  fi
-}
-
-auto_display
+xrandr --auto
+xbacklight -set 25

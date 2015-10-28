@@ -63,7 +63,6 @@ alias t='touch'
 alias ta='tmux attach'
 alias zr="vim ~/.zshrc && source ~/.zshrc"
 alias szr="vim ~/Dropbox/my/dotfiles/dot.share_zshrc && source ~/.zshrc"
-alias cal='cal -3'
 alias pingg='ping www.google.com'
 alias now='date +%Y%m%d%H%M%S'
 alias today='date +%Y%m%d'

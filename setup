@@ -8,15 +8,16 @@ cp "${DOTDIR}/git/dot.gitignore" ~/.gitignore
 
 rm ~/.zshrc
 ln -s "${DOTDIR}/dot.zshrc" ~/.zshrc
+
 mkdir ~/.zsh
 git clone git@github.com:olivierverdier/zsh-git-prompt.git ~/.zsh/git-prompt
 git clone git@github.com:rupa/z.git ~/.zsh/z
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 
-rm ~/.xinitrc
-ln -s "${DOTDIR}/dot.xinitrc" ~/.xinitrc
+#rm ~/.xinitrc
+#ln -s "${DOTDIR}/dot.xinitrc" ~/.xinitrc
 
 rm ~/.Xmodmap
 ln -s "${DOTDIR}/dot.xmodmaprc" ~/.Xmodmap
@@ -31,15 +32,15 @@ sudo cp ~/Dropbox/my/dotfiles/vim/molokai.vim /usr/share/vim/vim??/colors/
 rm ~/.gemrc
 ln -s "${DOTDIR}/dot.gemrc" ~/.gemrc
 
-rm ~/.pryrc
-ln -s "${DOTDIR}/dot.pryrc" ~/.pryrc
+#rm ~/.pryrc
+#ln -s "${DOTDIR}/dot.pryrc" ~/.pryrc
 
-rm ~/.rspec
-ln -s "${DOTDIR}/dot.rspec" ~/.rspec
+#rm ~/.rspec
+#ln -s "${DOTDIR}/dot.rspec" ~/.rspec
 
 rm ~/.ctags
 ln -s "${DOTDIR}/dot.ctags" ~/.ctags
 
-mkdir -p ~/.config/awesome/
-[ -f ~/.config/awesome/rc.lua ] && rm ~/.config/awesome/rc.lua
-ln -s "${DOTDIR}/awesome/rc.lua" ~/.config/awesome/rc.lua
+#mkdir -p ~/.config/awesome/
+#[ -f ~/.config/awesome/rc.lua ] && rm ~/.config/awesome/rc.lua
+#ln -s "${DOTDIR}/awesome/rc.lua" ~/.config/awesome/rc.lua

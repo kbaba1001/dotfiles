@@ -9,12 +9,9 @@ source ${HOME}/.zsh/z/z.sh
 # Terminal lang
 # LANG=en_US.UTF-8
 
-# editor
-alias st='subl'
-
 # bundle open & gem open
-export BUNDLER_EDITOR='subl'
-export GEM_EDITOR='subl'
+export BUNDLER_EDITOR='atom'
+export GEM_EDITOR='atom'
 export EDITOR='vim'
 
 # keychain
@@ -29,6 +26,7 @@ alias sd='sudo shutdown -h now'
 alias sr='sudo shutdown -r now'
 
 # short command
+alias cal='cal -3'
 alias s='show-linux'
 alias sl='screen_lock'
 alias open='xdg-open'
@@ -47,7 +45,7 @@ alias -g CP='| xsel --clipboard --input'
 alias ls='ls -F --color --group-directories-first'
 
 # PATH
-export PATH="$HOME/Dropbox/my/bin:$PATH"
+#export PATH="$HOME/Dropbox/my/bin:$PATH"
 
 # ghq風
 ghq-get() {
