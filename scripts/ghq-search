@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+# USAGE:
+#   ruby ghq-search -w warden -p 2
+
+require 'net/http'
+require 'uri'
+require 'json'
+require 'optparse'
+
+options = ARGV.getopts('p:')
+
+search_word = ARGV.last
+page = options['p'] || 1
+
+url = URI.parse("https://api.github.com/search/repositories?q=#{search_word}&sort=stars&order=desc&page=#{page}")
+response_json = JSON.parse(Net::HTTP.get(url))
+
+puts response_json['items'].map {|item| item['full_name'] }
+
+# shellだけでも次のような感じで似たようなことができる。
+# curl -X GET -i -s https://api.github.com/search/repositories\?q\=warden\&sort\=stars\&order\=desc | \grep full_name | awk '{print $2}'
+

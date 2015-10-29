@@ -38,6 +38,10 @@ alias battery='acpi -b'
 alias up='sudo apt update && sudo apt upgrade -y'
 alias fm='pcmanfm' #ファイルマネージャ ( file manager )
 
+# docker-compose
+alias dc='docker-compose'
+alias dcb='docker-compose run web bundle exec'
+
 # global alias
 alias -g CP='| xsel --clipboard --input'
 
