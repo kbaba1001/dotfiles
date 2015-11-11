@@ -41,6 +41,7 @@ alias fm='pcmanfm' #ファイルマネージャ ( file manager )
 # docker-compose
 alias dc='docker-compose'
 alias dcb='docker-compose run web bundle exec'
+alias dcr='docker-compose run web'
 
 # global alias
 alias -g CP='| xsel --clipboard --input'
