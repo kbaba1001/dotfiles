@@ -19,15 +19,15 @@ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-bu
 #rm ~/.xinitrc
 #ln -s "${DOTDIR}/dot.xinitrc" ~/.xinitrc
 
-rm ~/.Xmodmap
-ln -s "${DOTDIR}/dot.xmodmaprc" ~/.Xmodmap
+#rm ~/.Xmodmap
+#ln -s "${DOTDIR}/dot.xmodmaprc" ~/.Xmodmap
 
 rm ~/.tmux.conf
 ln -s "${DOTDIR}/dot.tmux.conf" ~/.tmux.conf
 
-rm ~/.vimrc
-ln -s "${DOTDIR}/vim/dot.vimrc" ~/.vimrc
-sudo cp ~/Dropbox/my/dotfiles/vim/molokai.vim /usr/share/vim/vim??/colors/
+#rm ~/.vimrc
+#ln -s "${DOTDIR}/vim/dot.vimrc" ~/.vimrc
+#sudo cp ~/Dropbox/my/dotfiles/vim/molokai.vim /usr/share/vim/vim??/colors/
 
 rm ~/.gemrc
 ln -s "${DOTDIR}/dot.gemrc" ~/.gemrc

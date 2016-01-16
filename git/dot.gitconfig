@@ -59,7 +59,7 @@
   lop   = log --decorate --oneline
   lp    = log --decorate -p
   ls    = log --decorate --stat
-  nipo  = !sh -c 'git commit -m \"[kbaba1001] NoMethodError: $(date +%Y-%m-%d)\"'
+  nipo  = !sh -c 'git commit -m \"日報: $(date +%Y-%m-%d)\"'
   p     = pull
   re    = rebase
   ri    = !sh -c 'git rebase -i HEAD~$0'
@@ -68,7 +68,3 @@
   si    = !sh -c 'git show HEAD~$(($0 - 1))'
   ss    = show --stat
   t     = tag
-[filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
