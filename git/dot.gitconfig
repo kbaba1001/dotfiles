@@ -15,9 +15,9 @@
 [log]
   date = iso
 [pager]
-  log  = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -XF
-  show = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -XF
-  diff = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -XF
+  log  = diff-highlight | less -XF
+  show = diff-highlight | less -XF
+  diff = diff-highlight | less -XF
 [gui]
   encoding = utf-8
 [help]

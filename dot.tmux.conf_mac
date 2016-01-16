@@ -1,0 +1,53 @@
+# Prefixキーの設定
+unbind-key C-b
+set-option -g prefix C-f
+bind-key C-f send-prefix
+
+# utf8有効
+set-window-option -g utf8 on
+
+# キーストロークのディレイを減らす
+set -sg escape-time 1
+
+# ウィンドウのインデックスを1から始める
+set -g base-index 1
+
+# ペインのインデックスを1から始める
+setw -g pane-base-index 1
+
+# vim keybind
+set-window-option -g mode-keys vi
+
+# 設定ファイルの再読み込み
+bind r source-file ~/.tmux.conf \; display-message "Reload ~/.tmux.conf"
+
+# メッセージの表示時間が短いので長くする
+set-option -g display-time 1000
+
+# クリップボードと同期
+unbind -t vi-copy Enter
+bind-key -t vi-copy Enter copy-pipe 'pbcopy'
+
+# Prefixキー v でクリップボードをペースト
+bind v if-shell 'pbpaste > ~/.tmux-buffer' 'load-buffer ~/.tmux-buffer ; paste-buffer'
+
+# マウスでスクロール
+set-option -g mouse on
+
+# ウインドウを追加した時に、分割元のカレントディレクトリに移動する
+bind c neww -c "#{pane_current_path}"
+bind % splitw -h -c "#{pane_current_path}"
+bind & splitw -v -c "#{pane_current_path}"
+
+# http://www.glidenote.com/archives/1767
+## status
+set -g status-fg black
+set -g status-bg magenta
+set -g pane-active-border-fg black
+set -g pane-active-border-bg magenta
+setw -g window-status-current-fg black
+setw -g window-status-current-bg white
+setw -g window-status-current-attr bold#,underscore
+set -g status-position top
+set -g status-left '#[fg=black]#S#[default]'
+set -g status-right ''
