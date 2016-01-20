@@ -22,25 +22,26 @@ alias s='show-linux'
 # peco search history
 alias rhistory='history -n 1 | tac | uniq -u '
 
-# docker-compose
-#alias dc='docker-compose'
-#alias dcb='docker-compose run web bundle exec'
-#alias dcr='docker-compose run web'
+# docker
+# eval "$(docker-machine env default)"
+alias dc='docker-compose'
+alias dcb='docker-compose run web bundle exec'
+alias dcr='docker-compose run web'
 
 # global alias
 alias -g CP='| pbcopy'
 
 # ls (coreutils を使ってGNUコマンドのls を使う前提)　
-eval $(dircolors ${HOME}/.zsh/dircolors-solarized/dircolors.ansi-universal)
+# eval $(dircolors ${HOME}/.zsh/dircolors-solarized/dircolors.ansi-universal)
 alias ls='ls -F --color --group-directories-first'
 
 # ghq風
 ghq-get() {
-  git clone "git@github.com:$1.git" "$HOME/github_repos/$1"
+  git clone "git@github.com:$1.git" "${HOME}/github_repos/$1"
 }
 
 function peco-ghq-fu () {
-  local selected_dir=$(find $HOME/github_repos/ -maxdepth 2 -mindepth 2 | peco --query "$LBUFFER")
+  local selected_dir=$(find $HOME/github_repos -maxdepth 2 -mindepth 2 | peco --query "$LBUFFER")
   if [ -n "$selected_dir" ]; then
     BUFFER="cd ${selected_dir}"
     zle accept-line
@@ -49,4 +50,3 @@ function peco-ghq-fu () {
 }
 zle -N peco-ghq-fu
 bindkey '^g' peco-ghq-fu
-

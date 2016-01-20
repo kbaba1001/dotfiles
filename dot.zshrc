@@ -68,4 +68,3 @@ function peco-ghq-fu () {
 }
 zle -N peco-ghq-fu
 bindkey '^g' peco-ghq-fu
-

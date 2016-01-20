@@ -25,9 +25,10 @@ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-bu
 rm ~/.tmux.conf
 ln -s "${DOTDIR}/dot.tmux.conf" ~/.tmux.conf
 
-#rm ~/.vimrc
-#ln -s "${DOTDIR}/vim/dot.vimrc" ~/.vimrc
-#sudo cp ~/Dropbox/my/dotfiles/vim/molokai.vim /usr/share/vim/vim??/colors/
+rm ~/.vimrc
+ln -s "${DOTDIR}/vim/dot.vimrc" ~/.vimrc
+mkdir -p ~/.vim/colors
+sudo cp ~/Dropbox/my/dotfiles/vim/molokai.vim ~/.vim/colors
 
 rm ~/.gemrc
 ln -s "${DOTDIR}/dot.gemrc" ~/.gemrc

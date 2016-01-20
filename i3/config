@@ -134,10 +134,15 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # move this window to other display
-bindsym $mod+Control+h move container to output left
-bindsym $mod+Control+j move container to output down
-bindsym $mod+Control+k move container to output up
-bindsym $mod+Control+l move container to output right
+bindsym $mod+Control+h move workspace to output left
+bindsym $mod+Control+j move workspace to output down
+bindsym $mod+Control+k move workspace to output up
+bindsym $mod+Control+l move workspace to output right
+
+bindsym $mod+Control+Shift+h move container to output left
+bindsym $mod+Control+Shift+j move container to output down
+bindsym $mod+Control+Shift+k move container to output up
+bindsym $mod+Control+Shift+l move container to output right
 
 # reload the configuration file
 # bindsym $mod+Shift+c reload
