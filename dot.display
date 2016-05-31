@@ -1,4 +1,4 @@
 #!/bin/bash
 
 xrandr --auto
-xbacklight -set 20
+xbacklight -set 30

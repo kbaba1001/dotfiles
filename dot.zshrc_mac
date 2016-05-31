@@ -17,7 +17,7 @@ export EDITOR='vim'
 
 # short command
 alias s='show-linux'
-#alias sl='screen_lock'
+alias sl='open /System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app'
 
 # peco search history
 alias rhistory='history -n 1 | tac | uniq -u '
@@ -25,6 +25,7 @@ alias rhistory='history -n 1 | tac | uniq -u '
 # docker
 # eval "$(docker-machine env default)"
 alias dc='docker-compose'
+alias dcup='docker-compose stop && docker-compose up'
 alias dcb='docker-compose run web bundle exec'
 alias dcr='docker-compose run web'
 
