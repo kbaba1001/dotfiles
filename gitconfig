@@ -1,0 +1,23 @@
+[user]
+	name  = kbaba1001
+	email = kbaba1001@users.noreply.github.com
+	signingkey = AD98002D26F15A863210D06AD67906C592FBA882
+[core]
+	editor = vim
+	pager = diff-highlight | less -XF
+	excludesfile = ~/.gitignore
+[pull]
+	rebase = true
+[alias]
+	co = checkout
+	ca = commit --amend
+	cm = commit -m
+	b = branch
+	l = log --decorate --oneline -n 10
+[commit]
+	gpgsign = true
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

@@ -20,7 +20,5 @@ eval "$(direnv hook bash)"
 # https://github.com/b4b4r07/enhancd
 source ~/enhancd/init.sh
 
-alias dc=docker-compose
-alias gh-open="gh repo view -w"  # https://github.com/cli/cli
-alias open=xdg-open
+alias dc="docker compose"
 alias ls='ls --color=auto --group-directories-first'
