@@ -14,6 +14,8 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
   ssh-add
 fi
 
+export LS_COLORS='di=01;36'
+
 # direnv https://direnv.net
 eval "$(direnv hook bash)"
 
