@@ -1,7 +1,6 @@
 [user]
 	name  = kbaba1001
 	email = kbaba1001@users.noreply.github.com
-	signingkey = AD98002D26F15A863210D06AD67906C592FBA882
 [core]
 	editor = vim
 	pager = diff-highlight | less -XF
@@ -9,13 +8,17 @@
 [pull]
 	rebase = true
 [alias]
+	l = log --decorate --oneline -n 15
+	ll = log --decorate --oneline
 	co = checkout
 	ca = commit --amend
 	cm = commit -m
+	s = status -s
 	b = branch
-	l = log --decorate --oneline -n 10
-[commit]
-	gpgsign = true
+	a = add -A
+	ds = diff --staged
+	d = diff
+	sf = show --ext-diff
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true

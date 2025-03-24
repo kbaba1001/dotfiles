@@ -1,22 +1,29 @@
+HISTSIZE=10000
+HISTFILESIZE=20000
+
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
 # https://github.com/git/git/tree/master/contrib/completion
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWCOLORHINTS=true
-source ~/.bin/git-prompt.sh
+source /usr/lib/git-core/git-sh-prompt
 PS1='\[\033[01;34m\]\w\[\033[01;32m\]$(__git_ps1 " (%s)")\[\033[00m\]
 \$ '
 
-# export CPPFLAGS="-I/home/linuxbrew/.linuxbrew/opt/openjdk@11/include"
+keychain --nogui $HOME/.ssh/id_rsa
+keychain --nogui $HOME/.ssh/id_ed25519
+source $HOME/.keychain/$HOSTNAME-sh
 
-if [ -z "$SSH_AUTH_SOCK" ] ; then
-  eval `ssh-agent -s`
-  ssh-add
-fi
-
+export ENHANCD_FILTER="fzf --height 40%"
 export LS_COLORS='di=01;36'
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-shopt -u histappend
 
 for i in /home/linuxbrew/.linuxbrew/etc/bash_completion.d/*
 do
@@ -25,19 +32,15 @@ done
 
 export GPG_TTY=$(tty)
 
-# direnv https://direnv.net
-eval "$(direnv hook bash)"
+# homebrew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+for i in /home/linuxbrew/.linuxbrew/etc/bash_completion.d/*
+do
+  . $i
+done
 
-# https://github.com/b4b4r07/enhancd
-source ~/enhancd/init.sh
-
-# brew install bat ripgrep
+# alias
 alias dc="docker compose"
 alias ls='ls --color=auto --group-directories-first'
-alias bat="bat -p --paging=always"
+alias bat="bat -p"
 alias type="type -a"
-alias p="rg --files | fzy"
-alias vimp='vim $(p)'
-alias batp='bat $(p)'
-
-bind -x '"\C-r":"$(tac ~/.bash_history | fzy)"'
