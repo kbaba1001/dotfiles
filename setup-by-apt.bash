@@ -16,7 +16,9 @@ sudo apt install -y \
 git clone https://github.com/babarot/enhancd ~/enhancd && source ~/enhancd/init.sh
 
 # install micro editor
-curl https://getmic.ro | bash
+cd /usr/local/bin
+curl https://getmic.ro/r | sudo sh
+cd ~
 
 # install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
