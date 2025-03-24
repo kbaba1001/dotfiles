@@ -2,8 +2,8 @@
 	name  = kbaba1001
 	email = kbaba1001@users.noreply.github.com
 [core]
-	editor = vim
-	pager = diff-highlight | less -XF
+	editor = micro
+	pager = diff-so-fancy | less --tabs=4 -RF
 	excludesfile = ~/.gitignore
 [pull]
 	rebase = true
@@ -24,3 +24,5 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+[interactive]
+	diffFilter = diff-so-fancy --patch
