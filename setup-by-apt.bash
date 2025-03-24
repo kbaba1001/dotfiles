@@ -12,8 +12,11 @@ sudo apt install -y \
   fzf \
   bat
 
-# install homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
 # enhancd
 git clone https://github.com/babarot/enhancd ~/enhancd && source ~/enhancd/init.sh
+
+
+# install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+brew install gcc diff-so-fancy
