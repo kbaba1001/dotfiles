@@ -2,11 +2,13 @@
 	name  = kbaba1001
 	email = kbaba1001@users.noreply.github.com
 [core]
-	editor = micro
-	pager = diff-so-fancy | less --tabs=4 -RF
+	editor = vim
+	pager = delta
 	excludesfile = ~/.gitignore
 [pull]
 	rebase = true
+[merge]
+	conflictStyle = zdiff3
 [alias]
 	l = log --decorate --oneline -n 15
 	ll = log --decorate --oneline
@@ -24,5 +26,6 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
-[interactive]
-	diffFilter = diff-so-fancy --patch
+[delta]
+	navigate = true  # use n and N to move between diff sections
+	dark = true
