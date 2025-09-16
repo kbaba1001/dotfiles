@@ -29,7 +29,7 @@ source /usr/share/git/git-prompt.sh
 PS1='\[\033[01;36m\]\W\[\033[01;32m\]$(__git_ps1 " (%s)")\[\033[00m\]
 \$ '
 
-export PATH=$HOME/.bin:$PATH
+export PATH=$HOME/.bin:$HOME/.local/bin:$PATH
 export LS_COLORS='di=01;36'
 export ENHANCD_FILTER="fzf --height 40%"
 source $HOME/enhancd/init.sh

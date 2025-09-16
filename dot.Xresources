@@ -5,3 +5,4 @@ URxvt*boldItalicFont: xft:PlemolJPConsole:bold:italic:size=20
 URxvt*background: black
 URxvt*foreground: white
 URxvt*scrollBar: false
+URxvt.bell-command: false
