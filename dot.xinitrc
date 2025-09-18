@@ -5,9 +5,12 @@ export QT_IM_MODULE=fcitx5
 export XMODIFIERS=@im=fcitx5
 
 xrdb -load ~/.Xresources
-source ~/.input-device
 
-exec fcitx5 &
-exec nm-applet &
-exec clipmenud &
+fcitx5 &
+nm-applet &
+clipmenud &
+slack &
+brave-browser-stable &
+urxvt &
+
 exec i3
