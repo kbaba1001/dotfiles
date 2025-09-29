@@ -2,7 +2,8 @@ URxvt*font: xft:PlemolJPConsole:size=20
 URxvt*boldFont: xft:PlemolJPConsole:bold:size=20
 URxvt*italicFont: xft:PlemolJPConsole:italic:size=20
 URxvt*boldItalicFont: xft:PlemolJPConsole:bold:italic:size=20
-URxvt*background: black
+URxvt*background: #222222
 URxvt*foreground: white
+URxvt*highlightColor: #444444
 URxvt*scrollBar: false
-URxvt.bell-command: false
+URxvt*bell-command: false
