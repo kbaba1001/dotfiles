@@ -37,6 +37,21 @@ source $HOME/enhancd/init.sh
 keychain --nogui $HOME/.ssh/id_ed25519
 source $HOME/.keychain/$HOSTNAME-sh
 
+# ctrl R の設定
+export FZF_CTRL_R_OPTS="
+  --height 40% \
+  --layout=reverse \
+  --border \
+  --ansi \
+  --preview 'echo {}' \
+  --preview-window down:3:wrap"
+
+# ターミナルでの  fzf 全体設定
+export FZF_DEFAULT_OPTS="
+  --height 50% \
+  --layout=reverse \
+  --border"
+
 eval "$(fzf --bash)"
 
 function filename_search {
@@ -47,3 +62,4 @@ alias ls="ls --color=auto --group-directories-first"
 alias dc="docker compose"
 alias bat="bat -p"
 alias type="type -a"
+alias npm="pnpm"
