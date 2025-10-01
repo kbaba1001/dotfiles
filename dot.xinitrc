@@ -9,8 +9,11 @@ xrdb -load ~/.Xresources
 fcitx5 &
 nm-applet &
 clipmenud &
-slack &
-brave-browser-stable &
-urxvt &
+#slack &
+#brave-browser-stable &
+#urxvt &
+pulseaudio -D
+
+bash .screenlayout/default.sh
 
 exec i3
