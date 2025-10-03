@@ -2,3 +2,6 @@
 .calva
 .clj-kondo
 .lsp
+mise.local.toml
+/.vscode/launch.json
+/.vscode/tasks.json

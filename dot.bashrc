@@ -48,11 +48,12 @@ export FZF_CTRL_R_OPTS="
 
 # ターミナルでの  fzf 全体設定
 export FZF_DEFAULT_OPTS="
-  --height 50% \
+  --height 40% \
   --layout=reverse \
   --border"
 
 eval "$(fzf --bash)"
+eval "$(mise activate bash)"
 
 function filename_search {
   rg --files $2 2>/dev/null | rg $1
@@ -63,3 +64,4 @@ alias dc="docker compose"
 alias bat="bat -p"
 alias type="type -a"
 alias npm="pnpm"
+alias rm="safe-rm"
