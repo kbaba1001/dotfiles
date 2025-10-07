@@ -4,16 +4,14 @@ export GTK_IM_MODULE=fcitx5
 export QT_IM_MODULE=fcitx5
 export XMODIFIERS=@im=fcitx5
 
-xrdb -load ~/.Xresources
 
 fcitx5 &
 nm-applet &
 clipmenud &
-#slack &
-#brave-browser-stable &
-#urxvt &
-pulseaudio -D
+dunst &
 
+xrdb -load ~/.Xresources
+pulseaudio -D
 bash .screenlayout/default.sh
 
 exec i3
