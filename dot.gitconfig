@@ -1,6 +1,7 @@
 [user]
 	name  = kbaba1001
 	email = kbaba1001@users.noreply.github.com
+	signingkey = D67906C592FBA882
 [core]
 	editor = vim
 	pager = delta
@@ -13,6 +14,7 @@
 	l = log --decorate --oneline -n 15
 	ll = log --decorate --oneline
 	co = checkout
+	c = commit
 	ca = commit --amend
 	cm = commit -m
 	s = status -s
@@ -29,3 +31,7 @@
 [delta]
 	navigate = true  # use n and N to move between diff sections
 	dark = true
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
