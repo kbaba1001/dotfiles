@@ -34,6 +34,9 @@ export LS_COLORS='di=01;36'
 export ENHANCD_FILTER="fzf --height 40%"
 source $HOME/enhancd/init.sh
 
+export GPG_TTY=$(tty)
+
+keychain --nogui --agents gpg --gpg2 D67906C592FBA882
 keychain --nogui $HOME/.ssh/id_ed25519
 source $HOME/.keychain/$HOSTNAME-sh
 
