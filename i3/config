@@ -196,7 +196,7 @@ mode "resize" {
 # finds out, if available)
 bar {
         status_command i3status
-	font pango:PlemolJP 20
+	font pango:PlemolJP 16
 }
 
 exec /home/kbaba/adjust.sh
