@@ -3,7 +3,7 @@ decorations_theme_variant = "Dark"
 
 [font]
 normal = { family = "PlemolJPConsole", style = "Regular" }
-size = 16
+size = 14
 
 [colors.primary]
 background = "#222222"
